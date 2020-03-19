@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="maskforest.css">
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"
+    preserveAspectRatio="xMidYMid">
+    <defs>
+        <mask id="MASK" maskunits="userSpaceOnUse"
+        maskcontentunits="userSpaceOnUse">
+        <image xlink:href="https://i.imgur.com/109PjFX.jpg"
+            height="100%"
+            width="100%"
+            />
+    </mask>
+    </defs>
+    <g mask="url(#MASK)">
+        <image x="0" y="0" class="space"
+        href="https://media.giphy.com/media/l3q2RgN7WUjeUUXm0/giphy.gif"
+        height="100%" width="100%"
+        /> 
+    </g>
+    </svg>
+    <div class="canvas">
+    </div>
+</body>
+</html>

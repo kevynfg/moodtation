@@ -1,0 +1,284 @@
+html, body {
+    height: auto;
+    width: auto;
+	overflow: hidden;
+     }
+    body{
+        background-image: url('imgs/rainforest5.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 101%;
+        
+        background-attachment: fixed;
+    justify-content: center;    
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    overflow-x: hidden; 
+    
+	padding: 0px;
+	margin: 0px;
+    
+    }
+    svg{
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+    }
+    #imergir{
+        visibility: visible;
+    }
+    #parar{
+        position: absolute;
+        top: 71%;
+        left: 35%;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    label{
+        visibility: hidden;
+        padding: 10px;
+    }
+
+    h1{
+    text-align: center;
+	color: white;
+	border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    
+    }
+    .container{
+        position: relative;
+    }
+    #eq {
+     position: absolute;
+     left: 35%;
+     top: 50%;
+     height: 20%;
+     width: 30%;
+     text-align: center;
+     font-size: 18px;
+     opacity: 0;
+     visibility: hidden;
+     transform: translate(-50, -50);
+     
+    }
+
+    #bar {
+        
+        width: 0px;
+    
+    }
+
+    .mySlides{
+        display: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        
+    }
+  
+    .slider{
+        -webkit-appearance: none;
+        width: 20%;
+        height: 20px;
+        background: linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%);
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        border-radius: 12px;
+        box-shadow: 0px 1px 10px 1px black;
+    }
+    .sliderDoSono{
+        -webkit-appearance: none;
+        width: 20%;
+        height: 20px;
+        background: linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%);
+        outline: none;
+        left: 40%;
+        bottom: -15px;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        border-radius: 12px;
+        box-shadow: 0px 1px 10px 1px black;
+        position: relative;
+        display: block;
+        text-align: center;
+    }
+    #sliderdiv{
+        position: relative;
+        display: block;
+        text-align: center;
+        margin: 0 0 0 9px;
+        bottom: 7px;
+    }
+    #sliderAnsiedade{
+        position: relative;
+        display: block;
+        text-align: center;
+        bottom: 5px;
+        right: 12px;
+    }
+    #slidersono{
+        text-align: center;
+        margin: -3px 0 0 15px;
+    }
+    
+    .jumbotron-fluid{
+        visibility: visible;
+    }
+    #emoticon{
+        visibility: visible;
+        margin: -10px 0px 5px -2px;
+    }
+    .slider:hover {
+        opacity: 1;
+    }
+    .slider::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        appearance: none;
+        width: 28px;
+        height: 28px;
+        /*background: url('imgs/blue.jpg'); */
+        background-color: #2FED66;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .sliderDoSono::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        appearance: none;
+        width: 28px;
+        height: 28px;
+        /*background: url('imgs/blue.jpg'); */
+        background-color: #2FED66;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+
+    #nuvemvideo {
+        position: fixed;
+        overflow: hidden;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: -1000;
+        visibility: hidden;
+    }
+    .emoji{
+        text-align: center;
+        font-size: 2rem;
+        padding: 10px 0px 0px 0px;
+        margin: -55px 0 0 10px;
+        opacity: 0.9;
+    }
+    #emoji2{
+        text-align: center;
+        font-size: 2rem;
+        padding: 10px;
+        margin: -50px 0 0 -10px;
+        opacity: 0.8;
+    }
+    #valoralegre{
+        left: 510px;
+        top: 230px;
+        position: relative;
+    }
+    .sliderzin{
+        color: white;
+        position: relative;
+        text-align: center;
+        font-size: 2rem;
+        /*font-family: 'Trebuchet MS', Helvetica, sans-serif;*/
+        font-family: 'VT323', monospace;
+        font-weight: lighter;
+        padding: 12px;
+    }
+    .sliderAnsi{
+        -webkit-appearance: none;
+        width: 20%;
+        height: 20px;
+        
+        background: linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%);
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        border-radius: 12px;
+        box-shadow: 0px 1px 10px 1px black;
+        
+    }
+    .sliderAnsi::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        appearance: none;
+        width: 28px;
+        height: 28px;
+        /*background: url('imgs/blue.jpg'); */
+        background-color: #2FED66;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    .sliderEscrita{
+        color: white;
+        font-size: 2rem;
+        padding: 10px;
+        
+        font-family: 'VT323', monospace;
+        font-weight: lighter;
+    }
+    .sliderSleep{
+        color: white;
+        font-size: 2rem;
+        display: block;
+        padding: 10px;
+        font-family: 'VT323', monospace;
+        font-weight: lighter;
+    }
+    /*
+    #alegre{
+        color: white;
+        position: relative;
+        font-size: 2rem;
+        left: 565px;
+        top: -40px;
+        font-family: 'Trebuchet MS', Helvetica, sans-serif;
+        font-weight: lighter;
+    }
+    */
+    #comoesta{
+        visibility: visible;
+    }
+    .display-4 {
+        font-size: 3.5rem;
+        font-weight: 300;
+        margin: 54px 54px 65px 54px;
+        line-height: 1.2;
+        padding: 0px 0px 5px 0px;
+    }
+
+    #svggif{
+        visibility: hidden;
+    }
+    #cachoeira{
+
+        display: block;
+        position: relative;
+        bottom: 250px;
+        z-index: 999;
+        background: white;
+        left: 100px;
+        width: 100px;
+        border-radius: 20px;
+
+    }
+    #meditar{
+        margin: -3px 0 0 15px;
+        position: relative;
+        left: 617px;
+        padding: 5px 50px 5px 50px;
+        bottom: 110px;
+    }

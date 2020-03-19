@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="mask.css">
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+        <defs>
+            <mask id="MASK" maskunits="userSpaceOnUse"
+            maskcontentunits="userSpaceOnUse">
+            <image xlink:href="https://media.giphy.com/media/UxTZDNv0Zej4s/giphy.gif"
+                height="100%"
+                width="100%"
+                />
+        </mask>
+        </defs>
+        <g mask="url(#MASK)">
+            <image x="0" y="0" class="space"
+            href="https://media.giphy.com/media/d31uZ4GcggcNzqh2/giphy.gif"
+            height="100%" width="100%"
+            />
+        </g>
+    </svg>
+    <div class="canvasWrapper">
+    </div>
+</body>
+</html>
