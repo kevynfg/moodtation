@@ -1,5 +1,5 @@
 const express = require('express');
-
+const connection = require('./database/connection');
 const routes = express.Router();
 
 routes.get('/', (require, response) => {
@@ -8,9 +8,9 @@ routes.get('/', (require, response) => {
 
    routes.post ('/users', (require, response) => { //post é para criar algo na aplicação
      
-    console.log(require.body);
+    const users = await connection('users').select ('*');
 
-    return response.json ({ ok: true });
+    return response.json (users);
 
 
    }); 
