@@ -3,8 +3,12 @@ const connection = require('../database/connection');
 module.exports = {
     //linha abaixo é o get
     async server(request, response) {
+        const { page = 1 } = request.query;
         //na linha abaixo posso dar um select específico ou um select em tudo igual abaixo
-        const consistencia = await connection('consistencia').select('*');
+        const consistencia = await connection('consistencia')
+        .limit(5)
+        .offset((page-1) * 5)
+        .select('*');
 
         return response.json(consistencia);
     },
