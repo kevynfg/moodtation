@@ -19,6 +19,7 @@ routes.get('/profile', profileController.server);
 //registra dados em geral do perfil do usuário
 routes.post('/consistencia', consistenciaController.create);
 routes.get('/consistencia', consistenciaController.server);
+routes.delete('/consistencia/:id', consistenciaController.delete);
 
 //exporta todos os routes
 module.exports = routes;

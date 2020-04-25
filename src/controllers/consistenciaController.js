@@ -34,5 +34,29 @@ module.exports = {
         });
         //a response só pode ser um objeto ou um vetor []
         return response.json({ id });
+    },
+
+    //Deletar consistencia baseado no id do usuário e se o usuário está logado
+    async delete(request, response) {
+        //pegar o id passado em http://localhost:3333/consistencia/1
+        const { id } = request.params;
+        //usar o id de autorização no cabeçalho
+        const id_usuario = request.headers.authorization;
+
+        //selecionar o ID na tabela consistencia do usuário logado
+        const consistencia = await connection('consistencia').where('id', id).select('id_usuario').first();
+
+        console.log(consistencia);
+
+        //se o id da tabela consistencia não for igual o usuário logado
+        if(consistencia.id_usuario !== id_usuario) {
+            return response.status(401).json({error: 'Operação não permitida'});
+        }
+        //se sim, deletar a consistência no id passado http://localhost:3333/consistencia/1 = ID 1
+        await connection('consistencia').where('id', id).delete();
+
+        //resposta http pro body
+        return response.status(204).send();
     }
+
 };
