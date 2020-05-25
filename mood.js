@@ -1,4 +1,4 @@
-   
+
     var i = 0,
     b = 101,
     progressBar = document.getElementById('bar'),
@@ -363,6 +363,7 @@
         }
         return s
     }
+    
     
 
    

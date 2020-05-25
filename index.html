@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <title>Moodtation - Afunde-se em si próprio</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -21,7 +22,8 @@
     </div>
     <div class="jumbotron-fluid" id="jumbo">
         <div class="container">
-            <h1 class="display-3 lead">Moodtation</h1>
+            <h1 class="display-4 lead">Moodtation</h1>
+            
             <div class="progress" style="height: 30px;">
                 <div class="progress-bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
             </div>
@@ -30,8 +32,27 @@
                 
                 <label class="radio-inline" id="lblnuvem"><input type="radio" name="optradio" id="optradio" onclick="chamarNuvens()">Quero estar nas nuvens!</label>
             </div>
-            <br>
-            
+
+            <div class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             <div>  
                 <audio volume="0.0" id="audio1">
                     <source src="sounds/curatibetanea.mp3"/>
@@ -59,7 +80,7 @@
             </div>  
             <div id="sliderdiv">
                 <span id="triste" class="sliderzin">Triste</span>
-                <input type="range" class="slider" min="0" max="2" value="1" step="0" id="alegrometro">
+                <input type="range" class="slider" min="0" max="2" value="1" step="0" height="50%;" id="alegrometro">
                 <span id="alegre" class="sliderzin">Alegre</span>
                 <p id="valoralegre" style = "visibility: hidden;">Valor: <span id="valor"></span></p>
              </div>  
@@ -74,19 +95,16 @@
                 <input type="range" class="slider" min="0" max="2" value="1" step="0" id="sonometro">
              </div>
          </div>
-        </div>   
-        <div id="cachoeira">
-            <figure class="figure">
-                <img src="./imgs/waterfall2.png" class="figure-img img-fluid rounded" alt="cachoeira">
-                <figcaption class="figure-caption text-center"></figcaption>
-            </figure>
-        </div>    
-    </div>
-    <div>
-        <button class="btn btn-primary btn-lg" id="meditar" role="button">Meditar</button>
+         <div>
+            <button class="btn btn-primary btn-lg" id="meditar"role="button">Meditar</button>
+        
+            <button class="btn btn-primary btn-lg" id="parar" role="button">Parar</button>
+        </div>
     
-        <button class="btn btn-primary btn-lg" id="parar" role="button">Parar</button>
-    </div>
+        </div> 
+    </div>      
+        
+    
     
   
     <div class="container-fluid" id="ctn">
@@ -95,28 +113,6 @@
         <!--<img src="imgs/rainforest.jpg" class="image-responsive center" alt="Floresta Tropical" id="rainforest"> -->
             
     </div>
-<div id="svggif">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"
-    preserveAspectRatio="xMidYMid">
-    <defs>
-        <mask id="MASK" maskunits="userSpaceOnUse"
-        maskcontentunits="userSpaceOnUse">
-        <image xlink:href="https://i.imgur.com/109PjFX.jpg"
-            height="100%"
-            width="100%"
-            />
-    </mask>
-    </defs>
-    <g mask="url(#MASK)">
-        <image x="0" y="0" class="space"
-        href="https://media.giphy.com/media/l3q2RgN7WUjeUUXm0/giphy.gif"
-        height="100%" width="100%"
-        /> 
-    </g>
-    </svg>
-    <div class="canvasWrapper">
-    </div>
-</div>
 
 
 <script src="mood.js"></script>

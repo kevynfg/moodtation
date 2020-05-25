@@ -5,7 +5,7 @@
   "main": "coisas.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon login.js"
   },
   "repository": {
     "type": "git",
