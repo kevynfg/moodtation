@@ -12,6 +12,7 @@
     divjumbo = document.getElementById('jumbo'),
     svggif = document.getElementById('svggif'),
     sliderdiv = document.getElementById('sliderdiv'),
+    bodychange = document.body,
     timevol,
     timevol2,
     timeoutNumbers,
@@ -28,7 +29,7 @@
             i++;                       
             progressBar.style.width = `${i}%`
             progressBar.innerHTML = `${i}%`
-            document.body.style.backgroundSize = `${b}%`
+            bodychange.style.backgroundSize = `${b}%`
             b++;  
                                 
             if (i >= 100){
@@ -62,7 +63,7 @@
     function voltarNumbers(){ // RETROCEDER A PORCENTAGEM DA BARRA      
         if (b != 100) {
             b--
-            document.body.style.backgroundSize = `${b}%` 
+            bodychange.style.backgroundSize = `${b}%` 
             progressBar.style.width = `${i}%`
             progressBar.innerHTML = `${i}%`
             i--
@@ -101,8 +102,8 @@
 
     function gifmeditate(){
 
-        document.body.style.background = 'none'
-        document.body.style.backgroundColor = '#000'
+        bodychange.style.background = 'none'
+        bodychange.style.backgroundColor = '#000'
         svggif.style.visibility = 'visible'
 
     }   
@@ -241,9 +242,8 @@
         progressBar.setAttribute('aria-valuenow', 0)
         progressBar.innerHTML = '0%'
         imergir.disabled = false
-        svggif.style.visibility = 'hidden'
-        document.body.style.visibility = 'visible'
-        document.body.style.backgroundImage = `url(imgs/rainforest5.jpg)`
+        bodychange.style.visibility = 'visible'
+        bodychange.style.backgroundImage = `url(imgs/rainforest5.jpg)`
         buscarBlock = document.getElementsByClassName('mySlides')
             for(let k = 0; k < buscarBlock.length; k++ ){
                 if (buscarBlock[k].style.display != 'none'){
@@ -255,7 +255,7 @@
     }
 
     var slider = document.getElementById('alegrometro')
-    //var output = document.getElementById('valor')
+    var output = document.getElementById('valor')
     var emoji = document.querySelector('.emoji')
     var spantriste = document.getElementById('triste')
     var spanalegre = document.getElementById('alegre')
