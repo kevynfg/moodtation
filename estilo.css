@@ -27,11 +27,7 @@ html, body {
         visibility: visible;
     }
     #parar{
-        position: absolute;
-        top: 71%;
-        left: 35%;
-        visibility: hidden;
-        opacity: 0;
+        
     }
 
     label{
@@ -47,8 +43,9 @@ html, body {
     
     }
     .container{
-        position: relative;
+        
     }
+
     #eq {
      position: absolute;
      left: 35%;
@@ -107,26 +104,8 @@ html, body {
         display: block;
         text-align: center;
     }
-    #sliderdiv{
-        position: relative;
-        text-align: center;
-        left: 3px;
-    }
-    #sliderAnsiedade{
-        position: relative;
-        text-align: center;
-        right: 12px;
-    }
-    #slidersono{
-        text-align: center;
-        margin: -3px 0 0 15px;
-    }
-    
-    .jumbotron-fluid{
-        visibility: visible;
-        height: 100vh;
-    }
 
+    
     #emoticon{
         visibility: visible;
         margin: -10px 0px 5px -2px;
@@ -155,37 +134,7 @@ html, body {
         border-radius: 50%;
         cursor: pointer;
     }
-    
-    
 
-    #nuvemvideo {
-        position: fixed;
-        overflow: hidden;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        z-index: -1000;
-        visibility: hidden;
-    }
-    .emoji{
-        text-align: center;
-        font-size: 2rem;
-        padding: 10px 0px 0px 0px;
-        margin: -55px 0 0 10px;
-        opacity: 0.9;
-    }
-    #emoji2{
-        text-align: center;
-        font-size: 2rem;
-        padding: 10px;
-        margin: -50px 0 0 -10px;
-        opacity: 0.8;
-    }
-    #valoralegre{
-        left: 510px;
-        top: 230px;
-        position: relative;
-    }
     .sliderzin{
         color: white;
         position: relative;
@@ -259,27 +208,4 @@ html, body {
         margin: 54px 54px 65px 54px;
         line-height: 1.2;
         padding: 0px 0px 5px 0px;
-    }
-
-    
-
-    #cachoeira{
-
-        display: block;
-        position: relative;
-        bottom: 250px;
-        z-index: 999;
-        background: white;
-        left: 100px;
-        width: 100px;
-        border-radius: 20px;
-
-    }
-    #meditar{
-        position: relative;
-        padding: 10px 25px 10px 21px;
-        bottom: -25px;
-        text-align: center;
-        left: 46%;
-        display: inline-block;
     }

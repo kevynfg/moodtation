@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Moodtation - Afunde-se em si próprio</title>
     <link rel="stylesheet" href="estilo.css">
  
@@ -16,39 +15,15 @@
         <img class="mySlides w3-animate-fading" src="imgs/rainforest3.jpg"/>
         <img class="mySlides w3-animate-fading" src="imgs/rainforest4.jpg"/>
     </div>
-
-    <div class="jumbotron-fluid" id="jumbo">
         <div class="container">
             <h1 class="display-3 lead">Moodtation</h1>
             
             <div class="progress" style="height: 30px;">
                 <div class="progress-bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
             </div>
-            <div style="margin: 10px 10px 10px 0px;">
-                <button class="btn btn-primary btn-lg" id="imergir"role="button">Imergir</button>
-                
-                <label class="radio-inline" id="lblnuvem"><input type="radio" name="optradio" id="optradio" onclick="chamarNuvens()">Quero estar nas nuvens!</label>
-            </div>
-            <div class="modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Modal title</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+            <span>
+                <button class="button" id="imergir"role="button">Imergir</button>
+            </span>
                 <div>  
                     <audio volume="0.0" id="audio1">
                         <source src="sounds/curatibetanea.mp3"/>
@@ -62,28 +37,24 @@
                     </audio>
                 </div> 
 
-                <div>
-                    <video autoplay muted loop id="nuvemvideo">
-                        <source src="videos/timelapse-nuvens.mp4" type="video/mp4">
-                            
-                    </video>
-                </div>
             <div id="painelSlides">
                 <div id="emoticon">
                     <h1 class="display-4 lead" id="comoesta">Como você está hoje?</h1>
-                    <div class="emoji">😶</div> 
+                     
                 </div>  
 
                 <div id="sliderdiv">
+                    <div class="emoji">😶</div>
                     <span id="triste" class="sliderzin">Triste</span>
                     <input type="range" class="slider" min="0" max="2" value="1" step="0" id="alegrometro">
                     <span id="alegre" class="sliderzin">Alegre</span>
                     <p id="valoralegre" style = "visibility: hidden;">Valor: <span id="valor"></span></p>
                 </div>  
 
-                <div class="emoji" id="emojis2">🙄</div> 
+                
 
                 <div id="sliderAnsiedade">
+                    <div class="emoji" id="emojis2">🙄</div> 
                     <span id="ansioso" class="sliderEscrita">Ansioso</span>
                     <input type="range" class="slider" min="0" max="2" value="1" step="0" id="ansiometro">
                     <span id="calmo" class="sliderEscrita">Calmo</span>
@@ -94,12 +65,11 @@
                     <input type="range" class="slider" min="0" max="2" value="1" step="0" id="sonometro">
                 </div>
             </div>
-
-            <button class="btn btn-primary btn-lg" id="meditar"role="button">Meditar</button>
-        
+                <p>
+                    <button class="btn btn-primary btn-lg" id="parar" role="button">Parar</button>
+                </p>
         </div> 
-    </div>
-    <button class="btn btn-primary btn-lg" id="parar" role="button">Parar</button>  
+      
         
     <div class="container-fluid" id="ctn">
         
@@ -110,7 +80,6 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="mood.js"></script>
 
 </body>
