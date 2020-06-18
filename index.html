@@ -16,13 +16,13 @@
         <img class="mySlides w3-animate-fading" src="imgs/rainforest4.jpg"/>
     </div>
         <div class="container">
-            <h1 class="display-3 lead">Moodtation</h1>
+            <h1>LOGO</h1>
             
             <div class="progress" style="height: 30px;">
                 <div class="progress-bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
             </div>
-            <span>
-                <button class="button" id="imergir"role="button">Imergir</button>
+            <span id="imergir">
+                <button class="button" role="button">Imergir</button>
             </span>
                 <div>  
                     <audio volume="0.0" id="audio1">
@@ -45,19 +45,23 @@
 
                 <div id="sliderdiv">
                     <div class="emoji">😶</div>
+                    <div id="divteste">
                     <span id="triste" class="sliderzin">Triste</span>
                     <input type="range" class="slider" min="0" max="2" value="1" step="0" id="alegrometro">
                     <span id="alegre" class="sliderzin">Alegre</span>
-                    <p id="valoralegre" style = "visibility: hidden;">Valor: <span id="valor"></span></p>
+                    <p id="valoralegre" hidden>Valor: <span id="valor"></span></p>
+                    </div>
                 </div>  
 
                 
 
                 <div id="sliderAnsiedade">
                     <div class="emoji" id="emojis2">🙄</div> 
+                    <div id="divteste2">
                     <span id="ansioso" class="sliderEscrita">Ansioso</span>
                     <input type="range" class="slider" min="0" max="2" value="1" step="0" id="ansiometro">
                     <span id="calmo" class="sliderEscrita">Calmo</span>
+                    </div>
                 </div>
 
                 <div id="slidersono">
@@ -66,7 +70,7 @@
                 </div>
             </div>
                 <p>
-                    <button class="btn btn-primary btn-lg" id="parar" role="button">Parar</button>
+                    <button class="button" id="parar" role="button">Parar</button>
                 </p>
         </div> 
       

@@ -1,49 +1,66 @@
 html, body {
-    height: auto;
-    width: auto;
+    height: 100vh;
+    width: 100%;
 	overflow: hidden;
      }
     body{
         background-image: url('imgs/rainforest5.jpg');
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 101%;
-        
         background-attachment: fixed;
+        background-size: cover;
     justify-content: center;    
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    overflow-x: hidden; 
-    
-	padding: 0px;
 	margin: 0px;
     
     }
-    svg{
-        width: 100%;
-        height: 100%;
-        z-index: 999;
+    .button {
+        background-color: rgb(17, 91, 228);
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        position: relative;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        box-shadow: 0px 1px 10px 1px black;
     }
     #imergir{
-        visibility: visible;
+        text-align: center;
+        position: absolute;
+        top: 65px;
+        width: 100%;
     }
     #parar{
-        
+        visibility: hidden;
     }
 
     label{
         visibility: hidden;
         padding: 10px;
     }
+    #divteste2{
+        text-align: center;
+        position: relative;
+        display: inline-block;
+        top: 50%;
+        right: 14px;
+        width: 100%;
+    }
+
 
     h1{
     text-align: center;
 	color: white;
-	border-radius: 10px;
-    background: rgba(0, 0, 0, 0.6);
-    
+    background: fixed;
+    filter: opacity(80%);
+    background-color: rgb(17, 91, 228);
+    opacity: 1;
+    z-index: 0;
     }
-    .container{
-        
+    #painelSlides{
+        text-align: center;
     }
 
     #eq {
@@ -74,57 +91,18 @@ html, body {
         margin: 0 auto;
         
     }
-    
-    .slider{
-        -webkit-appearance: none;
-        width: 20%;
-        height: 20px;
-        background: linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%);
-        outline: none;
-        opacity: 0.7;
-        -webkit-transition: 0.2s;
-        transition: opacity 0.2s;
-        border-radius: 12px;
-        box-shadow: 0px 1px 10px 1px black;
-    }
-    .sliderDoSono{
-        -webkit-appearance: none;
-        width: 20%;
-        height: 20px;
-        background: linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%);
-        outline: none;
-        left: 40%;
-        bottom: -15px;
-        opacity: 0.7;
-        -webkit-transition: 0.2s;
-        transition: opacity 0.2s;
-        border-radius: 12px;
-        box-shadow: 0px 1px 10px 1px black;
+
+    #emojis2{
         position: relative;
-        display: block;
-        text-align: center;
+        display: inline-block;
+        left: 2px;
     }
 
-    
-    #emoticon{
-        visibility: visible;
-        margin: -10px 0px 5px -2px;
-    }
     .slider:hover {
         opacity: 1;
     }
-    .slider::-webkit-slider-thumb{
-        -webkit-appearance: none;
-        appearance: none;
-        width: 28px;
-        height: 28px;
-        /*background: url('imgs/blue.jpg'); */
-        background-color: #2FED66;
-        border-radius: 50%;
-        cursor: pointer;
-    }
 
-    .sliderDoSono::-webkit-slider-thumb{
+    .slider::-webkit-slider-thumb{
         -webkit-appearance: none;
         appearance: none;
         width: 28px;
@@ -186,17 +164,10 @@ html, body {
         font-family: 'VT323', monospace;
         font-weight: lighter;
     }
-    /*
-    #alegre{
-        color: white;
+    #slidersono{
         position: relative;
-        font-size: 2rem;
-        left: 565px;
-        top: -40px;
-        font-family: 'Trebuchet MS', Helvetica, sans-serif;
-        font-weight: lighter;
+        left: 5px;
     }
-    */
     #comoesta{
         visibility: visible;
         font-size: 2.5rem;
@@ -209,3 +180,5 @@ html, body {
         line-height: 1.2;
         padding: 0px 0px 5px 0px;
     }
+
+    
