@@ -1,5 +1,6 @@
 
     var i = 0,
+    contadorHeight = 0,
     b = 101,
     progressBar = document.getElementById('bar'),
     birds = document.getElementById('audio1'),
@@ -8,17 +9,16 @@
     imergir = document.getElementById('imergir'),
     equalizador = document.getElementById('eq'),
     parar = document.getElementById('parar'),
-    lapseNuvens = document.getElementsByName('optradio'),
-    divjumbo = document.getElementById('jumbo'),
-    svggif = document.getElementById('svggif'),
     sliderdiv = document.getElementById('sliderdiv'),
     bodychange = document.body,
     container = document.getElementById('container'),
+    ondas = document.getElementsByClassName('waves'),
     timevol,
     timevol2,
     timeoutNumbers,
     timeoutMudar,
     timeout,
+    timeoutOndas,
     timeoutImagens;
     birds.volume = 0.0
     secundo.volume = 0.0
@@ -27,12 +27,12 @@
     function countNumbers(){ // FUNCTION PARA PROGREDIR A BARRA, ATIVAR O ÁUDIO E CHAMAR A FUNCTION DE PASSAR IMAGENS
         
         if(i < 100){  
-            i++;                       
+            i++                  
             progressBar.style.width = `${i}%`
             progressBar.innerHTML = `${i}%`
-            bodychange.style.backgroundSize = `${b}%`
-            b++;  
-                                
+            document.getElementById('ondas').style.height = `${contadorHeight}vh`
+            contadorHeight++
+
             if (i >= 100){
                 birds.loop = true
                 birds.currentTime
@@ -40,39 +40,53 @@
                 secundo.currentTime
                 terceiro.loop = true
                 terceiro.currentTime
-                //gifmeditate()
                 girarImgs()
-                divjumbo.style.webkitTransition = 'opacity 3s ease-in-out'
-                divjumbo.style.opacity = 0
-                //parar.style.top = '1%'
                 parar.style.webkitTransition = 'opacity 3s ease-in-out'
                 parar.style.opacity = 1
                 parar.style.visibility = 'visible'
                 equalizador.style.visibility = 'visible'
                 equalizador.style.webkitTransition = 'opacity 3s ease-in-out'
                 equalizador.style.opacity = 0.5
-                //divjumbo.setAttribute = ('display', none)
-                //divjumbo.style.display = 'none'
                 return true
             } 
             
         } 
         
-        timeout = setTimeout("countNumbers()", 100); 
+        timeout = setTimeout("countNumbers()", 300); 
     };
+
+
+
+    // timeoutOndas = setTimeout(() => {
+    //         for(contadorHeight = 0; contadorHeight <= 100; contadorHeight++){
+    //         i++                     
+    //         progressBar.style.width = `${i}%`
+    //         progressBar.innerHTML = `${i}%`
+    //         ondas.style.height = `${contadorHeight}vh`
+    //     }
+    // }, 5000)
+    // timeoutOndas = setTimeout(() => {
+    // function subirOndas(){
+    //         for(contadorHeight = 0; contadorHeight <= 100; contadorHeight++){
+    //         i++                     
+            
+    //     }
+    //     timeoutOndas = setTimeout("subirOndas()", 100);
+    // }
+    // }, 5000);
         
-    function voltarNumbers(){ // RETROCEDER A PORCENTAGEM DA BARRA      
-        if (b != 100) {
-            b--
-            bodychange.style.backgroundSize = `${b}%` 
-            progressBar.style.width = `${i}%`
-            progressBar.innerHTML = `${i}%`
-            i--
-        } else  {
-            return true
-        }
-        timeoutNumbers = setTimeout("voltarNumbers()", 50); 
-    };
+    // function voltarNumbers(){ // RETROCEDER A PORCENTAGEM DA BARRA      
+    //     if (b != 100) {
+    //         b--
+    //         bodychange.style.backgroundSize = `${b}%` 
+    //         progressBar.style.width = `${i}%`
+    //         progressBar.innerHTML = `${i}%`
+    //         i--
+    //     } else  {
+    //         return true
+    //     }
+    //     timeoutNumbers = setTimeout("voltarNumbers()", 50); 
+    // };
         
     var indexImgs = 0; // FUNCTION DE PASSAR AS IMAGENS DE FUNDO
     function girarImgs(){
@@ -90,24 +104,17 @@
     }
 
      // FUNCTION QUE ATIVA VIDEO DE FUNDO
-    var videoNuvens = document.getElementById('nuvemvideo')
-    function chamarNuvens(){ 
-        videoNuvens.playbackRate = 0.5
-    if (lapseNuvens[0].checked) {
-        videoNuvens.style.visibility = 'visible'
+    // var videoNuvens = document.getElementById('nuvemvideo')
+    // function chamarNuvens(){ 
+    //     videoNuvens.playbackRate = 0.5
+    // if (lapseNuvens[0].checked) {
+    //     videoNuvens.style.visibility = 'visible'
         
-    } else {
-        videoNuvens.style.visibility = 'hidden'
-    }
-    }
+    // } else {
+    //     videoNuvens.style.visibility = 'hidden'
+    // }
+    // }
 
-    function gifmeditate(){
-
-        bodychange.style.background = 'none'
-        bodychange.style.backgroundColor = '#000'
-        svggif.style.visibility = 'visible'
-
-    }   
     var startTempo2;
     imergir.addEventListener('click', function() { // BOTÃO PRINCIPAL QUE INICIA O ÁUDIO E CHAMA OUTAS VALIDAÇÕES
         
@@ -190,8 +197,6 @@
         cabou();
         birds.volume = 0.0
         secundo.volume = 0.0
-        divjumbo.style.webkitTransition = 'opacity 3s ease-in-out'
-        divjumbo.style.opacity = 1
         parar.style.webkitTransition = 'opacity 3s ease-in-out'
         parar.style.opacity = 0
         parar.style.visibility = 'hidden'
@@ -243,8 +248,8 @@
         progressBar.setAttribute('aria-valuenow', 0)
         progressBar.innerHTML = '0%'
         imergir.disabled = false
-        bodychange.style.visibility = 'visible'
-        bodychange.style.backgroundImage = `url(imgs/rainforest5.jpg)`
+        // bodychange.style.visibility = 'visible'
+        // bodychange.style.backgroundImage = `url(imgs/rainforest5.jpg)`
         buscarBlock = document.getElementsByClassName('mySlides')
             for(let k = 0; k < buscarBlock.length; k++ ){
                 if (buscarBlock[k].style.display != 'none'){
@@ -268,22 +273,19 @@
 
     const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
         
-        //output.innerHTML = this.value
+        
         var x = slider.value
         emoji.textContent = emojis[x]
 
         if (x <= 1){
             imergir.style.visibility = 'visible'
             slider.style.background = `linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%)`;
-            //parar.style.visibility = 'visible'
-            //labelnuvem.style.visibility = 'visible'
             cabou()
             alegre.style.color = 'white'
             triste.style.color = 'white'
             //h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
             //h1pergunta.style.opacity = '0'
             voltarNumbers()
-            divjumbo.style.visibility = 'visible'
             sliderdiv.style.visibility = 'visible'
         } 
         if (x > 1) {
@@ -297,9 +299,7 @@
             //h1pergunta.style.opacity = '0'
             imergir.style.visibility = 'visible'
             //parar.style.visibility = 'visible'
-            //labelnuvem.style.visibility = 'visible'
             voltarNumbers()
-            divjumbo.style.visibility = 'visible'
             sliderdiv.style.visibility = 'visible'
         } else if (x == 0) {
             slider.style.background = `linear-gradient(90deg, rgb(117,252,117)0%, rgb(214,214,214)0%)`;
@@ -311,13 +311,11 @@
             //h1pergunta.style.opacity = '0'
             window.alert('Não fique assim!')
             voltarNumbers()
-            divjumbo.style.visibility = 'visible'
             sliderdiv.style.visibility = 'visible'
         } 
         else {
             h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
             h1pergunta.style.opacity = '1'
-            //divjumbo.style.visibility = 'hidden'
         }
 
       
@@ -346,25 +344,6 @@
         } 
     }
 
-    var slider3 = document.getElementById('sonometro')
-    
-        const sliderinput3 = slider3.oninput = function(){
-        var s = slider3.value
-
-        if (s <= 1){
-            slider3.style.background = `linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%)`;
-            
-        }
-        if (s > 1){
-            slider3.style.background = `linear-gradient(90deg, rgb(153, 255, 153)100%, rgb(214,214,214)100%)`;
-            
-        } else if (s == 0){
-            slider3.style.background = `linear-gradient(90deg, rgb(0, 153, 0)0%, rgb(214,214,214)0%)`;
-            
-        }
-        return s
-    }
-
     // JQUERY
     
     $(document).ready(function(){
@@ -372,15 +351,18 @@
         $("i").on('click', function(){   
                 $('html, body').animate({
                     scrollTop: $(".waves").offset().top
-                }, 4000);
+                }, 10000);
                 preencheu = true;
+
                 container.style.webkitTransition = 'opacity 2s ease-in-out'
                 container.style.opacity = 0; 
-                if(preencheu){
-                   setTimeout(function(){
-                    container.style.visibility = 'hidden'
-                   }, 2000);
-                }
+                progressBar.style.visibility = 'visible';
+
+                setTimeout(function(){
+                 container.style.visibility = 'hidden'
+                }, 2000);      
+
+
         });
         
     });
