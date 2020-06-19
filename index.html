@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Moodtation - Afunde-se em si próprio</title>
     <link rel="stylesheet" href="estilo.css">
- 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
 <body>
     <div>
         <img class="mySlides w3-animate-fading" src="imgs/pexel1.jpg"/>
@@ -15,7 +14,7 @@
         <img class="mySlides w3-animate-fading" src="imgs/rainforest3.jpg"/>
         <img class="mySlides w3-animate-fading" src="imgs/rainforest4.jpg"/>
     </div>
-        <div class="container flex">
+        <div id="container" class="container flex">
             <h1>LOGO</h1>
             
             <div class="progress-bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
@@ -37,11 +36,18 @@
                 </div> 
 
             <div id="painelSlides">
-                <div id="emoticon">
-                    <h1 class="display-4 lead" id="comoesta">Como você está hoje?</h1>
-                     
-                </div>  
-
+  
+                <p id="comoesta">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    dustry. Lorem Ipsum has been the industry's standard dummy 
+                    text ever since the 1500s, when an unknown printer took a 
+                    galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries, but also the leap into 
+                    electronic typesetting, remaining essentially unchanged. 
+                    It was popularised in the 1960s with the release of Letraset 
+                    sheets containing Lorem Ipsum passages, and more recently with 
+                    desktop publishing software like Aldus PageMaker including 
+                    versions of Lorem Ipsum.</p>
+                
                 <div id="sliderdiv">
                     <div class="emoji">😶</div>
                     <div id="divteste">
@@ -68,22 +74,36 @@
                     <input type="range" class="slider" min="0" max="2" value="1" step="0" id="sonometro">
                 </div>
             </div>
-                <p><i class="setaBaixo"></i></p>
+                <p><i id="setaBaixo" class="setaBaixo"></i></p>
                 <p>
                     <button class="button" id="parar" role="button">Parar</button>
                 </p>
         </div> 
-      
-        
-    <div class="container-fluid" id="ctn">
-        
+        <p> 
         <image src="imgs/equalizer.gif" class="w3-animate-fading" alt="equalizador" id="eq"></image>
         <!--<img src="imgs/rainforest.jpg" class="image-responsive center" alt="Floresta Tropical" id="rainforest"> -->
-            
-    </div>
+        </p>       
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <!--This content is copyright of Daniel Österman 
+    https://codepen.io/goodkatz/pen/LYPGxQz#code-area-->
+
+<div id="section">
+    <div id="ondasPos">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(20,40,80,0.7)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(39,73,109,0.5)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(12,123,147,0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#00a8cc" />
+        </g>
+        </svg>
+    </div>
+</div>
+    
     <script src="mood.js"></script>
 
 </body>

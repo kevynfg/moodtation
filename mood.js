@@ -13,6 +13,7 @@
     svggif = document.getElementById('svggif'),
     sliderdiv = document.getElementById('sliderdiv'),
     bodychange = document.body,
+    container = document.getElementById('container'),
     timevol,
     timevol2,
     timeoutNumbers,
@@ -363,7 +364,23 @@
         }
         return s
     }
-    
-    
 
-   
+    // JQUERY
+    
+    $(document).ready(function(){
+        var preencheu = false;
+        $("i").on('click', function(){   
+                $('html, body').animate({
+                    scrollTop: $(".waves").offset().top
+                }, 4000);
+                preencheu = true;
+                container.style.webkitTransition = 'opacity 2s ease-in-out'
+                container.style.opacity = 0; 
+                if(preencheu){
+                   setTimeout(function(){
+                    container.style.visibility = 'hidden'
+                   }, 2000);
+                }
+        });
+        
+    });
