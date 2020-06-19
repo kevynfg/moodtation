@@ -71,7 +71,6 @@
         
     var indexImgs = 0; // FUNCTION DE PASSAR AS IMAGENS DE FUNDO
     function girarImgs(){
-        //var posicao1;
         var imgs = document.getElementsByClassName('mySlides')
         for (var posicao1 = 0; posicao1 < imgs.length; posicao1++){
             imgs[posicao1].style.display = "none";
@@ -84,32 +83,19 @@
         timeoutImagens = setTimeout(girarImgs, 8000);
     }
 
-     // FUNCTION QUE ATIVA VIDEO DE FUNDO
-    // var videoNuvens = document.getElementById('nuvemvideo')
-    // function chamarNuvens(){ 
-    //     videoNuvens.playbackRate = 0.5
-    // if (lapseNuvens[0].checked) {
-    //     videoNuvens.style.visibility = 'visible'
-        
-    // } else {
-    //     videoNuvens.style.visibility = 'hidden'
-    // }
-    // }
-
     var startTempo2;
     imergir.addEventListener('click', function() { // BOTÃO PRINCIPAL QUE INICIA O ÁUDIO E CHAMA OUTAS VALIDAÇÕES
         
         if (slider.value < 1){
             countNumbers()
             aumentarvolprim()
-            //document.body.style.backgroundSize = '101%'
             birds.play()
             this.disabled = true
             h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
             h1pergunta.style.opacity = '0'
             
             
-            //equalizador.style.visibility = 'visible'
+            
              
         } else if (slider.value == 1){
             secundo.volume = 0.1
@@ -120,7 +106,6 @@
             h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
             h1pergunta.style.opacity = '0'
             startTempo2 = setTimeout("secundo.play()", 7000)
-            //equalizador.style.visibility = 'visible'
             
         } else {
             terceiro.play()
@@ -140,7 +125,6 @@
     var startTempo3
     var count = 0
     var rotacao = 11
-    //var vaudio = document.getElementById('audio1');
     function aumentarvolprim(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
         count++;
         birds.volume = birds.volume + 0.1
@@ -185,7 +169,6 @@
         equalizador.style.opacity = 0
         equalizador.style.visibility = 'hidden'
         voltarNumbers()
-        //document.body.style.backgroundSize = '201%'
     });
 
     
@@ -212,8 +195,9 @@
         clearInterval(startTempo3)
     }
     
-    function cabou(){ // PARAR E RESETAR TUDO
-        //i = 0;
+
+
+    function cabou(){ // PARAR SONS E RESETAR TUDO
         birds.loop = false
         birds.currentTime = 0
         birds.pause()
@@ -229,8 +213,6 @@
         progressBar.setAttribute('aria-valuenow', 0)
         progressBar.innerHTML = '0%'
         imergir.disabled = false
-        // bodychange.style.visibility = 'visible'
-        // bodychange.style.backgroundImage = `url(imgs/rainforest5.jpg)`
         buscarBlock = document.getElementsByClassName('mySlides')
             for(let k = 0; k < buscarBlock.length; k++ ){
                 if (buscarBlock[k].style.display != 'none'){
@@ -251,6 +233,7 @@
     const emojis = ['😩', '😶', '😄']
     //output.innerHTML = slider.value
     
+
 
     const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
         
@@ -303,6 +286,9 @@
 
     } //TENTAR TROCAR ISTO POR SWITCH
 
+
+    //Variáveis e função de controle do range
+    //com mudança de background color
     var slider2 = document.getElementById('ansiometro')
     var emoji2 = document.getElementById('emojis2')
     var emojis2 = ['😰', '🙄' , '😌']
@@ -326,20 +312,23 @@
     }
 
     // JQUERY
+    //Variáveis que controlam quando a função ativa ou desativa
     var timer_rolou = 0, timer_progress = 0;
 
     $(document).ready(function(){
-        var preencheu = false;
         $("i").on('click', function(){   
+            //Evento de click que faz a transição da página para
+            //os efeitos de ondas com timer, de 10000 para fim de transição
                 $('html, body').animate({
                     scrollTop: $(".waves").offset().top
                 }, 10000);
-                preencheu = true;
-                
+
                 container.style.webkitTransition = 'opacity 2s ease-in-out'
                 container.style.opacity = 0; 
                 progressBar.style.visibility = 'visible';
                 
+                //Este timeout ativa duas funções com timer de 8 segs
+                //e desabilita visibilidade do container
                 setTimeout(function(){
                     container.style.visibility = 'hidden'
                     setTimeout(ComecaContar(), 0);
@@ -370,6 +359,10 @@
 
     var tempo_func_onda, tempo_func_progress;
 
+    //função com timer de 2 milisegundos que decrementa o css
+    //do elemento de efeito das ondas
+    //e ao final verifica se alcançou o esperado e desativa o loop
+    //da função
     function ondaTimer(){
         document.getElementById('ondasPos').style.top = `${contadorHeight}vh`
         contadorHeight--
@@ -380,6 +373,8 @@
         }
     }
     
+    //função parecida com a anterior, porém, incrementa o progressbar
+    //e faz a verificação ao final
     function timerProgress(){
         i++                  
         progressBar.style.width = `${i}%`
