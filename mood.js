@@ -1,6 +1,6 @@
 
     var i = 0,
-    contadorHeight = 0,
+    contadorHeight = 75,
     b = 101,
     progressBar = document.getElementById('bar'),
     birds = document.getElementById('audio1'),
@@ -13,6 +13,7 @@
     bodychange = document.body,
     container = document.getElementById('container'),
     ondas = document.getElementsByClassName('waves'),
+    paragrafo = document.getElementById('setaBaixo'),
     timevol,
     timevol2,
     timeoutNumbers,
@@ -30,8 +31,6 @@
             i++                  
             progressBar.style.width = `${i}%`
             progressBar.innerHTML = `${i}%`
-            document.getElementById('ondas').style.height = `${contadorHeight}vh`
-            contadorHeight++
 
             if (i >= 100){
                 birds.loop = true
@@ -57,24 +56,6 @@
 
 
 
-    // timeoutOndas = setTimeout(() => {
-    //         for(contadorHeight = 0; contadorHeight <= 100; contadorHeight++){
-    //         i++                     
-    //         progressBar.style.width = `${i}%`
-    //         progressBar.innerHTML = `${i}%`
-    //         ondas.style.height = `${contadorHeight}vh`
-    //     }
-    // }, 5000)
-    // timeoutOndas = setTimeout(() => {
-    // function subirOndas(){
-    //         for(contadorHeight = 0; contadorHeight <= 100; contadorHeight++){
-    //         i++                     
-            
-    //     }
-    //     timeoutOndas = setTimeout("subirOndas()", 100);
-    // }
-    // }, 5000);
-        
     // function voltarNumbers(){ // RETROCEDER A PORCENTAGEM DA BARRA      
     //     if (b != 100) {
     //         b--
@@ -345,7 +326,8 @@
     }
 
     // JQUERY
-    
+    var timer_rolou = 0, timer_progress = 0;
+
     $(document).ready(function(){
         var preencheu = false;
         $("i").on('click', function(){   
@@ -353,16 +335,75 @@
                     scrollTop: $(".waves").offset().top
                 }, 10000);
                 preencheu = true;
-
+                
                 container.style.webkitTransition = 'opacity 2s ease-in-out'
                 container.style.opacity = 0; 
                 progressBar.style.visibility = 'visible';
-
+                
                 setTimeout(function(){
-                 container.style.visibility = 'hidden'
-                }, 2000);      
+                    container.style.visibility = 'hidden'
+                    setTimeout(ComecaContar(), 0);
+                    setTimeout(ComecaProgress(),0)
+                }, 8000);      
+                
 
-
+                function ComecaContar(){
+                    if (!timer_rolou){
+                        timer_rolou = 1;
+                        ondaTimer();
+                    }
+                }
+                function ComecaProgress(){
+                    if (!timer_progress){
+                        timer_progress = 1;
+                        timerProgress();
+                    }
+                }
+                // ComecaContar();
         });
+
+       
+        // $("i").click(comecar())
         
     });
+
+
+    var tempo_func_onda, tempo_func_progress;
+
+    function ondaTimer(){
+        document.getElementById('ondasPos').style.top = `${contadorHeight}vh`
+        contadorHeight--
+        tempo_func_onda = setTimeout(ondaTimer, 200)
+        if(contadorHeight <= 0){
+            clearTimeout(tempo_func_onda);
+            timer_rolou = 0;
+        }
+    }
+    
+    function timerProgress(){
+        i++                  
+        progressBar.style.width = `${i}%`
+        progressBar.innerHTML = `${i}%`
+        tempo_func_progress = setTimeout(timerProgress, 150)
+        if (i >= 100){
+            clearTimeout(tempo_func_progress);
+            timer_progress = 0;
+        }
+    }
+
+
+   
+   
+//     function testeondas3(){ 
+//         testeOndas = setTimeout(function subirOndas(){
+//        if(contadorHeight > 0) {
+//            document.getElementById('ondasPos').style.top = `${contadorHeight}vh`
+//            contadorHeight--
+//            if(contadorHeight <= 0) {
+//                return true
+//            }
+//        }
+//        timeoutOndas = setTimeout(testeondas3(), 200)  
+//     }, 200)
+// }
+   
