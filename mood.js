@@ -325,12 +325,13 @@
 
                 container.style.webkitTransition = 'opacity 2s ease-in-out'
                 container.style.opacity = 0; 
-                progressBar.style.visibility = 'visible';
+                
                 
                 //Este timeout ativa duas funções com timer de 8 segs
                 //e desabilita visibilidade do container
                 setTimeout(function(){
                     container.style.visibility = 'hidden'
+                    progressBar.style.visibility = 'visible';
                     setTimeout(ComecaContar(), 0);
                     setTimeout(ComecaProgress(),0)
                 }, 8000);      

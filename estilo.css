@@ -7,7 +7,8 @@ html, body {
 	margin: 0px;
      }
     body{
-        background-image: url('imgs/rainforest5.jpg');
+        background-image: url('./imgs/landpage.jpg');
+        /* <a href="https://www.vecteezy.com/free-vector/nature">Nature Vectors by Vecteezy</a> */
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -16,9 +17,12 @@ html, body {
     
     
     
-    #section{
+    #section {
         min-height: 100%;
         background-color: #00a8cc;
+        /* animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+        animation-delay: -2s;
+        animation-duration: 7s; */
     }
 
     .container{
@@ -127,6 +131,7 @@ html, body {
         justify-content: center;
         align-items: center;
         text-align: center;
+        flex-direction: column;
       }
 
     #eq {
@@ -154,8 +159,7 @@ html, body {
 
     #emojis2{
         position: relative;
-        display: inline-block;
-        left: 2px;
+        left: 1px;
     }
 
     .slider:hover {
@@ -183,57 +187,32 @@ html, body {
         font-weight: lighter;
         padding: 12px;
     }
-    .sliderAnsi{
-        -webkit-appearance: none;
-        width: 20%;
-        height: 20px;
-        
-        background: linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%);
-        outline: none;
-        opacity: 0.7;
-        -webkit-transition: 0.2s;
-        transition: opacity 0.2s;
-        border-radius: 12px;
-        box-shadow: 0px 1px 10px 1px black;
-        
-    }
-    .sliderAnsi::-webkit-slider-thumb{
-        -webkit-appearance: none;
-        appearance: none;
-        width: 28px;
-        height: 28px;
-        /*background: url('imgs/blue.jpg'); */
-        background-color: #2FED66;
-        border-radius: 50%;
-        cursor: pointer;
-    }
     
     .sliderEscrita{
         color: white;
-        font-size: 2rem;
-        padding: 10px;
-        
-        font-family: 'VT323', monospace;
-        font-weight: lighter;
-    }
-    .sliderSleep{
-        color: white;
-        font-size: 2rem;
-        display: block;
-        padding: 10px;
-        font-family: 'VT323', monospace;
-        font-weight: lighter;
-    }
-    #slidersono{
         position: relative;
-        left: 5px;
+        text-align: center;
+        right: 15px;
+        font-size: 2rem;
+        /* font-family: 'Trebuchet MS', Helvetica, sans-serif; */
+        font-family: 'VT323', monospace;
+        font-weight: lighter;
+        padding: 12px;
     }
+
+    #ansiometro{
+        margin: 4px 2px 4px 2px;
+        position: relative;
+        left: -16px;
+    }
+
     #comoesta{
-        
+        width: 50vw;
         font-size: 16px;
         color: white;
         position: relative;
-        background-color: #00a8cc;
+        /* background-color: #79416e; */
+        background: rgb(121, 65, 110, 0.3);
     }
 
     @keyframes trocaPage{
@@ -280,8 +259,9 @@ html, body {
     }
     .parallax > use:nth-child(4) {
         animation-delay: -5s;
-        animation-duration: 20s;
+        animation-duration: 15s;
     }
+
     @keyframes move-forever {
         0% {
         transform: translate3d(-90px,0,0);
