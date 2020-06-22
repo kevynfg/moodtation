@@ -20,7 +20,7 @@ Not sure when this is gonna be done because i'm having college at the moment.
 
 ```shell
 cinst nodejs
- or for full install with npm
+or full install with npm
 cinst nodejs.install
 ```
 
@@ -62,7 +62,7 @@ $ npm install sqlite3
     - 🍴 Fork this repo!
 
 - **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
+    - 👯 Clone this repo to your local machine using `https://github.com/kevynfg/moodtation.git`
 
 ### Step 2
 
@@ -70,7 +70,7 @@ $ npm install sqlite3
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/kevynfg/moodtation/compare/" target="_blank">`https://github.com/kevynfg/moodtation/compare/`</a>.
 
 ---
 
