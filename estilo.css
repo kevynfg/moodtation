@@ -7,7 +7,7 @@ html, body {
 	margin: 0px;
      }
     body{
-        background-image: url('./imgs/landpage.jpg');
+        background-image: url('./imgs/homepage.jpg');
         /* <a href="https://www.vecteezy.com/free-vector/nature">Nature Vectors by Vecteezy</a> */
         background-position: center;
         background-repeat: no-repeat;
@@ -208,11 +208,13 @@ html, body {
 
     #comoesta{
         width: 50vw;
-        font-size: 16px;
+        font-size: 17px;
         color: white;
         position: relative;
         /* background-color: #79416e; */
-        background: rgb(121, 65, 110, 0.3);
+        background: rgb(67, 146, 186, 0.7);
+        border-radius: 10px;
+        padding: 15px;
     }
 
     @keyframes trocaPage{
