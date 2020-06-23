@@ -47,6 +47,13 @@ $ npm install cors
 $ npm install sqlite3
 ```
 
+- Also install Bower for the Jplayer!
+
+```shell
+$ npm install -g bower
+```
+
+
 ## Features
 - Done with JavaScript, jquery and HTML5 until the moment.
 - Also nodejs, express, cors and knex.
