@@ -20,6 +20,7 @@
   "homepage": "https://github.com/kevynfg/moodtation#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "jplayer": "^2.9.2",
     "knex": "^0.21.0",
     "sqlite3": "^4.1.1"
   },

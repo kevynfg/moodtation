@@ -1,4 +1,8 @@
-
+    const express = require('express');
+    const app = express();
+    const cors = require('cors');
+    app.use(cors());
+    
     var i = 0,
     contadorHeight = 75,
     b = 101,
@@ -24,7 +28,7 @@
     birds.volume = 0.0
     secundo.volume = 0.0
     terceiro.volume = 0.0
-        
+    
     function countNumbers(){ // FUNCTION PARA PROGREDIR A BARRA, ATIVAR O ÁUDIO E CHAMAR A FUNCTION DE PASSAR IMAGENS
         
         if(i < 100){  
@@ -258,9 +262,6 @@
             Verificar()
             alegre.style.color = 'rgb(117,252,117)'
             triste.style.color = 'white'
-            //h1pergunta.style.visibility = 'hidden'
-            //h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-            //h1pergunta.style.opacity = '0'
             imergir.style.visibility = 'visible'
             //parar.style.visibility = 'visible'
             voltarNumbers()
@@ -271,8 +272,6 @@
             //Verificar()
             triste.style.color = 'rgb(55, 94, 53)'
             alegre.style.color = 'white'
-            //h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-            //h1pergunta.style.opacity = '0'
             window.alert('Não fique assim!')
             voltarNumbers()
             sliderdiv.style.visibility = 'visible'
@@ -387,19 +386,24 @@
         }
     }
 
+var musicas = [0, 1, 2, 3, 4];
+var musicaTocada = [];
 
-   
-   
-//     function testeondas3(){ 
-//         testeOndas = setTimeout(function subirOndas(){
-//        if(contadorHeight > 0) {
-//            document.getElementById('ondasPos').style.top = `${contadorHeight}vh`
-//            contadorHeight--
-//            if(contadorHeight <= 0) {
-//                return true
-//            }
-//        }
-//        timeoutOndas = setTimeout(testeondas3(), 200)  
-//     }, 200)
-// }
-   
+var rodar = document.getElementById('rodar'); 
+rodar.addEventListener('click' , () => {
+    
+
+    if(musicas.length <= 0){
+        musicas = [...musicaTocada];
+        console.log(musicas);
+    } else {
+        musicas.shift();
+        console.log(musicas);
+        }
+    });
+
+ musicaTocada = [...musicas];
+//  musica = musicas[Math.floor(Math.random() * musicas.length)];
+
+ //JPLAYER
+

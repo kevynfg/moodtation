@@ -3,7 +3,7 @@ html, body {
     width: 100%;
     overflow: hidden;
     justify-content: center;    
-	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-family: 'Roboto', serif;
 	margin: 0px;
      }
     body{
@@ -211,6 +211,7 @@ html, body {
         font-size: 17px;
         color: white;
         position: relative;
+        bottom: 5%;
         /* background-color: #79416e; */
         background: rgb(67, 146, 186, 0.7);
         border-radius: 10px;
