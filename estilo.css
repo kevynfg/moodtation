@@ -4,7 +4,8 @@ html, body {
     overflow: hidden;
     justify-content: center;    
 	font-family: 'Roboto', serif;
-	margin: 0px;
+    margin: 0;
+    padding: 0;
      }
     body{
         background-image: url('./imgs/homepage.jpg');
@@ -14,8 +15,6 @@ html, body {
         background-attachment: fixed;
         background-size: cover;
     }
-    
-    
     
     #section {
         min-height: 100%;
@@ -208,7 +207,7 @@ html, body {
 
     #comoesta{
         width: 50vw;
-        font-size: 17px;
+        font-size: 14px;
         color: white;
         position: relative;
         bottom: 5%;
@@ -216,14 +215,6 @@ html, body {
         background: rgb(67, 146, 186, 0.7);
         border-radius: 10px;
         padding: 15px;
-    }
-
-    @keyframes trocaPage{
-        0% {bottom: 30px;}
-        25% {bottom: 40px;}
-        50% {bottom: 30px;}
-        75% {bottom: 40px;}
-        100% {bottom: 30px;}
     }
 
     /* Ondas */
@@ -286,4 +277,18 @@ html, body {
         font-size:24px;
         }
     }
-        
+
+    .caixa{
+        /* display: none; */
+        flex-direction: column;
+        position: relative;
+        width: 100vw;
+        height: 20vh;
+    }
+
+    .caixa .porcentagem {
+        position: relative;
+        width: 26vw;
+        height: 13vh;
+    }
+    

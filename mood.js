@@ -1,8 +1,3 @@
-    const express = require('express');
-    const app = express();
-    const cors = require('cors');
-    app.use(cors());
-    
     var i = 0,
     contadorHeight = 75,
     b = 101,
@@ -18,6 +13,8 @@
     container = document.getElementById('container'),
     ondas = document.getElementsByClassName('waves'),
     paragrafo = document.getElementById('setaBaixo'),
+    rodar = document.getElementById('rodar'),
+    sectionOndas = document.getElementById('section'),
     timevol,
     timevol2,
     timeoutNumbers,
@@ -366,7 +363,7 @@
     function ondaTimer(){
         document.getElementById('ondasPos').style.top = `${contadorHeight}vh`
         contadorHeight--
-        tempo_func_onda = setTimeout(ondaTimer, 200)
+        tempo_func_onda = setTimeout(ondaTimer, 0)
         if(contadorHeight <= 0){
             clearTimeout(tempo_func_onda);
             timer_rolou = 0;
@@ -379,20 +376,26 @@
         i++                  
         progressBar.style.width = `${i}%`
         progressBar.innerHTML = `${i}%`
-        tempo_func_progress = setTimeout(timerProgress, 150)
+        tempo_func_progress = setTimeout(timerProgress, 0)
         if (i >= 100){
             clearTimeout(tempo_func_progress);
             timer_progress = 0;
+            sectionOndas.style.webkitTransition = 'opacity 3s ease-in-out';
+            sectionOndas.style.opacity = 0; 
+            document.body.style.background.webkitTransition = 'opacity 3s ease-in-out';
+            document.body.style.background.opacity = 0; 
+            setTimeout(() =>{
+            sectionOndas.style.display = "none";
+            // document.body.style.display = "none";
+            }, 3000)
         }
-    }
+    };
 
 var musicas = [0, 1, 2, 3, 4];
 var musicaTocada = [];
 
-var rodar = document.getElementById('rodar'); 
 rodar.addEventListener('click' , () => {
     
-
     if(musicas.length <= 0){
         musicas = [...musicaTocada];
         console.log(musicas);
@@ -400,9 +403,11 @@ rodar.addEventListener('click' , () => {
         musicas.shift();
         console.log(musicas);
         }
+       
     });
+    
+musicaTocada = [...musicas];
 
- musicaTocada = [...musicas];
 //  musica = musicas[Math.floor(Math.random() * musicas.length)];
 
  //JPLAYER
