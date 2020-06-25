@@ -15,6 +15,7 @@
     paragrafo = document.getElementById('setaBaixo'),
     rodar = document.getElementById('rodar'),
     sectionOndas = document.getElementById('section'),
+    circuloPorcentagem = document.getElementById('circuloPorcentagem'),
     timevol,
     timevol2,
     timeoutNumbers,
@@ -22,10 +23,19 @@
     timeout,
     timeoutOndas,
     timeoutImagens;
-    birds.volume = 0.0
-    secundo.volume = 0.0
-    terceiro.volume = 0.0
-    
+    birds.volume = 0.0;
+    secundo.volume = 0.0;
+    terceiro.volume = 0.0;
+
+    // const player = {
+    //     data: {
+    //         file: "sounds/"
+    //     },
+    //     start(){
+    //         this.audio.src = this.data.file;
+    //     }
+    // }
+
     function countNumbers(){ // FUNCTION PARA PROGREDIR A BARRA, ATIVAR O ÁUDIO E CHAMAR A FUNCTION DE PASSAR IMAGENS
         
         if(i < 100){  
@@ -412,3 +422,8 @@ musicaTocada = [...musicas];
 
  //ALTERANDO O CIRCLE PROGRESS
 
+ 
+ var tempoSegundo = Math.floor(secundo.currentTime)
+ var tempoPrimeiro = Math.floor(secundo.duration)
+ console.log((tempoSegundo / tempoPrimeiro) * 100)
+ 

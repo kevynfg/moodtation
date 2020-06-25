@@ -320,7 +320,7 @@ html, body {
     .caixa .porcentagem svg circle:nth-child(2) {
 
         /* calculo padrão de porcentagem em 440 * N / 100  */
-        stroke-dashoffset: calc(440 - (440 * 100) / 100);
+        stroke-dashoffset: calc(440 - (440 * 90) / 100);
         stroke: #03a9f4;
     }
 
@@ -353,4 +353,14 @@ html, body {
         top: 140px;
         left: 20%;
         letter-spacing: 1px;
+    }
+
+    /* LINK DO SITE PRA LICENSE */
+
+    #licenseCopyright{
+        position: relative;
+        display: inline-block;
+        top: 34%;
+        right: 38%;
+        font-size: 8px;
     }

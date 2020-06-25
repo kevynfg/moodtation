@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="estilo.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+<!-- This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA. -->
 <script>
 
 // var musicas = [0, 1, 2, 3, 4];
@@ -38,6 +39,7 @@
         <img class="mySlides w3-animate-fading" src="imgs/rainforest3.jpg"/>
         <img class="mySlides w3-animate-fading" src="imgs/rainforest4.jpg"/>
         <a href="https://www.vecteezy.com/free-vector/landscape" alt="Landscape Vectors by Vecteezy"></a>
+        
     </div>
         <div id="container" class="container flex">
             <h1>LOGO</h1>   
@@ -48,7 +50,6 @@
                 <div>  
                     <audio volume="0.0" id="audio1">
                         <source src="sounds/curatibetanea.mp3"/>
-                        
                     </audio>
                     <audio volume="0.0" id="audio2">
                         <source src="sounds/meditaçãoxamânica.mp3"/>
@@ -56,6 +57,7 @@
                     <audio volume="0.0" id="audio3">
                         <source src="sounds/flautaindígena.mp3"/>
                     </audio>
+                    
                 </div> 
 
                 
@@ -69,6 +71,7 @@
                     o Flow State (estado de fluxo), e imergir no momento.
                 </p>
                 <button class="button" role="button" id="rodar">mandar</button>
+            
             <div id="barrasProgress">
                 <div id="sliderdiv">
                     <div class="emoji">😶</div>
@@ -91,6 +94,14 @@
             </div>
             
                 <p><i id="setaBaixo" class="setaBaixo" ></i></p>
+                <div id="licenseCopyright">
+                <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
+                    <img alt="Creative Commons License" style="border-width:0;width: 60px;" src="https://i.creativecommons.org/l/by/3.0/80x15.png" /></a>
+                    <br />This work is licensed under a 
+                    <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
+                        Creative Commons Attribution 3.0 Unported License
+                    </a>.
+                </div>
                 <p>
                     <button class="button" id="parar" role="button">Parar</button>
                 </p>
@@ -103,6 +114,8 @@
 
         <!--This content is copyright of Daniel Österman 
     https://codepen.io/goodkatz/pen/LYPGxQz#code-area-->
+
+    <!-- Music: www.bensound.com -->
 
 <div id="section">
 
@@ -130,7 +143,7 @@
     <div class="porcentagem">
         <svg>
             <circle cx="70" cy="70" r="70"></circle>
-            <circle cx="70" cy="70" r="70"></circle>
+            <circle id="circuloPorcentagem" cx="70" cy="70" r="70"></circle>
         </svg>
         <div class="numero">
             <h2>87<span>%</span></h2>
@@ -140,6 +153,9 @@
 </div>
 
     <script src="mood.js"></script>
+    <script src="index.js"></script>
+    <script src="data.js"></script>
+    <script src="player.js"></script>
 
 </body>
 </html>
