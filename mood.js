@@ -410,5 +410,5 @@ musicaTocada = [...musicas];
 
 //  musica = musicas[Math.floor(Math.random() * musicas.length)];
 
- //JPLAYER
+ //ALTERANDO O CIRCLE PROGRESS
 
