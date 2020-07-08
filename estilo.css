@@ -18,7 +18,7 @@ html, body {
     
     #section {
         min-height: 100%;
-        background-color: #00a8cc;
+        background-color: #00a8cc;        
         /* animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
         animation-delay: -2s;
         animation-duration: 7s; */
@@ -35,13 +35,15 @@ html, body {
         padding: 15px 32px;  
         text-decoration: none;
         font-size: 16px;
-        box-shadow: 0px 1px 10px 1px black;
+        border-radius: 3px;
+        box-shadow: 0px 1px 5px 1px black;
+        transition-duration: 0.2s;
     }
-    #imergir{
-        position: absolute;
-        top: 15%;
-        width: 100%;
+    
+    .button#imergir:hover{
+        box-shadow: 0px 1px 20px 1px black;
     }
+
     #parar{
         visibility: hidden;
     }
@@ -85,13 +87,24 @@ html, body {
         top: 25%;
     }
 
-    span.setaNext{
-        padding: 50px;
-        position: absolute;
-       
-        bottom: 0px;
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
+    #barrasProgress {
+        position: relative;
+        display: inline-block;
+        top: 10%;
+        bottom: 0%;
+        right: 0px;
+        left: 0px;
+        margin: 0 auto;
+    }
+
+    p#botaoImergir {
+        position: relative;
+        display: inline-block;
+        top: 23%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
     }
 
     .setaBaixo {
@@ -100,10 +113,11 @@ html, body {
         display: inline-block;
         transform: rotate(45deg);
         padding: 10px;
-        position: absolute;
-        bottom: 30px;
-        right: 49%;
-        margin: 0 auto;
+        position: relative;
+        bottom: 0px;
+        right: 0px;
+        top: 0px;
+        left: 0px;
         /* box-shadow: 0px 0px 1px 1px black; */
     }
 
@@ -206,11 +220,13 @@ html, body {
     }
 
     #comoesta{
-        width: 50vw;
+        width: 80vw;
         font-size: 14px;
         color: white;
         position: relative;
         bottom: 5%;
+        top: 8%;
+        margin: 0 auto;
         /* background-color: #79416e; */
         background: rgb(67, 146, 186, 0.7);
         border-radius: 10px;
@@ -230,7 +246,7 @@ html, body {
 
     #ondasPos{
         position: relative;
-        top: 75vh;
+        top: -12vh;
         
     }
 
@@ -252,8 +268,8 @@ html, body {
         animation-duration: 13s;
     }
     .parallax > use:nth-child(4) {
-        animation-delay: -5s;
-        animation-duration: 15s;
+        animation-delay: -4s;
+        animation-duration: 6s;
     }
 
     @keyframes move-forever {
@@ -280,10 +296,11 @@ html, body {
 
     .caixa{
         /* display: none; */
-        position: absolute;
+        position: relative;
         display: inline-block;
-        left: 46%;
-        top: 50%;
+        right: 0%;
+        bottom: 50%;
+        visibility: hidden;
     }
 
     .caixa .porcentagem {
@@ -327,7 +344,7 @@ html, body {
     .caixa .porcentagem .numero {
         position: absolute;
         top: 75px;
-        left: 80px;
+        left: 85px;
         width: 100%;
         height: 100%;
         display: flex;
@@ -351,7 +368,7 @@ html, body {
         position: relative;
         display: flex;
         top: 140px;
-        left: 20%;
+        left: 35%;
         letter-spacing: 1px;
     }
 

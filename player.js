@@ -1,14 +1,25 @@
-window.player = {
+window.this = {
     audio: document.querySelector("audio"),
     audioData: audios,
     currentAudio: {},
+    currentPlaying: 0,
     start() {
-        this.currentAudio = this.audioData[0];
-        this.audio.src = path(this.currentAudio.file);
+        this.update();
+        this.audio.onended = () => this.next();
+    },
+    next() {
 
-        this.audio.addEventListener("ended", () => {
-            this.audio.src = path(this.audioData[1].file);
-            this.audio.play();
-        });
+        this.currentPlaying++
+        if (this.currentPlaying == this.audioData.length) this.restart();
+        this.update();
+        },
+    update(){
+    this.currentAudio = this.audioData[this.currentPlaying];
+    this.audio.src = path(this.currentAudio.file);
+    },
+    restart(){
+        this.currentPlaying = 0;
+        this.update();
     }
+    
 };

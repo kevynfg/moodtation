@@ -1,8 +1,7 @@
     var i = 0,
     contadorHeight = 75,
     b = 101,
-    progressBar = document.getElementById('bar'),
-    birds = document.getElementById('audio1'),
+    // progressBar = document.getElementById('bar'),
     secundo = document.getElementById('audio2'),
     terceiro = document.getElementById('audio3'),
     imergir = document.getElementById('imergir'),
@@ -16,6 +15,7 @@
     rodar = document.getElementById('rodar'),
     sectionOndas = document.getElementById('section'),
     circuloPorcentagem = document.getElementById('circuloPorcentagem'),
+    player = 
     timevol,
     timevol2,
     timeoutNumbers,
@@ -23,9 +23,6 @@
     timeout,
     timeoutOndas,
     timeoutImagens;
-    birds.volume = 0.0;
-    secundo.volume = 0.0;
-    terceiro.volume = 0.0;
 
     // const player = {
     //     data: {
@@ -40,8 +37,8 @@
         
         if(i < 100){  
             i++                  
-            progressBar.style.width = `${i}%`
-            progressBar.innerHTML = `${i}%`
+            // progressBar.style.width = `${i}%`
+            // progressBar.innerHTML = `${i}%`
 
             if (i >= 100){
                 birds.loop = true
@@ -95,41 +92,42 @@
     }
 
     var startTempo2;
-    imergir.addEventListener('click', function() { // BOTÃO PRINCIPAL QUE INICIA O ÁUDIO E CHAMA OUTAS VALIDAÇÕES
+    // imergir.addEventListener('click', function() { // BOTÃO PRINCIPAL QUE INICIA O ÁUDIO E CHAMA OUTAS VALIDAÇÕES
         
-        if (slider.value < 1){
-            countNumbers()
-            aumentarvolprim()
-            birds.play()
-            this.disabled = true
-            h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-            h1pergunta.style.opacity = '0'
+    //     if (slider.value < 1){
+    //         countNumbers()
+    //         aumentarvolprim()
+    //         // birds.play()
+    //         audioMood.play();
+    //         this.disabled = true
+    //         h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
+    //         h1pergunta.style.opacity = '0'
             
             
             
              
-        } else if (slider.value == 1){
-            secundo.volume = 0.1
-            countNumbers()
-            aumentarvolsegundo()
-            //birds.play()
-            this.disabled = true
-            h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-            h1pergunta.style.opacity = '0'
-            startTempo2 = setTimeout("secundo.play()", 7000)
+    //     } else if (slider.value == 1){
+    //         secundo.volume = 0.1
+    //         countNumbers()
+    //         aumentarvolsegundo()
+    //         //birds.play()
+    //         this.disabled = true
+    //         h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
+    //         h1pergunta.style.opacity = '0'
+    //         startTempo2 = setTimeout("secundo.play()", 7000)
             
-        } else {
-            terceiro.play()
-            terceiro.volume = 0.1
-            countNumbers()
-            aumentarvolterceiro()
-            this.disabled = true
-            h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-            h1pergunta.style.opacity = '0'
-            window.alert('entrou')
-        }
+    //     } else {
+    //         terceiro.play()
+    //         terceiro.volume = 0.1
+    //         countNumbers()
+    //         aumentarvolterceiro()
+    //         this.disabled = true
+    //         h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
+    //         h1pergunta.style.opacity = '0'
+    //         window.alert('entrou')
+    //     }
            
-    });
+    // });
 
     
     var startTempo
@@ -220,9 +218,9 @@
         terceiro.pause()
         equalizador.style.visibility = 'hidden'
         limparIntervals()
-        progressBar.style.width = 0
-        progressBar.setAttribute('aria-valuenow', 0)
-        progressBar.innerHTML = '0%'
+        // progressBar.style.width = 0
+        // progressBar.setAttribute('aria-valuenow', 0)
+        // progressBar.innerHTML = '0%'
         imergir.disabled = false
         buscarBlock = document.getElementsByClassName('mySlides')
             for(let k = 0; k < buscarBlock.length; k++ ){
@@ -322,24 +320,23 @@
     var timer_rolou = 0, timer_progress = 0;
 
     $(document).ready(function(){
-        $("i").on('click', function(){   
+        $("#imergir").on('click', function(){   
             //Evento de click que faz a transição da página para
             //os efeitos de ondas com timer, de 10000 para fim de transição
+                player.start();
                 $('html, body').animate({
-                    scrollTop: $(".waves").offset().top
-                }, 10000);
+                    scrollTop: $("#section").offset().top
+                }, 15000);
 
                 container.style.webkitTransition = 'opacity 2s ease-in-out'
-                container.style.opacity = 0; 
-                
+                container.style.opacity = 0;            
                 
                 //Este timeout ativa duas funções com timer de 8 segs
                 //e desabilita visibilidade do container
                 setTimeout(function(){
-                    container.style.visibility = 'hidden'
-                    progressBar.style.visibility = 'visible';
-                    setTimeout(ComecaContar(), 0);
-                    setTimeout(ComecaProgress(),0)
+                    container.style.visibility = 'hidden';                  
+                    // setTimeout(ComecaContar(), 0);
+                    // setTimeout(ComecaProgress(),0)
                 }, 8000);      
                 
 
@@ -371,7 +368,7 @@
     //e ao final verifica se alcançou o esperado e desativa o loop
     //da função
     function ondaTimer(){
-        document.getElementById('ondasPos').style.top = `${contadorHeight}vh`
+        // document.getElementById('ondasPos').style.top = `${contadorHeight}vh`
         contadorHeight--
         tempo_func_onda = setTimeout(ondaTimer, 0)
         if(contadorHeight <= 0){
@@ -384,9 +381,9 @@
     //e faz a verificação ao final
     function timerProgress(){
         i++                  
-        progressBar.style.width = `${i}%`
-        progressBar.innerHTML = `${i}%`
-        tempo_func_progress = setTimeout(timerProgress, 0)
+        // progressBar.style.width = `${i}%`
+        // progressBar.innerHTML = `${i}%`
+        tempo_func_progress = setTimeout(timerProgress, 1000)
         if (i >= 100){
             clearTimeout(tempo_func_progress);
             timer_progress = 0;
@@ -401,10 +398,13 @@
         }
     };
 
+//Troca de música por sequência de armazenagem em array
+//Tirando sempre a primeira do array e ao final colocando as mesmas novamente
+
 var musicas = [0, 1, 2, 3, 4];
 var musicaTocada = [];
 
-rodar.addEventListener('click' , () => {
+imergir.addEventListener('click' , () => {
     
     if(musicas.length <= 0){
         musicas = [...musicaTocada];
@@ -423,7 +423,9 @@ musicaTocada = [...musicas];
  //ALTERANDO O CIRCLE PROGRESS
 
  
- var tempoSegundo = Math.floor(secundo.currentTime)
- var tempoPrimeiro = Math.floor(secundo.duration)
- console.log((tempoSegundo / tempoPrimeiro) * 100)
+//  var tempoSegundo = Math.floor(secundo.currentTime)
+//  var tempoPrimeiro = Math.floor(secundo.duration)
+//  console.log((tempoSegundo / tempoPrimeiro) * 100)
+
+
  
