@@ -1,12 +1,14 @@
 window.audios = [
+    
     {
 
-    file: "campfire.mp3" 
+    file: "bowl-tibetaneo.wav" 
 
     },
     {
 
-    file: "audioAcalmar.wav"
+    file: "calmingbirds.mp3"
 
     }
+
 ];

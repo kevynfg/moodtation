@@ -15,8 +15,7 @@
     rodar = document.getElementById('rodar'),
     sectionOndas = document.getElementById('section'),
     circuloPorcentagem = document.getElementById('circuloPorcentagem'),
-    player = 
-    timevol,
+    player,
     timevol2,
     timeoutNumbers,
     timeoutMudar,
@@ -33,34 +32,28 @@
     //     }
     // }
 
-    function countNumbers(){ // FUNCTION PARA PROGREDIR A BARRA, ATIVAR O ÁUDIO E CHAMAR A FUNCTION DE PASSAR IMAGENS
+    // function countNumbers(){ // FUNCTION PARA PROGREDIR A BARRA, ATIVAR O ÁUDIO E CHAMAR A FUNCTION DE PASSAR IMAGENS
         
-        if(i < 100){  
-            i++                  
-            // progressBar.style.width = `${i}%`
-            // progressBar.innerHTML = `${i}%`
+    //     if(i < 100){  
+    //         i++                  
+    //         // progressBar.style.width = `${i}%`
+    //         // progressBar.innerHTML = `${i}%`
 
-            if (i >= 100){
-                birds.loop = true
-                birds.currentTime
-                secundo.loop = true
-                secundo.currentTime
-                terceiro.loop = true
-                terceiro.currentTime
-                girarImgs()
-                parar.style.webkitTransition = 'opacity 3s ease-in-out'
-                parar.style.opacity = 1
-                parar.style.visibility = 'visible'
-                equalizador.style.visibility = 'visible'
-                equalizador.style.webkitTransition = 'opacity 3s ease-in-out'
-                equalizador.style.opacity = 0.5
-                return true
-            } 
+    //         if (i >= 100){
+    //             girarImgs()
+    //             parar.style.webkitTransition = 'opacity 3s ease-in-out'
+    //             parar.style.opacity = 1
+    //             parar.style.visibility = 'visible'
+    //             equalizador.style.visibility = 'visible'
+    //             equalizador.style.webkitTransition = 'opacity 3s ease-in-out'
+    //             equalizador.style.opacity = 0.5
+    //             return true
+    //         } 
             
-        } 
+    //     } 
         
-        timeout = setTimeout("countNumbers()", 300); 
-    };
+    //     timeout = setTimeout("countNumbers()", 300); 
+    // };
 
 
 
@@ -91,7 +84,7 @@
         timeoutImagens = setTimeout(girarImgs, 8000);
     }
 
-    var startTempo2;
+    // var startTempo2;
     // imergir.addEventListener('click', function() { // BOTÃO PRINCIPAL QUE INICIA O ÁUDIO E CHAMA OUTAS VALIDAÇÕES
         
     //     if (slider.value < 1){
@@ -130,62 +123,62 @@
     // });
 
     
-    var startTempo
-    var startTempo3
-    var count = 0
-    var rotacao = 11
-    function aumentarvolprim(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
-        count++;
-        birds.volume = birds.volume + 0.1
-        if (count != rotacao){
-            startTempo = setTimeout(function(){
-                aumentarvolprim()
-            }, 1200)
-        }
+    // var startTempo
+    // var startTempo3
+    // var count = 0
+    // var rotacao = 11
+    // function aumentarvolprim(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
+    //     count++;
+    //     birds.volume = birds.volume + 0.1
+    //     if (count != rotacao){
+    //         startTempo = setTimeout(function(){
+    //             aumentarvolprim()
+    //         }, 1200)
+    //     }
         
-    };
+    // };
 
-    function aumentarvolsegundo(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
-        count++;
-        secundo.volume = secundo.volume + 0.1
-        if (count != rotacao){
-            startTempo2 = setTimeout(function(){
-                aumentarvolsegundo()
-            }, 1200)
-        }
+    // function aumentarvolsegundo(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
+    //     count++;
+    //     secundo.volume = secundo.volume + 0.1
+    //     if (count != rotacao){
+    //         startTempo2 = setTimeout(function(){
+    //             aumentarvolsegundo()
+    //         }, 1200)
+    //     }
         
-    };
+    // };
 
-    function aumentarvolterceiro(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
-        count++;
-        terceiro.volume = terceiro.volume + 0.1
-        if (count != rotacao){
-            startTempo3 = setTimeout(function(){
-                aumentarvolterceiro()
-            }, 1200)
-        }
+    // function aumentarvolterceiro(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
+    //     count++;
+    //     terceiro.volume = terceiro.volume + 0.1
+    //     if (count != rotacao){
+    //         startTempo3 = setTimeout(function(){
+    //             aumentarvolterceiro()
+    //         }, 1200)
+    //     }
         
-    };
+    // };
     
-    parar.addEventListener('click', function() { // BOTÃO QUE CHAMA O RESET
-        cabou();
-        birds.volume = 0.0
-        secundo.volume = 0.0
-        parar.style.webkitTransition = 'opacity 3s ease-in-out'
-        parar.style.opacity = 0
-        parar.style.visibility = 'hidden'
-        equalizador.style.webkitTransition = 'opacity 3s ease-in-out'
-        equalizador.style.opacity = 0
-        equalizador.style.visibility = 'hidden'
-        voltarNumbers()
-    });
+    // parar.addEventListener('click', function() { // BOTÃO QUE CHAMA O RESET
+    //     cabou();
+    //     birds.volume = 0.0
+    //     secundo.volume = 0.0
+    //     parar.style.webkitTransition = 'opacity 3s ease-in-out'
+    //     parar.style.opacity = 0
+    //     parar.style.visibility = 'hidden'
+    //     equalizador.style.webkitTransition = 'opacity 3s ease-in-out'
+    //     equalizador.style.opacity = 0
+    //     equalizador.style.visibility = 'hidden'
+    //     voltarNumbers()
+    // });
 
     
 
     function Verificar(){ // VERIFICAR MUDANÇA DO SLIDER
         if (output != 1) {
             h1pergunta.style.opacity = '1'
-            window.alert('Espero que tenhamos ajudado você!')
+            // window.alert('Espero que tenhamos ajudado você!')
             return true
         } else {
             h1pergunta.style.opacity = '0'
@@ -206,31 +199,22 @@
     
 
 
-    function cabou(){ // PARAR SONS E RESETAR TUDO
-        birds.loop = false
-        birds.currentTime = 0
-        birds.pause()
-        secundo.loop = false
-        secundo.currentTime = 0
-        secundo.pause()
-        terceiro.loop = false
-        terceiro.currentTime = 0
-        terceiro.pause()
-        equalizador.style.visibility = 'hidden'
-        limparIntervals()
-        // progressBar.style.width = 0
-        // progressBar.setAttribute('aria-valuenow', 0)
-        // progressBar.innerHTML = '0%'
-        imergir.disabled = false
-        buscarBlock = document.getElementsByClassName('mySlides')
-            for(let k = 0; k < buscarBlock.length; k++ ){
-                if (buscarBlock[k].style.display != 'none'){
-                buscarBlock[k].style.display = 'none'
-                }
-            } 
+    // function cabou(){ // PARAR SONS E RESETAR TUDO
+    //     equalizador.style.visibility = 'hidden'
+    //     limparIntervals()
+    //     // progressBar.style.width = 0
+    //     // progressBar.setAttribute('aria-valuenow', 0)
+    //     // progressBar.innerHTML = '0%'
+    //     imergir.disabled = false
+    //     buscarBlock = document.getElementsByClassName('mySlides')
+    //         for(let k = 0; k < buscarBlock.length; k++ ){
+    //             if (buscarBlock[k].style.display != 'none'){
+    //             buscarBlock[k].style.display = 'none'
+    //             }
+    //         } 
     
         
-    }
+    // }
 
     var slider = document.getElementById('alegrometro')
     var output = document.getElementById('valor')
@@ -277,7 +261,6 @@
             //Verificar()
             triste.style.color = 'rgb(55, 94, 53)'
             alegre.style.color = 'white'
-            window.alert('Não fique assim!')
             voltarNumbers()
             sliderdiv.style.visibility = 'visible'
         } 
@@ -323,7 +306,7 @@
         $("#imergir").on('click', function(){   
             //Evento de click que faz a transição da página para
             //os efeitos de ondas com timer, de 10000 para fim de transição
-                player.start();
+                
                 $('html, body').animate({
                     scrollTop: $("#section").offset().top
                 }, 15000);
@@ -337,7 +320,18 @@
                     container.style.visibility = 'hidden';                  
                     // setTimeout(ComecaContar(), 0);
                     // setTimeout(ComecaProgress(),0)
-                }, 8000);      
+                    sectionOndas.style.webkitTransition = 'opacity 2s ease-in-out'
+                    sectionOndas.style.opacity = 0;
+                    setTimeout(() => {
+                        sectionOndas.style.visibility = 'hidden'
+                    }, 2000)
+                    document.body.style.background = "url('./imgs/meditationpage.jpg')";
+                    document.body.style.backgroundRepeat = "no repeat";
+                    document.body.style.backgroundPosition = "center";
+                    document.body.style.backgroundSize = "cover";
+                    document.body.style.backgroundAttachment = "fixed";
+                }, 15000);      
+                
                 
 
                 function ComecaContar(){
@@ -391,7 +385,7 @@
             sectionOndas.style.opacity = 0; 
             document.body.style.background.webkitTransition = 'opacity 3s ease-in-out';
             document.body.style.background.opacity = 0; 
-            setTimeout(() =>{
+            setTimeout(() => {
             sectionOndas.style.display = "none";
             // document.body.style.display = "none";
             }, 3000)
