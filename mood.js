@@ -441,18 +441,33 @@ musicaTocada = [...musicas];
 // } )
 
 //DEU CERTO
+//  musica = musicas[Math.floor(Math.random() * musicas.length)];
 
+const testeImagens = [
+    {
+        triste: "url('./imgs/meditationpage.jpg')"
+    },
+    {
+        triste: "url('./imgs/homepage.jpg')"
+    },
+    {
+        triste: "url('./imgs/landpage.jpg')"
+    }
+];
 
+var RandomizarImagens;
 const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
         
         
     var x = slider.value
     emoji.textContent = emojis[x]
-
+    
     switch (x) {
         
         case '0': 
         player.audioData = window.audiosTenso;
+        RandomizarImagens = testeImagens[Math.floor(Math.random() * testeImagens.length)];
+        document.body.style.background = RandomizarImagens.triste;
         console.log(x);
         break;
 
@@ -468,3 +483,27 @@ const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHA
     }
 
 }
+
+function func1() {
+    return 2;
+}
+
+function func2() {
+    return 3;
+}
+
+
+// for (const f of [func1, func2]){
+//     await f();
+// }
+
+// console.log(f())
+
+Promise.resolve().then(() => console.log(2));
+console.log(1);
+
+const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+wait().then(() => console.log('você?'));
+Promise.resolve().then(() => console.log('como')).then(() => console.log('vai'));
+console.log('oi');
