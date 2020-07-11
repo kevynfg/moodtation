@@ -1,7 +1,8 @@
-window.player = {
 
+
+window.player = {  
     audio: document.querySelector("audio"),
-    audioData: audios,
+    audioData: audiosTenso,
     currentAudio: {},
     currentPlaying: 0,
     preload(){
@@ -10,6 +11,7 @@ window.player = {
     },
     start() {
         this.update();
+        this.audio.play();
         // this.audio.onended = () => this.next();
     },
     next() {
@@ -27,5 +29,4 @@ window.player = {
         this.currentPlaying = 0;
         this.update();
     }
-    
 };

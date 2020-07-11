@@ -1,3 +1,9 @@
+window.audiosTenso = [
+    {
+        file: "ES_Forest Ambience - SFX Producer.mp3"
+    }
+];
+
 window.audios = [
     
     {
@@ -10,5 +16,4 @@ window.audios = [
     file: "calmingbirds.mp3"
 
     }
-
 ];

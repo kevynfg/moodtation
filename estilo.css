@@ -28,6 +28,36 @@ html, body {
         height: 100%;
     }
 
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-gap: 35px;
+        background-color: #2FED66;
+        padding: 5px;
+        position: relative;
+        top: 13%;
+        left: 0%;
+    }
+
+    .grid-container > div {
+        background-color: aqua;
+        padding: 5px 20px;
+        font-size: 30px;
+    }
+
+    .grid-container > div:hover {
+        background-color: rgb(10, 199, 199);
+        padding: 5px 20px;
+        font-size: 30px;
+    }
+
+    .grid-container > div:active {
+        background-color: rgb(5, 12, 12);
+        padding: 5px 20px;
+        font-size: 30px;
+    }
+
+
     .button {
         background-color: rgb(17, 91, 228);
         border: none;
@@ -184,7 +214,16 @@ html, body {
         appearance: none;
         width: 28px;
         height: 28px;
-        /*background: url('imgs/blue.jpg'); */
+        background: url('./imgs/blue.jpg');
+        background-color: #2FED66;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb{
+        width: 28px;
+        height: 28px;
+        background: url('./imgs/blue.jpg');
         background-color: #2FED66;
         border-radius: 50%;
         cursor: pointer;
@@ -192,13 +231,17 @@ html, body {
 
     .sliderzin{
         color: white;
-        position: relative;
-        text-align: center;
         font-size: 2rem;
         /*font-family: 'Trebuchet MS', Helvetica, sans-serif;*/
         font-family: 'VT323', monospace;
         font-weight: lighter;
         padding: 12px;
+    }
+
+    #sliderEmoji {
+        position: relative;
+        left: 0%;
+        top: 50%;
     }
     
     .sliderEscrita{
