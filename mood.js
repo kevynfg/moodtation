@@ -291,6 +291,8 @@
     //Variáveis que controlam quando a função ativa ou desativa
     var timer_rolou = 0, timer_progress = 0;
 
+    const playerProgress = document.querySelector('.caixa');
+
     $(document).ready(function(){
         $("#imergir").on('click', function(){   
             //Evento de click que faz a transição da página para
@@ -309,9 +311,8 @@
                     container.style.visibility = 'hidden';                  
                     // setTimeout(ComecaContar(), 0);
                     // setTimeout(ComecaProgress(),0)
-
                     window.player.start();
-
+                    playerProgress.style.visibility = "visible"
                     sectionOndas.style.webkitTransition = 'opacity 2s ease-in-out'
                     sectionOndas.style.opacity = 0;
                     setTimeout(() => {
@@ -345,7 +346,6 @@
         // $("i").click(comecar())
         
     });
-
 
     var tempo_func_onda, tempo_func_progress;
 
@@ -443,15 +443,30 @@ musicaTocada = [...musicas];
 //DEU CERTO
 //  musica = musicas[Math.floor(Math.random() * musicas.length)];
 
-const testeImagens = [
+const imagensTenso = [
     {
-        triste: "url('./imgs/meditationpage.jpg')"
+        triste: "url('./imgs/rangeTenso.jpg')"
     },
     {
-        triste: "url('./imgs/homepage.jpg')"
+        triste: "url('./imgs/rangeTenso2.jpg')"
     },
     {
-        triste: "url('./imgs/landpage.jpg')"
+        triste: "url('./imgs/rangeTenso3.jpg')"
+    }
+];
+
+const imagensNeutral = [
+    {
+        neutral: "url('./imgs/rangeNeutral.jpg')"
+    },
+    {
+        neutral: "url('./imgs/rangeNeutral2.jpg')"
+    },
+    {
+        neutral: "url('./imgs/rangeNeutral3.jpg')"
+    },
+    {
+        neutral: "url('./imgs/rangeNeutral4.jpg')"
     }
 ];
 
@@ -466,13 +481,23 @@ const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHA
         
         case '0': 
         player.audioData = window.audiosTenso;
-        RandomizarImagens = testeImagens[Math.floor(Math.random() * testeImagens.length)];
+        RandomizarImagens = imagensTenso[Math.floor(Math.random() * imagensTenso.length)];
         document.body.style.background = RandomizarImagens.triste;
+        document.body.style.backgroundRepeat = "no repeat";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
         console.log(x);
         break;
 
         case '1': 
         player.audioData = window.audios;
+        RandomizarImagens = imagensNeutral[Math.floor(Math.random() * imagensNeutral.length)];
+        document.body.style.background = RandomizarImagens.neutral;
+        document.body.style.backgroundRepeat = "no repeat";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundAttachment = "fixed";
         console.log(x);
         break;
 
@@ -483,6 +508,24 @@ const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHA
     }
 
 }
+
+var teste = document.querySelectorAll('circle')[1];
+teste.style.strokeDashoffset = 'calc(440 - (440 * 0) / 100)';
+
+function loop(){
+        const labelProgress = document.querySelector('.textoProgress');
+        if (player.audio.buffered.length){
+        var progresso = Math.floor(100 * player.audio.currentTime / player.audio.duration);
+        teste.style.strokeDashoffset = `calc(440 - (440 * ${progresso}) / 100);`
+        }
+        setTimeout(loop, 50);
+        console.log(progresso)
+    }
+
+    
+
+
+
 
 function func1() {
     return 2;

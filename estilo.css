@@ -9,7 +9,6 @@ html, body {
      }
     body{
         background-image: url('./imgs/homepage.jpg');
-        /* <a href="https://www.vecteezy.com/free-vector/nature">Nature Vectors by Vecteezy</a> */
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -339,9 +338,9 @@ html, body {
 
     .caixa{
         /* display: none; */
-        position: relative;
+        position: absolute;
         display: inline-block;
-        right: 0%;
+        right: 45%;
         bottom: 50%;
         visibility: hidden;
     }
@@ -380,7 +379,7 @@ html, body {
     .caixa .porcentagem svg circle:nth-child(2) {
 
         /* calculo padrão de porcentagem em 440 * N / 100  */
-        stroke-dashoffset: calc(440 - (440 * 90) / 100);
+        stroke-dashoffset: calc(440 - (440 * 100) / 100);
         stroke: #03a9f4;
     }
 
@@ -411,7 +410,7 @@ html, body {
         position: relative;
         display: flex;
         top: 140px;
-        left: 35%;
+        left: 25%;
         letter-spacing: 1px;
     }
 

@@ -2,7 +2,7 @@
 
 window.player = {  
     audio: document.querySelector("audio"),
-    audioData: audiosTenso,
+    audioData: {},
     currentAudio: {},
     currentPlaying: 0,
     preload(){

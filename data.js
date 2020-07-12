@@ -1,6 +1,6 @@
 window.audiosTenso = [
     {
-        file: "ES_Forest Ambience - SFX Producer.mp3"
+        file: "ForestAmbience.mp3"
     }
 ];
 

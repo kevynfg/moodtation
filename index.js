@@ -7,6 +7,9 @@ const path = function(file){
 };
 
 
-window.addEventListener("load" , player.preload());
+window.addEventListener("load" , () => {
+    player.audioData = audios;
+    player.preload()
+});
 
 //  window.addEventListener("click", player.start());
