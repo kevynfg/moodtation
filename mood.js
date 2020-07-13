@@ -290,9 +290,7 @@
     // JQUERY
     //Variáveis que controlam quando a função ativa ou desativa
     var timer_rolou = 0, timer_progress = 0;
-
-    const playerProgress = document.querySelector('.caixa');
-
+    var meuRange = document.getElementById("playerRange");
     $(document).ready(function(){
         $("#imergir").on('click', function(){   
             //Evento de click que faz a transição da página para
@@ -301,30 +299,49 @@
                 $('html, body').animate({
                     scrollTop: $("#section").offset().top
                 }, 15000);
-
+                
                 container.style.webkitTransition = 'opacity 2s ease-in-out'
                 container.style.opacity = 0;            
-                
                 //Este timeout ativa duas funções com timer de 8 segs
                 //e desabilita visibilidade do container
                 setTimeout(function(){
                     container.style.visibility = 'hidden';                  
                     // setTimeout(ComecaContar(), 0);
                     // setTimeout(ComecaProgress(),0)
-                    window.player.start();
-                    playerProgress.style.visibility = "visible"
                     sectionOndas.style.webkitTransition = 'opacity 2s ease-in-out'
                     sectionOndas.style.opacity = 0;
                     setTimeout(() => {
                         sectionOndas.style.visibility = 'hidden'
                     }, 2000)
-                    document.body.style.background = "url('./imgs/meditationpage.jpg')";
-                    document.body.style.backgroundRepeat = "no repeat";
-                    document.body.style.backgroundPosition = "center";
-                    document.body.style.backgroundSize = "cover";
-                    document.body.style.backgroundAttachment = "fixed";
-                }, 15000);      
-                
+                    window.player.start();
+                    
+                    // document.body.style.background = "url('./imgs/meditationpage.jpg')";
+                    // document.body.style.backgroundRepeat = "no repeat";
+                    // document.body.style.backgroundPosition = "center";
+                    // document.body.style.backgroundSize = "cover";
+                    // document.body.style.backgroundAttachment = "fixed";
+                    
+                    setTimeout(() => {
+                        $("#playerRange").roundSlider({
+                            sliderType: "min-range",
+                            min: 0,
+                            max: 100,
+                            value: 1,
+                            radius: 70,
+                            width: 10,
+                            svgMode: true,
+                            rangeColor: "rgb(17, 91, 228)",
+                            pathColor: "#B6174B",
+                            borderWidth: 0
+                            
+                        });
+                        meuRange.classList.remove("rs-animation")
+                        meuRange.classList.remove("rs-transition")
+                        meuRange.style.visibility = "visible"
+                    }, 2000); 
+                   
+                }, 1000);
+
                 
 
                 function ComecaContar(){
@@ -346,6 +363,19 @@
         // $("i").click(comecar())
         
     });
+    var root = document.querySelectorAll('.rs-animation, .rs-transition');
+    function loopar(){
+        
+        meuRange.classList.toggle("rs-animation")
+        meuRange.classList.toggle("rs-transition")
+        
+    }
+    
+
+    
+
+
+   
 
     var tempo_func_onda, tempo_func_progress;
 
@@ -509,18 +539,20 @@ const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHA
 
 }
 
-var teste = document.querySelectorAll('circle')[1];
-teste.style.strokeDashoffset = 'calc(440 - (440 * 0) / 100)';
+// var teste = document.querySelectorAll('circle')[1];
+// teste.style.strokeDashoffset = 'calc(440 - (440 * 0) / 100)';
 
-function loop(){
-        const labelProgress = document.querySelector('.textoProgress');
-        if (player.audio.buffered.length){
-        var progresso = Math.floor(100 * player.audio.currentTime / player.audio.duration);
-        teste.style.strokeDashoffset = `calc(440 - (440 * ${progresso}) / 100);`
-        }
-        setTimeout(loop, 50);
-        console.log(progresso)
-    }
+// function loop(){
+//         const labelProgress = document.querySelector('.textoProgress');
+//         if (player.audio.buffered.length){
+//         var progresso = Math.floor(100 * player.audio.currentTime / player.audio.duration);
+//         teste.style.strokeDashoffset = `calc(440 - (440 * ${progresso}) / 100);`
+//         }
+//         setTimeout(loop, 50);
+//         console.log(progresso)
+//     }
+
+
 
     
 

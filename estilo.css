@@ -255,6 +255,48 @@ html, body {
         padding: 12px;
     }
 
+    #playerRange {
+        position: relative;
+        bottom: 50%;
+        left: 30%;
+        visibility: hidden;
+    }
+
+    /* CONTROLE DE CORES DO PLAYER */
+
+    :root{
+        --transition-duration: 0s;
+        --transition-timing-function: linear;
+    }
+
+    .rs-inner.rs-bg-color.rs-border{
+        border: 0;
+        background-color: rgb(17, 91, 228);
+    }
+
+    .rs-block.rs-outer.rs-border.rs-split{
+        border: 0;
+    }
+
+    #playerRange .rs-path-color {
+        background-color: rgb(17, 91, 228);
+    }
+
+    #playerRange .rs-range-color {
+        background-color: white;
+    }
+
+    #playerRange.rs-animation .rs-transition {
+        transition-duration: 60s;
+        transition-timing-function: linear;
+    }
+
+    #playerRange .rs-handle {
+        background-color: white;
+    }
+
+    /* FIM DO CONTROLE DO PLAYER */
+
     #ansiometro{
         margin: 4px 2px 4px 2px;
         position: relative;
