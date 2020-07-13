@@ -259,7 +259,7 @@ html, body {
         position: relative;
         bottom: 50%;
         left: 30%;
-        visibility: hidden;
+        visibility: visible;
     }
 
     /* CONTROLE DE CORES DO PLAYER */

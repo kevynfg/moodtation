@@ -290,7 +290,7 @@
     // JQUERY
     //Variáveis que controlam quando a função ativa ou desativa
     var timer_rolou = 0, timer_progress = 0;
-    var meuRange = document.getElementById("playerRange");
+    var meuRange = document.querySelector("#playerRange");
     $(document).ready(function(){
         $("#imergir").on('click', function(){   
             //Evento de click que faz a transição da página para
@@ -321,41 +321,22 @@
                     // document.body.style.backgroundSize = "cover";
                     // document.body.style.backgroundAttachment = "fixed";
                     
-                    setTimeout(() => {
-                        $("#playerRange").roundSlider({
-                            sliderType: "min-range",
-                            min: 0,
-                            max: 100,
-                            value: 1,
-                            radius: 70,
-                            width: 10,
-                            svgMode: true,
-                            rangeColor: "rgb(17, 91, 228)",
-                            pathColor: "#B6174B",
-                            borderWidth: 0
-                            
-                        });
-                        meuRange.classList.remove("rs-animation")
-                        meuRange.classList.remove("rs-transition")
-                        meuRange.style.visibility = "visible"
-                    }, 2000); 
                    
+                    
                 }, 1000);
 
-                
-
-                function ComecaContar(){
-                    if (!timer_rolou){
-                        timer_rolou = 1;
-                        ondaTimer();
-                    }
-                }
-                function ComecaProgress(){
-                    if (!timer_progress){
-                        timer_progress = 1;
-                        timerProgress();
-                    }
-                }
+                // function ComecaContar(){
+                //     if (!timer_rolou){
+                //         timer_rolou = 1;
+                //         ondaTimer();
+                //     }
+                // }
+                // function ComecaProgress(){
+                //     if (!timer_progress){
+                //         timer_progress = 1;
+                //         timerProgress();
+                //     }
+                // }
                 // ComecaContar();
         });
 
@@ -363,19 +344,33 @@
         // $("i").click(comecar())
         
     });
-    var root = document.querySelectorAll('.rs-animation, .rs-transition');
-    function loopar(){
+
         
-        meuRange.classList.toggle("rs-animation")
-        meuRange.classList.toggle("rs-transition")
+
+const mudar = document.querySelector(".buttonM")
+const inputRange = document.querySelector(".inputRange");
+
+function ativarPlayer(timing) {
+    $("#playerRange").roundSlider({
+        sliderType: "min-range",
+        min: 0,
+        max: 100,
+        value: timing,
+        radius: 70,
+        width: 10,
+        svgMode: true,
+        rangeColor: "rgb(17, 91, 228)",
+        pathColor: "#B6174B",
+        borderWidth: 0
         
-    }
-    
+    }); 
+}
+mudar.addEventListener('click', function() { ativarPlayer(inputRange.value) 
+    // inputRange.value = "60";  
+    meuRange.style.visibility = "visible"
+});
 
-    
 
-
-   
 
     var tempo_func_onda, tempo_func_progress;
 
