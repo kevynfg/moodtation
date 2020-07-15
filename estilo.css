@@ -295,6 +295,19 @@ html, body {
         background-color: white;
     }
 
+    #buttonM {
+        position: absolute;
+        top: 57%;
+        left: 38%;
+        visibility: hidden;
+    }
+
+    #inputRange {
+        width: 220px;
+        position: absolute;
+        top: 57%;left: 44%;
+        visibility: hidden;
+    }
     /* FIM DO CONTROLE DO PLAYER */
 
     #ansiometro{
