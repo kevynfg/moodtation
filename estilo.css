@@ -260,6 +260,7 @@ html, body {
         bottom: 60%;
         left: 46%;
         visibility: visible;
+        opacity: 0;
     }
 
     /* CONTROLE DE CORES DO PLAYER */

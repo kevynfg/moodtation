@@ -286,9 +286,9 @@
     // JQUERY
     //Variáveis que controlam quando a função ativa ou desativa
     var timer_rolou = 0, timer_progress = 0;
-    var meuRange = document.querySelector("#playerRange");
-    const clickAqui = document.querySelector(".buttonM");
-    const tempoMeditacao = document.querySelector(".inputRange");
+    var meuRange = document.getElementById('playerRange');
+    var clickAqui = document.getElementById('buttonM');
+    var tempoMeditacao = document.getElementById('inputRange');
     $(document).ready(function(){
         $("#imergir").on('click', function(){   
             //Evento de click que faz a transição da página para
@@ -300,19 +300,24 @@
                 
                 container.style.webkitTransition = 'opacity 2s ease-in-out'
                 container.style.opacity = 0;       
-                clickAqui.style.visibility = "visible"
-                tempoMeditacao.style.visibility = "visible"
+                
                 //Este timeout ativa duas funções com timer de 8 segs
                 //e desabilita visibilidade do container
                 setTimeout(function(){
                     container.style.visibility = 'hidden';                  
                     // setTimeout(ComecaContar(), 0);
                     // setTimeout(ComecaProgress(),0)
-                    sectionOndas.style.webkitTransition = 'opacity 2s ease-in-out'
-                    sectionOndas.style.opacity = 0;
+                    
                     setTimeout(() => {
-                        sectionOndas.style.visibility = 'hidden'
-                    }, 2000)
+                        sectionOndas.style.webkitTransition = 'opacity 2s ease-in-out'
+                        sectionOndas.style.opacity = 0;
+                        setTimeout(() => {
+                            sectionOndas.style.visibility = 'hidden'
+                        }, 1000)
+                        
+                        clickAqui.style.visibility = 'visible'
+                        tempoMeditacao.style.visibility = 'visible'
+                    }, 15000)
                     window.player.start();
                     
                     // document.body.style.background = "url('./imgs/meditationpage.jpg')";
@@ -348,10 +353,11 @@
 const mudar = document.querySelector(".buttonM")
 const inputRange = document.querySelector(".inputRange");
 const root = document.documentElement;
+
 function ativarPlayer() {
     $("#playerRange").roundSlider({
         sliderType: "min-range",
-        min: 0,
+        min: 1,
         max: 100,
         value: 100,
         showTooltip: false,
@@ -360,15 +366,20 @@ function ativarPlayer() {
         svgMode: true,
         rangeColor: "rgb(17, 91, 228)",
         pathColor: "#B6174B",
-        borderWidth: 0
+        borderWidth: 0,
+        readOnly: true,
+        keyboardAction: false
         
     }); 
-}
-mudar.addEventListener('click', function() { ativarPlayer() 
-    // inputRange.value = "60";  
+    meuRange.style.webkitTransition = 'opacity 2s ease-in-out'
+    meuRange.style.opacity = '1'
     meuRange.style.visibility = "visible"
-    root.style.setProperty('--transition-duration', `${inputRange.value}s`)
+}
+mudar.addEventListener('click', function() {
+        ativarPlayer();
+        root.style.setProperty('--transition-duration', `${inputRange.value}s`)
 });
+
 
 
 
