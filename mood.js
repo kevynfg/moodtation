@@ -191,9 +191,6 @@
      function cabou(){ // PARAR SONS E RESETAR TUDO
          equalizador.style.visibility = 'hidden'
         limparIntervals()
-        // progressBar.style.width = 0
-        // progressBar.setAttribute('aria-valuenow', 0)
-        // progressBar.innerHTML = '0%'
         imergir.disabled = false
         buscarBlock = document.getElementsByClassName('mySlides')
             for(let k = 0; k < buscarBlock.length; k++ ){
@@ -211,7 +208,6 @@
     var spantriste = document.getElementById('triste')
     var spanalegre = document.getElementById('alegre')
     var h1pergunta = document.getElementById('comoesta')
-    var labelnuvem = document.getElementById('lblnuvem')
     const emojis = ['😩', '😶', '😄']
     //output.innerHTML = slider.value
     
@@ -291,6 +287,8 @@
     //Variáveis que controlam quando a função ativa ou desativa
     var timer_rolou = 0, timer_progress = 0;
     var meuRange = document.querySelector("#playerRange");
+    const clickAqui = document.querySelector(".buttonM");
+    const tempoMeditacao = document.querySelector(".inputRange");
     $(document).ready(function(){
         $("#imergir").on('click', function(){   
             //Evento de click que faz a transição da página para
@@ -301,7 +299,9 @@
                 }, 15000);
                 
                 container.style.webkitTransition = 'opacity 2s ease-in-out'
-                container.style.opacity = 0;            
+                container.style.opacity = 0;       
+                clickAqui.style.visibility = "visible"
+                tempoMeditacao.style.visibility = "visible"
                 //Este timeout ativa duas funções com timer de 8 segs
                 //e desabilita visibilidade do container
                 setTimeout(function(){
@@ -345,17 +345,16 @@
         
     });
 
-        
-
 const mudar = document.querySelector(".buttonM")
 const inputRange = document.querySelector(".inputRange");
-
-function ativarPlayer(timing) {
+const root = document.documentElement;
+function ativarPlayer() {
     $("#playerRange").roundSlider({
         sliderType: "min-range",
         min: 0,
         max: 100,
-        value: timing,
+        value: 100,
+        showTooltip: false,
         radius: 70,
         width: 10,
         svgMode: true,
@@ -365,9 +364,10 @@ function ativarPlayer(timing) {
         
     }); 
 }
-mudar.addEventListener('click', function() { ativarPlayer(inputRange.value) 
+mudar.addEventListener('click', function() { ativarPlayer() 
     // inputRange.value = "60";  
     meuRange.style.visibility = "visible"
+    root.style.setProperty('--transition-duration', `${inputRange.value}s`)
 });
 
 
@@ -546,13 +546,6 @@ const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHA
 //         setTimeout(loop, 50);
 //         console.log(progresso)
 //     }
-
-
-
-    
-
-
-
 
 function func1() {
     return 2;
