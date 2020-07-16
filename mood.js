@@ -380,9 +380,18 @@ var contadorPlayer = 0
 var controladorPlayer = false;
 mudar.addEventListener('click', function() {
         ativarPlayer()
+        mudar.innerHTML = `Resetar &#${10074}&#${10074}`
         root.style.setProperty('--transition-duration', `${inputRange.value}s`)
-        timerPlayer()
+        if (contadorPlayer > 0){
+            //IMPEDE QUE O USUÁRIO ATIVE O PLAYER APÓS TE-LO ATIVADO
+            // event.preventDefault()
+            mudar.innerHTML = `Play &#${9658}`
+            ResetarPlayer()
+        }else{
+            timerPlayer()
+        }
     });
+
     var contadorPlayer = 0
     function timerPlayer() {
         contadorPlayer++
@@ -394,13 +403,24 @@ mudar.addEventListener('click', function() {
             contadorPlayer = 0
             setTimeout(() => {
                 $("#playerRange").roundSlider("option", "value", 1)
-            }, 2000);
-            console.log("funfou");
+            }, 2000)
+            console.log("funfou")
         }
     }
 
+    function ResetarPlayer(){
+            clearTimeout(tempo_do_player)
+            controladorPlayer = true
+            root.style.setProperty('--transition-duration', `${0}s`)
+            contadorPlayer = 0
+            setTimeout(() => {
+                $("#playerRange").roundSlider("option", "value", 1)
+            }, 1000)
+            console.log("funfou")
+    }
 
-    var tempo_func_onda, tempo_func_progress;
+
+    var tempo_func_onda, tempo_func_progress
 
     //função com timer de 2 milisegundos que decrementa o css
     //do elemento de efeito das ondas
@@ -411,8 +431,8 @@ mudar.addEventListener('click', function() {
         contadorHeight--
         tempo_func_onda = setTimeout(ondaTimer, 0)
         if(contadorHeight <= 0){
-            clearTimeout(tempo_func_onda);
-            timer_rolou = 0;
+            clearTimeout(tempo_func_onda)
+            timer_rolou = 0
         }
     }
     
@@ -427,11 +447,11 @@ mudar.addEventListener('click', function() {
             clearTimeout(tempo_func_progress);
             timer_progress = 0;
             sectionOndas.style.webkitTransition = 'opacity 3s ease-in-out';
-            sectionOndas.style.opacity = 0; 
+            sectionOndas.style.opacity = 0;
             document.body.style.background.webkitTransition = 'opacity 3s ease-in-out';
-            document.body.style.background.opacity = 0; 
+            document.body.style.background.opacity = 0;
             setTimeout(() => {
-            sectionOndas.style.display = "none";
+            sectionOndas.style.display = "none"
             // document.body.style.display = "none";
             }, 3000)
         }

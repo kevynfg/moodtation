@@ -1,5 +1,3 @@
-
-
 window.player = {  
     audio: document.querySelector("audio"),
     audioData: {},
