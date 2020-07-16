@@ -364,6 +364,7 @@ function ativarPlayer() {
         radius: 70,
         width: 10,
         svgMode: true,
+        sliderType: "range",
         rangeColor: "rgb(17, 91, 228)",
         pathColor: "#B6174B",
         borderWidth: 0,
@@ -375,12 +376,28 @@ function ativarPlayer() {
     meuRange.style.opacity = '1'
     meuRange.style.visibility = "visible"
 }
+var contadorPlayer = 0
+var controladorPlayer = false;
 mudar.addEventListener('click', function() {
-        ativarPlayer();
+        ativarPlayer()
         root.style.setProperty('--transition-duration', `${inputRange.value}s`)
-});
-
-
+        timerPlayer()
+    });
+    var contadorPlayer = 0
+    function timerPlayer() {
+        contadorPlayer++
+        tempo_do_player = setTimeout(timerPlayer, 1000);
+        if(contadorPlayer >= inputRange.value) {
+            clearTimeout(tempo_do_player)
+            controladorPlayer = true
+            root.style.setProperty('--transition-duration', `${0}s`)
+            contadorPlayer = 0
+            setTimeout(() => {
+                $("#playerRange").roundSlider("option", "value", 1)
+            }, 2000);
+            console.log("funfou");
+        }
+    }
 
 
     var tempo_func_onda, tempo_func_progress;
