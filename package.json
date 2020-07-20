@@ -22,6 +22,7 @@
     "express": "^4.17.1",
     "jplayer": "^2.9.2",
     "knex": "^0.21.0",
+    "lodash.update": "^4.10.2",
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
