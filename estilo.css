@@ -257,7 +257,7 @@ html, body {
 
     #playerRange {
         position: relative;
-        bottom: 60%;
+        bottom: 70%;
         left: 46%;
         visibility: visible;
         opacity: 0;
@@ -299,12 +299,13 @@ html, body {
     #buttonM {
         position: absolute;
         top: 57%;
-        left: 38%;
+        left: 37%;
         visibility: hidden;
     }
 
     #inputRange {
         width: 220px;
+        height: 18px;
         position: absolute;
         top: 57%;left: 44%;
         visibility: hidden;
