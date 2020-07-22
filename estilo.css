@@ -298,6 +298,7 @@ html, body {
 
     #buttonM {
         position: absolute;
+        height: 25px;
         top: 57%;
         left: 37%;
         visibility: hidden;

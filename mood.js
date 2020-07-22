@@ -7,7 +7,7 @@
     imergir = document.getElementById('imergir'),
     equalizador = document.getElementById('eq'),
     parar = document.getElementById('parar'),
-    sliderdiv = document.getElementById('sliderdiv'),
+    checkboxdiv = document.getElementById('checkboxdiv'),
     bodychange = document.body,
     container = document.getElementById('container'),
     ondas = document.getElementsByClassName('waves'),
@@ -15,13 +15,7 @@
     rodar = document.getElementById('rodar'),
     sectionOndas = document.getElementById('section'),
     circuloPorcentagem = document.getElementById('circuloPorcentagem'),
-    player,
-    timevol2,
-    timeoutNumbers,
-    timeoutMudar,
-    timeout,
-    timeoutOndas,
-    timeoutImagens;
+    player
 
 
     // function countNumbers(){ // FUNCTION PARA PROGREDIR A BARRA, ATIVAR O ÁUDIO E CHAMAR A FUNCTION DE PASSAR IMAGENS
@@ -62,24 +56,24 @@
     //     timeoutNumbers = setTimeout("voltarNumbers()", 50); 
     // };
         
-    var indexImgs = 0; // FUNCTION DE PASSAR AS IMAGENS DE FUNDO
-    function girarImgs(){
-        var imgs = document.getElementsByClassName('mySlides')
-        for (var posicao1 = 0; posicao1 < imgs.length; posicao1++){
-            imgs[posicao1].style.display = "none";
-        }
+    // var indexImgs = 0; // FUNCTION DE PASSAR AS IMAGENS DE FUNDO
+    // function girarImgs(){
+    //     var imgs = document.getElementsByClassName('mySlides')
+    //     for (var posicao1 = 0; posicao1 < imgs.length; posicao1++){
+    //         imgs[posicao1].style.display = "none";
+    //     }
 
-        indexImgs++;
+    //     indexImgs++;
 
-        if (indexImgs > imgs.length) {indexImgs = 1}
-        imgs[indexImgs-1].style.display = "block";
-        timeoutImagens = setTimeout(girarImgs, 8000);
-    }
+    //     if (indexImgs > imgs.length) {indexImgs = 1}
+    //     imgs[indexImgs-1].style.display = "block";
+    //     timeoutImagens = setTimeout(girarImgs, 8000);
+    // }
 
     // var startTempo2;
     // imergir.addEventListener('click', function() { // BOTÃO PRINCIPAL QUE INICIA O ÁUDIO E CHAMA OUTAS VALIDAÇÕES
         
-    //     if (slider.value < 1){
+    //     if (checkbox.value < 1){
     //         countNumbers()
     //         aumentarvolprim()
     //         // birds.play()
@@ -91,7 +85,7 @@
             
             
              
-    //     } else if (slider.value == 1){
+    //     } else if (checkbox.value == 1){
     //         secundo.volume = 0.1
     //         countNumbers()
     //         aumentarvolsegundo()
@@ -167,7 +161,7 @@
 
     
 
-    // function Verificar(){ // VERIFICAR MUDANÇA DO SLIDER
+    // function Verificar(){ // VERIFICAR MUDANÇA DO checkbox
     //     if (output != 1) {
     //         h1pergunta.style.opacity = '1'
     //         // window.alert('Espero que tenhamos ajudado você!')
@@ -187,51 +181,46 @@
     }
     
 
+    //Função não utilizável no momento
 
-     function cabou(){ // PARAR SONS E RESETAR TUDO
-         equalizador.style.visibility = 'hidden'
-        limparIntervals()
-        imergir.disabled = false
-        buscarBlock = document.getElementsByClassName('mySlides')
-            for(let k = 0; k < buscarBlock.length; k++ ){
-                if (buscarBlock[k].style.display != 'none'){
-                buscarBlock[k].style.display = 'none'
-                }
-            } 
+    //  function cabou(){ // PARAR SONS E RESETAR TUDO
+    //      equalizador.style.visibility = 'hidden'
+    //     limparIntervals()
+    //     imergir.disabled = false
+    //     buscarBlock = document.getElementsByClassName('mySlides')
+    //         for(let k = 0; k < buscarBlock.length; k++ ){
+    //             if (buscarBlock[k].style.display != 'none'){
+    //             buscarBlock[k].style.display = 'none'
+    //             }
+    //         } 
     
         
-    }
+    // }
 
-    var slider = document.getElementById('alegrometro')
-    var output = document.getElementById('valor')
-    var emoji = document.querySelector('.emoji')
-    var spantriste = document.getElementById('triste')
-    var spanalegre = document.getElementById('alegre')
-    var h1pergunta = document.getElementById('comoesta')
-    const emojis = ['😩', '😶', '😄']
-    //output.innerHTML = slider.value
+    
+    //output.innerHTML = checkbox.value
     
 
 
-    // const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
+    // const checkboxinput1 = checkbox.oninput = function(){ // CONTROLADOR DO checkbox E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
         
         
-    //     var x = slider.value
+    //     var x = checkbox.value
     //     emoji.textContent = emojis[x]
 
     //     if (x <= 1){
     //         imergir.style.visibility = 'visible'
-    //         slider.style.background = `linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%)`;
+    //         checkbox.style.background = `linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%)`;
     //         cabou()
     //         alegre.style.color = 'white'
     //         triste.style.color = 'white'
     //         //h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
     //         //h1pergunta.style.opacity = '0'
     //         // voltarNumbers()
-    //         sliderdiv.style.visibility = 'visible'
+    //         checkboxdiv.style.visibility = 'visible'
     //     } 
     //     if (x > 1) {
-    //         slider.style.background = `linear-gradient(90deg, rgb(117,252,117)100%, rgb(214,214,214)100%)`;
+    //         checkbox.style.background = `linear-gradient(90deg, rgb(117,252,117)100%, rgb(214,214,214)100%)`;
     //         cabou()
     //         // Verificar()
     //         alegre.style.color = 'rgb(117,252,117)'
@@ -239,15 +228,15 @@
     //         imergir.style.visibility = 'visible'
     //         //parar.style.visibility = 'visible'
     //         // voltarNumbers()
-    //         sliderdiv.style.visibility = 'visible'
+    //         checkboxdiv.style.visibility = 'visible'
     //     } else if (x == 0) {
-    //         slider.style.background = `linear-gradient(90deg, rgb(117,252,117)0%, rgb(214,214,214)0%)`;
+    //         checkbox.style.background = `linear-gradient(90deg, rgb(117,252,117)0%, rgb(214,214,214)0%)`;
     //         cabou()
     //         //Verificar()
     //         triste.style.color = 'rgb(55, 94, 53)'
     //         alegre.style.color = 'white'
     //         // voltarNumbers()
-    //         sliderdiv.style.visibility = 'visible'
+    //         checkboxdiv.style.visibility = 'visible'
     //     } 
     //     else {
     //         h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
@@ -261,27 +250,90 @@
 
     //Variáveis e função de controle do range
     //com mudança de background color
-    var slider2 = document.getElementById('ansiometro')
-    var emoji2 = document.getElementById('emojis2')
-    var emojis2 = ['😰', '🙄' , '😌']
+    // var checkbox2 = document.getElementById('ansiometro')
+    // var emoji2 = document.getElementById('emojis2')
+    // var emojis2 = ['😰', '🙄' , '😌']
 
-    // const sliderinput2 = slider2.oninput = function(){
+
+    // const checkboxinput2 = checkbox2.oninput = function(){
         
-    //     var v = slider2.value
+    //     var v = checkbox2.value
     //     emoji2.textContent = emojis2[v]
 
     //     if (v <= 1){
            
-    //         slider2.style.background = `linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%)`;
+    //         checkbox2.style.background = `linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%)`;
     //     } 
     //     if (v > 1) {
-    //         slider2.style.background = `linear-gradient(90deg, rgb(153, 255, 187)100%, rgb(214,214,214)100%)`;
+    //         checkbox2.style.background = `linear-gradient(90deg, rgb(153, 255, 187)100%, rgb(214,214,214)100%)`;
             
     //     } else if (v == 0) {
-    //         slider2.style.background = `linear-gradient(90deg, rgb(117,252,117)0%, rgb(214,214,214)0%)`;
+    //         checkbox2.style.background = `linear-gradient(90deg, rgb(117,252,117)0%, rgb(214,214,214)0%)`;
             
     //     } 
     // }
+
+    
+    //Objetos que guardam imagens de fundo do app
+    const imagensTenso = [
+        {
+            triste: "url('./imgs/rangeTenso.jpg')"
+        },
+        {
+            triste: "url('./imgs/rangeTenso2.jpg')"
+        },
+        {
+            triste: "url('./imgs/rangeTenso3.jpg')"
+        }
+    ];
+    
+    const imagensNeutral = [
+        {
+            neutral: "url('./imgs/rangeNeutral.jpg')"
+        },
+        {
+            neutral: "url('./imgs/rangeNeutral2.jpg')"
+        },
+        {
+            neutral: "url('./imgs/rangeNeutral3.jpg')"
+        },
+        {
+            neutral: "url('./imgs/rangeNeutral4.jpg')"
+        }
+    ];
+    
+    var checkbox = document.getElementById('alegrometro')
+    var emoji = document.querySelector('.emoji')
+    const emojis = ['😩', '😄']
+    var RandomizarImagens;
+
+    //Começa uma função que chama diferentes açoes baseadas no valor do range checkbox
+    const checkboxinput1 = checkbox.onchange = function(){ // CONTROLADOR DO checkbox E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
+        console.log(checkbox.checked);
+        if(checkbox.checked) {
+            //Caso 0, vai tocar áudios específicos e muda o background
+            player.audioData = window.audiosTenso;
+            RandomizarImagens = imagensTenso[Math.floor(Math.random() * imagensTenso.length)];
+            document.body.style.background = RandomizarImagens.triste;
+            document.body.style.backgroundRepeat = "no repeat";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundAttachment = "fixed";
+            emoji.textContent = emojis[0]
+            }
+            else { 
+            player.audioData = window.audios;
+            RandomizarImagens = imagensNeutral[Math.floor(Math.random() * imagensNeutral.length)];
+            document.body.style.background = RandomizarImagens.neutral;
+            document.body.style.backgroundRepeat = "no repeat";
+            document.body.style.backgroundPosition = "center";
+            document.body.style.backgroundSize = "cover";
+            document.body.style.backgroundAttachment = "fixed";
+            emoji.textContent = emojis[1]
+            
+            }
+    }
+
 
     // JQUERY
     //Variáveis que controlam quando a função ativa ou desativa
@@ -289,6 +341,9 @@
     var meuRange = document.getElementById('playerRange');
     var clickAqui = document.getElementById('buttonM');
     var tempoMeditacao = document.getElementById('inputRange');
+    var playerGongo = document.getElementById("playerGongo");
+
+    console.log(playerGongo.src)
     $(document).ready(function(){
         $("#imergir").on('click', function(){   
             //Evento de click que faz a transição da página para
@@ -297,7 +352,9 @@
                 $('html, body').animate({
                     scrollTop: $("#section").offset().top
                 }, 15000);
-                
+
+                //playerGongo é o inicio da meditação quando sobe a onda
+                playerGongo.play()
                 container.style.webkitTransition = 'opacity 2s ease-in-out'
                 container.style.opacity = 0;       
                 
@@ -305,29 +362,23 @@
                 //e desabilita visibilidade do container
                 setTimeout(function(){
                     container.style.visibility = 'hidden';                  
-                    // setTimeout(ComecaContar(), 0);
-                    // setTimeout(ComecaProgress(),0)
-                    
                     setTimeout(() => {
+
                         sectionOndas.style.webkitTransition = 'opacity 2s ease-in-out'
                         sectionOndas.style.opacity = 0;
+
                         setTimeout(() => {
                             sectionOndas.style.visibility = 'hidden'
                         }, 1000)
-                        
+
                         clickAqui.style.visibility = 'visible'
                         tempoMeditacao.style.visibility = 'visible'
+                        
+                        window.player.start()
                     }, 15000)
-                    window.player.start();
+
                     
-                    // document.body.style.background = "url('./imgs/meditationpage.jpg')";
-                    // document.body.style.backgroundRepeat = "no repeat";
-                    // document.body.style.backgroundPosition = "center";
-                    // document.body.style.backgroundSize = "cover";
-                    // document.body.style.backgroundAttachment = "fixed";
-                    
-                   
-                    
+
                 }, 1000);
 
                 // function ComecaContar(){
@@ -350,10 +401,12 @@
         
     });
 
+//Variáveis de teste
 const mudar = document.querySelector(".buttonM")
 const inputRange = document.querySelector(".inputRange");
 const root = document.documentElement;
 
+//Cria o player com Jquery que rola o timer
 function ativarPlayer() {
     $("#playerRange").roundSlider({
         sliderType: "min-range",
@@ -376,48 +429,68 @@ function ativarPlayer() {
     meuRange.style.opacity = '1'
     meuRange.style.visibility = "visible"
 }
+
 var contadorPlayer = 0
 var controladorPlayer = false;
-mudar.addEventListener('click', function() {
-        ativarPlayer()
-        mudar.innerHTML = `Resetar &#${10074}&#${10074}`
-        root.style.setProperty('--transition-duration', `${inputRange.value}s`)
-        if (contadorPlayer > 0){
-            //IMPEDE QUE O USUÁRIO ATIVE O PLAYER APÓS TE-LO ATIVADO
-            // event.preventDefault()
-            mudar.innerHTML = `Play &#${9658}`
-            ResetarPlayer()
-        }else{
-            timerPlayer()
-        }
-    });
 
-    var contadorPlayer = 0
-    function timerPlayer() {
-        contadorPlayer++
-        tempo_do_player = setTimeout(timerPlayer, 1000);
-        if(contadorPlayer >= inputRange.value) {
-            clearTimeout(tempo_do_player)
-            controladorPlayer = true
-            root.style.setProperty('--transition-duration', `${0}s`)
-            contadorPlayer = 0
-            setTimeout(() => {
-                $("#playerRange").roundSlider("option", "value", 1)
-            }, 2000)
-            console.log("funfou")
-        }
+//AO CLICAR NO BTN PLAY/PAUSE
+mudar.addEventListener('click', function() {  
+
+    window.player.togglePlayPause();
+
+    if(window.player.isPlaying) {
+        console.log('animar');
+        ativarPlayer();
+        root.style.setProperty('--transition-duration', `${inputRange.value}s`);
+        mudar.innerHTML = `Resetar &#${10074}&#${10074}`;        
+    } else {
+        console.log('desanimar');
+        ResetarPlayer();
+        mudar.innerHTML = `Play &#${9658}`;
     }
 
-    function ResetarPlayer(){
-            clearTimeout(tempo_do_player)
-            controladorPlayer = true
-            root.style.setProperty('--transition-duration', `${0}s`)
-            contadorPlayer = 0
-            setTimeout(() => {
-                $("#playerRange").roundSlider("option", "value", 1)
-            }, 1000)
-            console.log("funfou")
+    if (contadorPlayer > 0){         
+    } else {
+        timerPlayer()
     }
+});
+
+    
+var tempo_do_player
+function timerPlayer() {
+    //Contador que verifica a posição do timing do player
+    contadorPlayer++
+    //Tempo que roda em volta do player
+    tempo_do_player = setTimeout(timerPlayer, 1000);
+    if(contadorPlayer >= inputRange.value) {
+        //Reseta o player se o contador for igual o valor do input do usuário
+        clearTimeout(tempo_do_player)
+        root.style.setProperty('--transition-duration', `${0}s`)
+        contadorPlayer = 0
+        setTimeout(() => {
+            $("#playerRange").roundSlider("option", "value", 1)
+        }, 2000)
+        console.log("timer player")
+    }
+
+}
+
+function ResetarPlayer(){
+    clearTimeout(tempo_do_player)
+    root.style.setProperty('--transition-duration', `${0}s`)
+    contadorPlayer = 0
+    setTimeout(() => {
+        $("#playerRange").roundSlider("option", "value", 1)
+    }, 1000)
+    mudar.innerHTML = `Play &#${9658}`
+    console.log("Resetou")
+}
+
+
+    //*******ABAIXO DESTA LINHA SÃO COMANDOS NÃO UTILIZADOS NO APP*********
+
+
+
 
 
     var tempo_func_onda, tempo_func_progress
@@ -515,72 +588,6 @@ musicaTocada = [...musicas];
 
 //DEU CERTO
 //  musica = musicas[Math.floor(Math.random() * musicas.length)];
-
-const imagensTenso = [
-    {
-        triste: "url('./imgs/rangeTenso.jpg')"
-    },
-    {
-        triste: "url('./imgs/rangeTenso2.jpg')"
-    },
-    {
-        triste: "url('./imgs/rangeTenso3.jpg')"
-    }
-];
-
-const imagensNeutral = [
-    {
-        neutral: "url('./imgs/rangeNeutral.jpg')"
-    },
-    {
-        neutral: "url('./imgs/rangeNeutral2.jpg')"
-    },
-    {
-        neutral: "url('./imgs/rangeNeutral3.jpg')"
-    },
-    {
-        neutral: "url('./imgs/rangeNeutral4.jpg')"
-    }
-];
-
-var RandomizarImagens;
-const sliderinput1 = slider.oninput = function(){ // CONTROLADOR DO SLIDER E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
-        
-        
-    var x = slider.value
-    emoji.textContent = emojis[x]
-    
-    switch (x) {
-        
-        case '0': 
-        player.audioData = window.audiosTenso;
-        RandomizarImagens = imagensTenso[Math.floor(Math.random() * imagensTenso.length)];
-        document.body.style.background = RandomizarImagens.triste;
-        document.body.style.backgroundRepeat = "no repeat";
-        document.body.style.backgroundPosition = "center";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundAttachment = "fixed";
-        console.log(x);
-        break;
-
-        case '1': 
-        player.audioData = window.audios;
-        RandomizarImagens = imagensNeutral[Math.floor(Math.random() * imagensNeutral.length)];
-        document.body.style.background = RandomizarImagens.neutral;
-        document.body.style.backgroundRepeat = "no repeat";
-        document.body.style.backgroundPosition = "center";
-        document.body.style.backgroundSize = "cover";
-        document.body.style.backgroundAttachment = "fixed";
-        console.log(x);
-        break;
-
-        case '2': console.log(x);
-        break;
-
-        default: console.log("deu ruim");
-    }
-
-}
 
 // var teste = document.querySelectorAll('circle')[1];
 // teste.style.strokeDashoffset = 'calc(440 - (440 * 0) / 100)';
