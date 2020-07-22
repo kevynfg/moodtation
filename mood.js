@@ -340,7 +340,6 @@
     var timer_rolou = 0, timer_progress = 0;
     var meuRange = document.getElementById('playerRange');
     var clickAqui = document.getElementById('buttonM');
-    var tempoMeditacao = document.getElementById('inputRange');
     var playerGongo = document.getElementById("playerGongo");
 
     console.log(playerGongo.src)
@@ -351,7 +350,7 @@
                 
                 $('html, body').animate({
                     scrollTop: $("#section").offset().top
-                }, 15000);
+                }, 1000);
 
                 //playerGongo é o inicio da meditação quando sobe a onda
                 playerGongo.play()
@@ -372,10 +371,9 @@
                         }, 1000)
 
                         clickAqui.style.visibility = 'visible'
-                        tempoMeditacao.style.visibility = 'visible'
                         
                         window.player.start()
-                    }, 15000)
+                    }, 1000)
 
                     
 
@@ -402,17 +400,19 @@
     });
 
 //Variáveis de teste
-const mudar = document.querySelector(".buttonM")
-const inputRange = document.querySelector(".inputRange");
-const root = document.documentElement;
-
+var mudar = document.querySelector(".buttonM")
+var inputRange = document.querySelector(".inputRange");
+var root = document.documentElement;
+var valor = 1;
+var tempo_falta_transition;
 //Cria o player com Jquery que rola o timer
 function ativarPlayer() {
     $("#playerRange").roundSlider({
         sliderType: "min-range",
         min: 1,
-        max: 100,
-        value: 100,
+        max: 120,
+        value: valor,
+        startValue: 1,
         showTooltip: false,
         radius: 70,
         width: 10,
@@ -441,11 +441,22 @@ mudar.addEventListener('click', function() {
     if(window.player.isPlaying) {
         console.log('animar');
         ativarPlayer();
-        root.style.setProperty('--transition-duration', `${inputRange.value}s`);
-        mudar.innerHTML = `Resetar &#${10074}&#${10074}`;        
+        controladorSlider();
+        // root.style.setProperty('--transition-duration', `${inputRange.value}s`);
+        mudar.innerHTML = `Resetar &#${10074}&#${10074}`;   
+        if (tempo_falta_transition > 1) {
+            root.style.setProperty('--transition-duration', `${0}s`);
+            root.style.setProperty('--transition-duration', `${tempo_falta_transition}s`);
+        } 
     } else {
-        console.log('desanimar');
+        console.log(root.style.getPropertyValue('--transition-duration'));
         ResetarPlayer();
+        clearTimeout(tempo_do_slider);
+        tempo_falta_transition = 120 - valor;
+        setTimeout(() => {
+            $("#playerRange").roundSlider("option", "value", valor)
+        }, 1000)
+        ativarPlayer();
         mudar.innerHTML = `Play &#${9658}`;
     }
 
@@ -455,21 +466,31 @@ mudar.addEventListener('click', function() {
     }
 });
 
-    
+function controladorSlider() {
+    valor++;
+    $("#playerRange").roundSlider("option", "value", valor)
+    tempo_do_slider = setTimeout(controladorSlider, 1000);
+    if (valor == 120){
+        clearTimeout(tempo_do_slider);
+        valor = 1;
+    }
+}
+
+var tempo_do_slider   
 var tempo_do_player
 function timerPlayer() {
     //Contador que verifica a posição do timing do player
     contadorPlayer++
     //Tempo que roda em volta do player
     tempo_do_player = setTimeout(timerPlayer, 1000);
-    if(contadorPlayer >= inputRange.value) {
+    if(contadorPlayer >= 120) {
         //Reseta o player se o contador for igual o valor do input do usuário
         clearTimeout(tempo_do_player)
-        root.style.setProperty('--transition-duration', `${0}s`)
+        // root.style.setProperty('--transition-duration', `${0}s`)
         contadorPlayer = 0
         setTimeout(() => {
             $("#playerRange").roundSlider("option", "value", 1)
-        }, 2000)
+        }, 1000)
         console.log("timer player")
     }
 
@@ -477,11 +498,11 @@ function timerPlayer() {
 
 function ResetarPlayer(){
     clearTimeout(tempo_do_player)
-    root.style.setProperty('--transition-duration', `${0}s`)
+    // root.style.setProperty('--transition-duration', `${0}s`)
     contadorPlayer = 0
-    setTimeout(() => {
-        $("#playerRange").roundSlider("option", "value", 1)
-    }, 1000)
+    // setTimeout(() => {
+    //     $("#playerRange").roundSlider("option", "value", 1)
+    // }, 1000)
     mudar.innerHTML = `Play &#${9658}`
     console.log("Resetou")
 }

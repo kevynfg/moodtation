@@ -266,7 +266,7 @@ html, body {
     /* CONTROLE DE CORES DO PLAYER */
 
     :root{
-        --transition-duration: 0s;
+        --transition-duration: 120s;
         --transition-timing-function: linear;
     }
 
@@ -287,10 +287,10 @@ html, body {
         background-color: white;
     }
 
-    #playerRange.rs-animation .rs-transition {
+    /* #playerRange.rs-animation .rs-transition {
         transition-duration: var(--transition-duration);
         transition-timing-function: linear;
-    }
+    } */
 
     #playerRange .rs-handle {
         background-color: white;
