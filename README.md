@@ -14,6 +14,15 @@ Not sure when this is gonna be done because i'm having college at the moment.
 
 ### Setup
 
+For now you just need 
+
+- To install cors
+
+```shell
+$ npm install cors
+```
+Below this message it's pre feature for a future backend in this project.
+
 - To install nodejs
 
 > if you use chocolatey
@@ -34,11 +43,6 @@ scoop install nodejs
 
 ```shell
 $ npm install express --save
-```
-- To install cors
-
-```shell
-$ npm install cors
 ```
 
 - To install knex (our database)
