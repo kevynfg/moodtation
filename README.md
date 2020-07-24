@@ -14,14 +14,14 @@ Not sure when this is gonna be done because i'm having college at the moment.
 
 ### Setup
 
-For now you just need 
+# For now you just need 
 
 - To install cors
 
 ```shell
 $ npm install cors
 ```
-Below this message it's pre feature for a future backend in this project.
+# Below this message it's pre feature for a future backend in this project.
 
 - To install nodejs
 
