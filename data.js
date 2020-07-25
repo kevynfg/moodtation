@@ -1,6 +1,15 @@
 window.audiosTenso = [
     {
-        file: "ForestAmbience.mp3"
+        file: "curatibetanea.mp3"
+    },
+    {
+        file: "flautaindígena.mp3"
+    },
+    {
+        file: "meditaçãoxamânica.mp3"
+    },
+    {
+        file: "Meditation.mp3"
     }
 ];
 
@@ -8,7 +17,7 @@ window.audios = [
     
     {
 
-    file: "bowl-tibetaneo.wav" 
+    file: "eveningForest.wav" 
 
     },
     {

@@ -1,61 +1,12 @@
     var i = 0,
     contadorHeight = 75,
-    b = 101,
-    // progressBar = document.getElementById('bar'),
-    secundo = document.getElementById('audio2'),
-    terceiro = document.getElementById('audio3'),
     imergir = document.getElementById('imergir'),
-    equalizador = document.getElementById('eq'),
-    parar = document.getElementById('parar'),
-    checkboxdiv = document.getElementById('checkboxdiv'),
     bodychange = document.body,
     container = document.getElementById('container'),
     ondas = document.getElementsByClassName('waves'),
-    paragrafo = document.getElementById('setaBaixo'),
-    rodar = document.getElementById('rodar'),
     sectionOndas = document.getElementById('section'),
-    circuloPorcentagem = document.getElementById('circuloPorcentagem'),
     player
 
-
-    // function countNumbers(){ // FUNCTION PARA PROGREDIR A BARRA, ATIVAR O ÁUDIO E CHAMAR A FUNCTION DE PASSAR IMAGENS
-        
-    //     if(i < 100){  
-    //         i++                  
-    //         // progressBar.style.width = `${i}%`
-    //         // progressBar.innerHTML = `${i}%`
-
-    //         if (i >= 100){
-    //             girarImgs()
-    //             parar.style.webkitTransition = 'opacity 3s ease-in-out'
-    //             parar.style.opacity = 1
-    //             parar.style.visibility = 'visible'
-    //             equalizador.style.visibility = 'visible'
-    //             equalizador.style.webkitTransition = 'opacity 3s ease-in-out'
-    //             equalizador.style.opacity = 0.5
-    //             return true
-    //         } 
-            
-    //     } 
-        
-    //     timeout = setTimeout("countNumbers()", 300); 
-    // };
-
-
-
-    // function voltarNumbers(){ // RETROCEDER A PORCENTAGEM DA BARRA      
-    //     if (b != 100) {
-    //         b--
-    //         bodychange.style.backgroundSize = `${b}%` 
-    //         progressBar.style.width = `${i}%`
-    //         progressBar.innerHTML = `${i}%`
-    //         i--
-    //     } else  {
-    //         return true
-    //     }
-    //     timeoutNumbers = setTimeout("voltarNumbers()", 50); 
-    // };
-        
     // var indexImgs = 0; // FUNCTION DE PASSAR AS IMAGENS DE FUNDO
     // function girarImgs(){
     //     var imgs = document.getElementsByClassName('mySlides')
@@ -69,210 +20,6 @@
     //     imgs[indexImgs-1].style.display = "block";
     //     timeoutImagens = setTimeout(girarImgs, 8000);
     // }
-
-    // var startTempo2;
-    // imergir.addEventListener('click', function() { // BOTÃO PRINCIPAL QUE INICIA O ÁUDIO E CHAMA OUTAS VALIDAÇÕES
-        
-    //     if (checkbox.value < 1){
-    //         countNumbers()
-    //         aumentarvolprim()
-    //         // birds.play()
-    //         audioMood.play();
-    //         this.disabled = true
-    //         h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-    //         h1pergunta.style.opacity = '0'
-            
-            
-            
-             
-    //     } else if (checkbox.value == 1){
-    //         secundo.volume = 0.1
-    //         countNumbers()
-    //         aumentarvolsegundo()
-    //         //birds.play()
-    //         this.disabled = true
-    //         h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-    //         h1pergunta.style.opacity = '0'
-    //         startTempo2 = setTimeout("secundo.play()", 7000)
-            
-    //     } else {
-    //         terceiro.play()
-    //         terceiro.volume = 0.1
-    //         countNumbers()
-    //         aumentarvolterceiro()
-    //         this.disabled = true
-    //         h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-    //         h1pergunta.style.opacity = '0'
-    //         window.alert('entrou')
-    //     }
-           
-    // });
-
-    
-    // var startTempo
-    // var startTempo3
-    // var count = 0
-    // var rotacao = 11
-    // function aumentarvolprim(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
-    //     count++;
-    //     birds.volume = birds.volume + 0.1
-    //     if (count != rotacao){
-    //         startTempo = setTimeout(function(){
-    //             aumentarvolprim()
-    //         }, 1200)
-    //     }
-        
-    // };
-
-    // function aumentarvolsegundo(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
-    //     count++;
-    //     secundo.volume = secundo.volume + 0.1
-    //     if (count != rotacao){
-    //         startTempo2 = setTimeout(function(){
-    //             aumentarvolsegundo()
-    //         }, 1200)
-    //     }
-        
-    // };
-
-    // function aumentarvolterceiro(){ // LOOP PARA AUMENTO CONTÍNUO DO VOLUME
-    //     count++;
-    //     terceiro.volume = terceiro.volume + 0.1
-    //     if (count != rotacao){
-    //         startTempo3 = setTimeout(function(){
-    //             aumentarvolterceiro()
-    //         }, 1200)
-    //     }
-        
-    // };
-    
-    // parar.addEventListener('click', function() { // BOTÃO QUE CHAMA O RESET
-    //     cabou();
-    //     birds.volume = 0.0
-    //     secundo.volume = 0.0
-    //     parar.style.webkitTransition = 'opacity 3s ease-in-out'
-    //     parar.style.opacity = 0
-    //     parar.style.visibility = 'hidden'
-    //     equalizador.style.webkitTransition = 'opacity 3s ease-in-out'
-    //     equalizador.style.opacity = 0
-    //     equalizador.style.visibility = 'hidden'
-    //     voltarNumbers()
-    // });
-
-    
-
-    // function Verificar(){ // VERIFICAR MUDANÇA DO checkbox
-    //     if (output != 1) {
-    //         h1pergunta.style.opacity = '1'
-    //         // window.alert('Espero que tenhamos ajudado você!')
-    //         return true
-    //     } else {
-    //         h1pergunta.style.opacity = '0'
-    //         return false
-    //     }
-        
-    // }
-
-    function limparIntervals(){ // LIMPAR OS TIMERS DOS AUDIOS
-        clearInterval(timeout)
-        clearInterval(timeoutNumbers)
-        clearInterval(timeoutImagens)
-        clearInterval(timeoutMudar)
-    }
-    
-
-    //Função não utilizável no momento
-
-    //  function cabou(){ // PARAR SONS E RESETAR TUDO
-    //      equalizador.style.visibility = 'hidden'
-    //     limparIntervals()
-    //     imergir.disabled = false
-    //     buscarBlock = document.getElementsByClassName('mySlides')
-    //         for(let k = 0; k < buscarBlock.length; k++ ){
-    //             if (buscarBlock[k].style.display != 'none'){
-    //             buscarBlock[k].style.display = 'none'
-    //             }
-    //         } 
-    
-        
-    // }
-
-    
-    //output.innerHTML = checkbox.value
-    
-
-
-    // const checkboxinput1 = checkbox.oninput = function(){ // CONTROLADOR DO checkbox E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
-        
-        
-    //     var x = checkbox.value
-    //     emoji.textContent = emojis[x]
-
-    //     if (x <= 1){
-    //         imergir.style.visibility = 'visible'
-    //         checkbox.style.background = `linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%)`;
-    //         cabou()
-    //         alegre.style.color = 'white'
-    //         triste.style.color = 'white'
-    //         //h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-    //         //h1pergunta.style.opacity = '0'
-    //         // voltarNumbers()
-    //         checkboxdiv.style.visibility = 'visible'
-    //     } 
-    //     if (x > 1) {
-    //         checkbox.style.background = `linear-gradient(90deg, rgb(117,252,117)100%, rgb(214,214,214)100%)`;
-    //         cabou()
-    //         // Verificar()
-    //         alegre.style.color = 'rgb(117,252,117)'
-    //         triste.style.color = 'white'
-    //         imergir.style.visibility = 'visible'
-    //         //parar.style.visibility = 'visible'
-    //         // voltarNumbers()
-    //         checkboxdiv.style.visibility = 'visible'
-    //     } else if (x == 0) {
-    //         checkbox.style.background = `linear-gradient(90deg, rgb(117,252,117)0%, rgb(214,214,214)0%)`;
-    //         cabou()
-    //         //Verificar()
-    //         triste.style.color = 'rgb(55, 94, 53)'
-    //         alegre.style.color = 'white'
-    //         // voltarNumbers()
-    //         checkboxdiv.style.visibility = 'visible'
-    //     } 
-    //     else {
-    //         h1pergunta.style.webkitTransition = 'opacity 2s ease-in-out'
-    //         h1pergunta.style.opacity = '1'
-    //     }
-
-      
-
-    // } //TENTAR TROCAR ISTO POR SWITCH
-
-
-    //Variáveis e função de controle do range
-    //com mudança de background color
-    // var checkbox2 = document.getElementById('ansiometro')
-    // var emoji2 = document.getElementById('emojis2')
-    // var emojis2 = ['😰', '🙄' , '😌']
-
-
-    // const checkboxinput2 = checkbox2.oninput = function(){
-        
-    //     var v = checkbox2.value
-    //     emoji2.textContent = emojis2[v]
-
-    //     if (v <= 1){
-           
-    //         checkbox2.style.background = `linear-gradient(90deg, rgb(117,252,117)50%, rgb(214,214,214)50%)`;
-    //     } 
-    //     if (v > 1) {
-    //         checkbox2.style.background = `linear-gradient(90deg, rgb(153, 255, 187)100%, rgb(214,214,214)100%)`;
-            
-    //     } else if (v == 0) {
-    //         checkbox2.style.background = `linear-gradient(90deg, rgb(117,252,117)0%, rgb(214,214,214)0%)`;
-            
-    //     } 
-    // }
-
     
     //Objetos que guardam imagens de fundo do app
     const imagensTenso = [
@@ -304,11 +51,11 @@
     
     var checkbox = document.getElementById('alegrometro')
     var emoji = document.querySelector('.emoji')
-    const emojis = ['😩', '😄']
+    const emojis = ['😄', '😩']
     var RandomizarImagens;
 
     //Começa uma função que chama diferentes açoes baseadas no valor do range checkbox
-    const checkboxinput1 = checkbox.onchange = function(){ // CONTROLADOR DO checkbox E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
+    var checkboxinput1 = checkbox.onchange = function(){ // CONTROLADOR DO checkbox E CHAMADA DE FUNCTIONS COM VALIDAÇÕES
         console.log(checkbox.checked);
         if(checkbox.checked) {
             //Caso 0, vai tocar áudios específicos e muda o background
@@ -339,9 +86,9 @@
     //Variáveis que controlam quando a função ativa ou desativa
     var timer_rolou = 0, timer_progress = 0;
     var meuRange = document.getElementById('playerRange');
-    var clickAqui = document.getElementById('buttonM');
+    var clickPlay = document.getElementById('buttonM');
     var playerGongo = document.getElementById("playerGongo");
-
+    var secao3 = document.getElementById('secao3')
     console.log(playerGongo.src)
     $(document).ready(function(){
         $("#imergir").on('click', function(){   
@@ -368,49 +115,35 @@
 
                         setTimeout(() => {
                             sectionOndas.style.visibility = 'hidden'
-                        }, 1000)
-
-                        clickAqui.style.visibility = 'visible'
-                        
+                        }, 15000)
+                        ativarPlayer()
+                        secao3.style.webkitTransition = 'opacity 2s ease-in-out'
+                        secao3.style.opacity = '1'
+                        secao3.style.visibility = 'visible'
                         window.player.start()
-                    }, 1000)
+                        Meditar()
+                    }, 15000)
 
                     
 
                 }, 1000);
-
-                // function ComecaContar(){
-                //     if (!timer_rolou){
-                //         timer_rolou = 1;
-                //         ondaTimer();
-                //     }
-                // }
-                // function ComecaProgress(){
-                //     if (!timer_progress){
-                //         timer_progress = 1;
-                //         timerProgress();
-                //     }
-                // }
-                // ComecaContar();
-        });
-
-       
-        // $("i").click(comecar())
-        
+        });   
     });
 
 //Variáveis de teste
 var mudar = document.querySelector(".buttonM")
+var proximaMeditacao = document.getElementById('NextMeditation')
 var inputRange = document.querySelector(".inputRange");
 var root = document.documentElement;
 var valor = 1;
 var tempo_falta_transition;
+
 //Cria o player com Jquery que rola o timer
 function ativarPlayer() {
     $("#playerRange").roundSlider({
-        sliderType: "min-range",
+        sliderType: "range",
         min: 1,
-        max: 120,
+        max: 240,
         value: valor,
         startValue: 1,
         showTooltip: false,
@@ -424,66 +157,97 @@ function ativarPlayer() {
         readOnly: true,
         keyboardAction: false
         
-    }); 
-    meuRange.style.webkitTransition = 'opacity 2s ease-in-out'
-    meuRange.style.opacity = '1'
-    meuRange.style.visibility = "visible"
+    });
 }
 
 var contadorPlayer = 0
 var controladorPlayer = false;
 
 //AO CLICAR NO BTN PLAY/PAUSE
-mudar.addEventListener('click', function() {  
+mudar.addEventListener('click', Meditar, false);
 
+function Meditar() {
     window.player.togglePlayPause();
-
     if(window.player.isPlaying) {
         console.log('animar');
         ativarPlayer();
         controladorSlider();
+        mudar.innerHTML = `Pausar &#${10074}&#${10074}`;   
         // root.style.setProperty('--transition-duration', `${inputRange.value}s`);
-        mudar.innerHTML = `Resetar &#${10074}&#${10074}`;   
-        if (tempo_falta_transition > 1) {
-            root.style.setProperty('--transition-duration', `${0}s`);
-            root.style.setProperty('--transition-duration', `${tempo_falta_transition}s`);
-        } 
-    } else {
-        console.log(root.style.getPropertyValue('--transition-duration'));
-        ResetarPlayer();
-        clearTimeout(tempo_do_slider);
-        tempo_falta_transition = 120 - valor;
-        setTimeout(() => {
-            $("#playerRange").roundSlider("option", "value", valor)
-        }, 1000)
-        ativarPlayer();
-        mudar.innerHTML = `Play &#${9658}`;
-    }
+        // if (tempo_falta_transition > 1) {
+        //     root.style.setProperty('--transition-duration', `${0}s`);
+        //     root.style.setProperty('--transition-duration', `${tempo_falta_transition}s`);
+        // } 
+        } else {
+            // console.log(root.style.getPropertyValue('--transition-duration'));
+            // tempo_falta_transition = 240 - valor;
+            ResetarPlayer();
+            clearTimeout(tempo_do_slider);
+            setTimeout(() => {
+                $("#playerRange").roundSlider("option", "value", valor)
+            }, 0)
+            ativarPlayer();
+            mudar.innerHTML = `Play &#${9658}`;
 
+        }
     if (contadorPlayer > 0){         
     } else {
         timerPlayer()
     }
-});
+}
 
+proximaMeditacao.addEventListener('click', () => {
+    //Começa a próxima meditação
+    window.player.next();
+
+    if(window.player.isPlaying) {
+        clearTimeout(tempo_do_slider);
+        valor = 1
+        setTimeout(() => {
+            $("#playerRange").roundSlider("option", "value", valor)
+        }, 0);
+        controladorSlider();
+        ResetarPlayer();
+        mudar.innerHTML = `Pausar &#${10074}&#${10074}`; 
+    } else {
+        window.player.togglePlayPause();
+        // mudar.innerHTML = `Pausar &#${10074}&#${10074}`;        
+        clearTimeout(tempo_do_slider);
+        setTimeout(() => {
+            $("#playerRange").roundSlider("option", "value", 1)
+        }, 1000);
+        controladorSlider();
+        ResetarPlayer();
+        ativarPlayer();
+        mudar.innerHTML = `Pausar &#${10074}&#${10074}`;
+    }
+    if (contadorPlayer > 0){         
+    } else {
+        timerPlayer()
+    }
+})
+
+//Variáveis de controle de tempo do Player
+var tempo_do_slider   
+var tempo_do_player
+
+//Aumento contínuo do valor no Player
 function controladorSlider() {
     valor++;
     $("#playerRange").roundSlider("option", "value", valor)
-    tempo_do_slider = setTimeout(controladorSlider, 1000);
-    if (valor == 120){
+    tempo_do_slider = setTimeout(controladorSlider, 500);
+    if (valor == 240){
         clearTimeout(tempo_do_slider);
         valor = 1;
     }
 }
 
-var tempo_do_slider   
-var tempo_do_player
 function timerPlayer() {
     //Contador que verifica a posição do timing do player
     contadorPlayer++
     //Tempo que roda em volta do player
-    tempo_do_player = setTimeout(timerPlayer, 1000);
-    if(contadorPlayer >= 120) {
+    tempo_do_player = setTimeout(timerPlayer, 500);
+    if(contadorPlayer >= 240) {
         //Reseta o player se o contador for igual o valor do input do usuário
         clearTimeout(tempo_do_player)
         // root.style.setProperty('--transition-duration', `${0}s`)
@@ -491,6 +255,8 @@ function timerPlayer() {
         setTimeout(() => {
             $("#playerRange").roundSlider("option", "value", 1)
         }, 1000)
+        mudar.innerHTML = `Play &#${9658}`;
+        playerGongo.play()
         console.log("timer player")
     }
 
@@ -500,19 +266,12 @@ function ResetarPlayer(){
     clearTimeout(tempo_do_player)
     // root.style.setProperty('--transition-duration', `${0}s`)
     contadorPlayer = 0
-    // setTimeout(() => {
-    //     $("#playerRange").roundSlider("option", "value", 1)
-    // }, 1000)
     mudar.innerHTML = `Play &#${9658}`
     console.log("Resetou")
 }
 
 
     //*******ABAIXO DESTA LINHA SÃO COMANDOS NÃO UTILIZADOS NO APP*********
-
-
-
-
 
     var tempo_func_onda, tempo_func_progress
 
@@ -572,56 +331,9 @@ imergir.addEventListener('click' , () => {
 musicaTocada = [...musicas];
 
 //  musica = musicas[Math.floor(Math.random() * musicas.length)];
-
- //ALTERANDO O CIRCLE PROGRESS
-
- 
 //  var tempoSegundo = Math.floor(secundo.currentTime)
 //  var tempoPrimeiro = Math.floor(secundo.duration)
 //  console.log((tempoSegundo / tempoPrimeiro) * 100)
-
-
-// var containerPaleta = document.querySelector(".grid-container");
-
-// document.body.onload = () => {
-//     for(t = 1; t <= 5; t++){
-
-//         var divPaleta = document.createElement("div");
-//         divPaleta.setAttribute("id",`id${t}`)
-//         divPaleta.innerHTML = '🙄';
-//         containerPaleta.appendChild(divPaleta);
-        
-//     }
-// }
-
-//TESTE DE ERRO
-
-// var mood = 0;
-// containerPaleta.addEventListener('click', e => {
-    
-//     switch (mood){
-//         case 1: mood = 1;
-//         break;
-//         default: console.log("deu ruim");
-//     }
-//     console.log(mood);
-// } )
-
-//DEU CERTO
-//  musica = musicas[Math.floor(Math.random() * musicas.length)];
-
-// var teste = document.querySelectorAll('circle')[1];
-// teste.style.strokeDashoffset = 'calc(440 - (440 * 0) / 100)';
-
-// function loop(){
-//         const labelProgress = document.querySelector('.textoProgress');
-//         if (player.audio.buffered.length){
-//         var progresso = Math.floor(100 * player.audio.currentTime / player.audio.duration);
-//         teste.style.strokeDashoffset = `calc(440 - (440 * ${progresso}) / 100);`
-//         }
-//         setTimeout(loop, 50);
-//         console.log(progresso)
-//     }
 
 function func1() {
     return 2;
@@ -630,14 +342,7 @@ function func1() {
 function func2() {
     return 3;
 }
-
-
-// for (const f of [func1, func2]){
-//     await f();
-// }
-
-// console.log(f())
-
+    
 Promise.resolve().then(() => console.log(2));
 console.log(1);
 

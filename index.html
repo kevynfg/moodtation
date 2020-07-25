@@ -24,7 +24,7 @@
                     </audio>
                 </div> 
                 <div id="player2">
-                    <audio volume="1" src="sounds/bowl-tibetaneo.wav" id="playerGongo"></audio>
+                    <audio volume="0.1" src="sounds/bowl-tibetaneo.wav" id="playerGongo"></audio>
                 </div>
 
                 
@@ -41,27 +41,17 @@
             
             <div id="barrasProgress">
                 <div id="sliderEmoji">
-                    <div class="emoji">😶</div>
+                    <div class="emoji">😄</div>
                     
                     <span id="triste" class="sliderzin">Triste</span>
-                    <input type="checkbox" id="alegrometro">
+                    <label class="switch" style="visibility: visible; padding: 0;">
+                    <input type="checkbox" id="alegrometro" checked>
+                    <span class="slider round"></span>
+                    </label>
                     <span id="alegre" class="sliderzin">Alegre</span>
                     <p id="valoralegre" hidden>Valor: <span id="valor"></span></p>
                     
                 </div>  
-
-                <!-- <div class="grid-container">
-                    
-                </div> -->
-
-                <!-- <div id="sliderAnsiedade">
-                    <div class="emoji" id="emojis2">🙄</div> 
-                    
-                    <span id="ansioso" class="sliderEscrita">Ansioso</span>
-                    <input type="range" class="slider" min="0" max="2" value="1" step="0" id="ansiometro">
-                    <span id="calmo" class="sliderEscrita">Calmo</span>
-                    
-                </div> -->
             </div>
 
                 <p id="botaoImergir"><button id="imergir" class="button" type="button">Imergir</button></p>
@@ -77,25 +67,8 @@
                 <p>
                     <button class="button" id="parar" role="button">Parar</button>
                 </p>
-        </div> 
-        <p> 
-        <image src="imgs/equalizer.gif" class="w3-animate-fading" alt="equalizador" id="eq"></image>
-        </p>     
-        
-        <!-- <div class="caixa flex">
-            <div class="porcentagem">
-                <svg>
-                    <circle cx="70" cy="70" r="70"></circle>
-                    <circle id="circuloPorcentagem" cx="70" cy="70" r="70"></circle>
-                </svg>
-                <div class="numero">
-                    <h2>87<span>%</span></h2>
-                </div>
-            </div>
-            <h2 class="textoProgress">Progress</h2>
-        </div> -->
-        
-
+        </div>  
+   
 <div id="section">
 
     <div class="progress-bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
@@ -117,11 +90,11 @@
         
     </div>
 </div>
-
+<section id="secao3" class="secao3">
 <div id="playerRange" class="container flex"></div>
-
 <button type="button" id="buttonM" class="buttonM">Play &#9658</i></button>
-<!-- <input type="text" id="inputRange" class="inputRange" placeholder="Digite quanto tempo quer meditar" value=""></input> -->
+<button type="button" id="NextMeditation" class="buttonM">Próxima</i></button>
+</section>
     <script src="mood.js"></script>
     <script src="data.js"></script>
     <script src="player.js"></script>
