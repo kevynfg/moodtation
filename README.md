@@ -2,6 +2,8 @@ Hey, Kevyn here. First i want to say this is a personal project, after seeing th
 
 Not sure when this is gonna be done because i'm having college at the moment.
 
+You can try this github page https://kevynfg.github.io/moodtation/
+
 # Moodtation
 
 >Hey, Kevyn here. First i want to say this is a personal project, after seeing the exponential growing on meditation apps i wanted to give it a try to give some comfort and care to the world.
@@ -13,6 +15,15 @@ Not sure when this is gonna be done because i'm having college at the moment.
 - It's pretty simple you just have to clone https://github.com/kevynfg/moodtation.git and done!
 
 ### Setup
+
+# For now you just need 
+
+- To install cors
+
+```shell
+$ npm install cors
+```
+# Below this message it's pre feature for a future backend in this project.
 
 - To install nodejs
 
@@ -34,11 +45,6 @@ scoop install nodejs
 
 ```shell
 $ npm install express --save
-```
-- To install cors
-
-```shell
-$ npm install cors
 ```
 
 - To install knex (our database)
