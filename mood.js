@@ -97,7 +97,7 @@
                 
                 $('html, body').animate({
                     scrollTop: $("#section").offset().top
-                }, 1000);
+                }, 15000);
 
                 //playerGongo é o inicio da meditação quando sobe a onda
                 playerGongo.play()
@@ -115,17 +115,16 @@
 
                         setTimeout(() => {
                             sectionOndas.style.visibility = 'hidden'
-                        }, 15000)
+                        }, 1000)
+
                         ativarPlayer()
                         secao3.style.webkitTransition = 'opacity 2s ease-in-out'
                         secao3.style.opacity = '1'
                         secao3.style.visibility = 'visible'
                         window.player.start()
                         Meditar()
+
                     }, 15000)
-
-                    
-
                 }, 1000);
         });   
     });
@@ -143,7 +142,7 @@ function ativarPlayer() {
     $("#playerRange").roundSlider({
         sliderType: "range",
         min: 1,
-        max: 240,
+        max: 30,
         value: valor,
         startValue: 1,
         showTooltip: false,
@@ -160,7 +159,7 @@ function ativarPlayer() {
     });
 }
 
-var contadorPlayer = 0
+var contadorPlayer = 1
 var controladorPlayer = false;
 
 //AO CLICAR NO BTN PLAY/PAUSE
@@ -172,12 +171,8 @@ function Meditar() {
         console.log('animar');
         ativarPlayer();
         controladorSlider();
+        timerPlayer();
         mudar.innerHTML = `Pausar &#${10074}&#${10074}`;   
-        // root.style.setProperty('--transition-duration', `${inputRange.value}s`);
-        // if (tempo_falta_transition > 1) {
-        //     root.style.setProperty('--transition-duration', `${0}s`);
-        //     root.style.setProperty('--transition-duration', `${tempo_falta_transition}s`);
-        // } 
         } else {
             // console.log(root.style.getPropertyValue('--transition-duration'));
             // tempo_falta_transition = 240 - valor;
@@ -188,12 +183,7 @@ function Meditar() {
             }, 0)
             ativarPlayer();
             mudar.innerHTML = `Play &#${9658}`;
-
         }
-    if (contadorPlayer > 0){         
-    } else {
-        timerPlayer()
-    }
 }
 
 proximaMeditacao.addEventListener('click', () => {
@@ -208,23 +198,19 @@ proximaMeditacao.addEventListener('click', () => {
         }, 0);
         controladorSlider();
         ResetarPlayer();
+        timerPlayer();
         mudar.innerHTML = `Pausar &#${10074}&#${10074}`; 
-    } else {
-        window.player.togglePlayPause();
-        // mudar.innerHTML = `Pausar &#${10074}&#${10074}`;        
-        clearTimeout(tempo_do_slider);
-        setTimeout(() => {
-            $("#playerRange").roundSlider("option", "value", 1)
-        }, 1000);
-        controladorSlider();
-        ResetarPlayer();
-        ativarPlayer();
-        mudar.innerHTML = `Pausar &#${10074}&#${10074}`;
-    }
-    if (contadorPlayer > 0){         
-    } else {
-        timerPlayer()
-    }
+        } else {
+            window.player.togglePlayPause();        
+            clearTimeout(tempo_do_slider);
+            setTimeout(() => {
+                $("#playerRange").roundSlider("option", "value", 1)
+            }, 1000);
+            controladorSlider();
+            ResetarPlayer();
+            ativarPlayer();
+            mudar.innerHTML = `Pausar &#${10074}&#${10074}`;
+        }
 })
 
 //Variáveis de controle de tempo do Player
@@ -236,79 +222,36 @@ function controladorSlider() {
     valor++;
     $("#playerRange").roundSlider("option", "value", valor)
     tempo_do_slider = setTimeout(controladorSlider, 500);
-    if (valor == 240){
+    if (valor == 30){
         clearTimeout(tempo_do_slider);
         valor = 1;
     }
 }
-
 function timerPlayer() {
     //Contador que verifica a posição do timing do player
     contadorPlayer++
     //Tempo que roda em volta do player
     tempo_do_player = setTimeout(timerPlayer, 500);
-    if(contadorPlayer >= 240) {
+    if(contadorPlayer >= 30) {
         //Reseta o player se o contador for igual o valor do input do usuário
         clearTimeout(tempo_do_player)
-        // root.style.setProperty('--transition-duration', `${0}s`)
-        contadorPlayer = 0
-        setTimeout(() => {
-            $("#playerRange").roundSlider("option", "value", 1)
-        }, 1000)
-        mudar.innerHTML = `Play &#${9658}`;
+        contadorPlayer = 1
+        mudar.innerHTML = `Pausar &#${10074}&#${10074}`;
         playerGongo.play()
-        console.log("timer player")
+        console.log("Fim de meditação")
     }
-
-}
+};
 
 function ResetarPlayer(){
     clearTimeout(tempo_do_player)
-    // root.style.setProperty('--transition-duration', `${0}s`)
-    contadorPlayer = 0
+    // contadorPlayer = 1
     mudar.innerHTML = `Play &#${9658}`
-    console.log("Resetou")
-}
+    console.log("Pausou")
+};
 
 
     //*******ABAIXO DESTA LINHA SÃO COMANDOS NÃO UTILIZADOS NO APP*********
 
-    var tempo_func_onda, tempo_func_progress
-
-    //função com timer de 2 milisegundos que decrementa o css
-    //do elemento de efeito das ondas
-    //e ao final verifica se alcançou o esperado e desativa o loop
-    //da função
-    function ondaTimer(){
-        // document.getElementById('ondasPos').style.top = `${contadorHeight}vh`
-        contadorHeight--
-        tempo_func_onda = setTimeout(ondaTimer, 0)
-        if(contadorHeight <= 0){
-            clearTimeout(tempo_func_onda)
-            timer_rolou = 0
-        }
-    }
-    
-    //função parecida com a anterior, porém, incrementa o progressbar
-    //e faz a verificação ao final
-    function timerProgress(){
-        i++                  
-        // progressBar.style.width = `${i}%`
-        // progressBar.innerHTML = `${i}%`
-        tempo_func_progress = setTimeout(timerProgress, 1000)
-        if (i >= 100){
-            clearTimeout(tempo_func_progress);
-            timer_progress = 0;
-            sectionOndas.style.webkitTransition = 'opacity 3s ease-in-out';
-            sectionOndas.style.opacity = 0;
-            document.body.style.background.webkitTransition = 'opacity 3s ease-in-out';
-            document.body.style.background.opacity = 0;
-            setTimeout(() => {
-            sectionOndas.style.display = "none"
-            // document.body.style.display = "none";
-            }, 3000)
-        }
-    };
 
 //Troca de música por sequência de armazenagem em array
 //Tirando sempre a primeira do array e ao final colocando as mesmas novamente
