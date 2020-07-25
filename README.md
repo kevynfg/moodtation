@@ -2,6 +2,8 @@ Hey, Kevyn here. First i want to say this is a personal project, after seeing th
 
 Not sure when this is gonna be done because i'm having college at the moment.
 
+You can try this github page https://kevynfg.github.io/moodtation/
+
 # Moodtation
 
 >Hey, Kevyn here. First i want to say this is a personal project, after seeing the exponential growing on meditation apps i wanted to give it a try to give some comfort and care to the world.
