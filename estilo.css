@@ -187,14 +187,14 @@ html, body {
 
     .emoji{
         position: relative;
-        bottom: 10px;
-        font-size: 23px;
+        bottom: 30px;
+        font-size: 32px;
     }
 
     .switch{
         position: relative;
         display: inline-block;
-        width: 85px;
+        width: 70px;
         height: 34px;
         margin: auto 10px;
         bottom: 12px;
@@ -239,9 +239,9 @@ html, body {
       }
       
       input:checked + .slider:before {
-        -webkit-transform: translateX(50px);
-        -ms-transform: translateX(50px);
-        transform: translateX(50px);
+        -webkit-transform: translateX(35px);
+        -ms-transform: translateX(35px);
+        transform: translateX(35px);
       }
       
       /* sliders redondos */
@@ -325,10 +325,23 @@ html, body {
 
     #NextMeditation {
         position: absolute;
-        top: 65%;
+        top: 66%;
         left: 60%;
         transform: translate(-50%, -50%);
         height: 25px;
+    }
+
+    #perguntaNext {
+        position: absolute;
+        top: 66%;
+        left: 38%;
+        transform: translate(-50%, -50%);
+        height: 27px;
+        font-size: 19px;
+        color: white;
+        margin: 0 auto;
+        background: rgb(17, 91, 228);
+        opacity: 0;
     }
 
     .secao3 {

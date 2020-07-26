@@ -97,7 +97,7 @@
                 
                 $('html, body').animate({
                     scrollTop: $("#section").offset().top
-                }, 15000);
+                }, 1000);
 
                 //playerGongo é o inicio da meditação quando sobe a onda
                 playerGongo.play()
@@ -124,7 +124,7 @@
                         window.player.start()
                         Meditar()
 
-                    }, 15000)
+                    }, 1000)
                 }, 1000);
         });   
     });
@@ -134,14 +134,14 @@ var mudar = document.querySelector(".buttonM")
 var proximaMeditacao = document.getElementById('NextMeditation')
 var inputRange = document.querySelector(".inputRange");
 var root = document.documentElement;
-var valor = 1;
+var valor = 0;
 var tempo_falta_transition;
 
 //Cria o player com Jquery que rola o timer
 function ativarPlayer() {
     $("#playerRange").roundSlider({
         sliderType: "range",
-        min: 1,
+        min: 0,
         max: 30,
         value: valor,
         startValue: 1,
@@ -159,7 +159,7 @@ function ativarPlayer() {
     });
 }
 
-var contadorPlayer = 1
+var contadorPlayer = 0
 var controladorPlayer = false;
 
 //AO CLICAR NO BTN PLAY/PAUSE
@@ -168,11 +168,11 @@ mudar.addEventListener('click', Meditar, false);
 function Meditar() {
     window.player.togglePlayPause();
     if(window.player.isPlaying) {
-        console.log('animar');
+        console.log('Começou meditação');
         ativarPlayer();
         controladorSlider();
         timerPlayer();
-        mudar.innerHTML = `Pausar &#${10074}&#${10074}`;   
+        mudar.innerHTML = `Pausar &#${10074}&#${10074}`;  
         } else {
             // console.log(root.style.getPropertyValue('--transition-duration'));
             // tempo_falta_transition = 240 - valor;
@@ -189,17 +189,18 @@ function Meditar() {
 proximaMeditacao.addEventListener('click', () => {
     //Começa a próxima meditação
     window.player.next();
-
     if(window.player.isPlaying) {
         clearTimeout(tempo_do_slider);
-        valor = 1
+        valor = 0
+        contadorPlayer = 0
         setTimeout(() => {
             $("#playerRange").roundSlider("option", "value", valor)
-        }, 0);
+        }, 1000);
         controladorSlider();
         ResetarPlayer();
         timerPlayer();
         mudar.innerHTML = `Pausar &#${10074}&#${10074}`; 
+        
         } else {
             window.player.togglePlayPause();        
             clearTimeout(tempo_do_slider);
@@ -211,6 +212,7 @@ proximaMeditacao.addEventListener('click', () => {
             ativarPlayer();
             mudar.innerHTML = `Pausar &#${10074}&#${10074}`;
         }
+        console.log(valor);
 })
 
 //Variáveis de controle de tempo do Player
@@ -224,7 +226,7 @@ function controladorSlider() {
     tempo_do_slider = setTimeout(controladorSlider, 500);
     if (valor == 30){
         clearTimeout(tempo_do_slider);
-        valor = 1;
+        valor = 0;
     }
 }
 function timerPlayer() {
@@ -232,19 +234,38 @@ function timerPlayer() {
     contadorPlayer++
     //Tempo que roda em volta do player
     tempo_do_player = setTimeout(timerPlayer, 500);
-    if(contadorPlayer >= 30) {
+    const perguntaNext = document.getElementById('perguntaNext');
+    if (contadorPlayer >= 23) {
+        perguntaNext.innerHTML = 'A próxima meditação já vai começar...';
+        // perguntaNext.appendChild(conteudoPergunta);
+        perguntaNext.style.display = 'block';
+        perguntaNext.style.webkitTransition = 'opacity 2s ease-in-out'
+        perguntaNext.style.opacity = '1'
+    } else {
+        perguntaNext.style.display = 'none';
+    }
+    if(contadorPlayer == 30) {
         //Reseta o player se o contador for igual o valor do input do usuário
         clearTimeout(tempo_do_player)
-        contadorPlayer = 1
+        contadorPlayer = 0
         mudar.innerHTML = `Pausar &#${10074}&#${10074}`;
         playerGongo.play()
+        perguntaNext.style.webkitTransition = 'opacity 2s ease-in-out'
+        perguntaNext.style.opacity = '0'
+        perguntaNext.style.display = 'none';
+        setTimeout(() => {
+            window.player.next();
+            ativarPlayer();
+            controladorSlider();
+            timerPlayer();
+        }, 5000);
         console.log("Fim de meditação")
     }
+    
 };
 
 function ResetarPlayer(){
     clearTimeout(tempo_do_player)
-    // contadorPlayer = 1
     mudar.innerHTML = `Play &#${9658}`
     console.log("Pausou")
 };
