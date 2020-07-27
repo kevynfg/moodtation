@@ -10,7 +10,7 @@ window.player = {
     },
     start() {
         this.update();
-        this.audio.play();
+        // this.audio.play();
         // this.audio.onended = () => this.next();
     },
     play(){
@@ -36,7 +36,7 @@ window.player = {
     update(){
         this.currentAudio = this.audioData[this.currentPlaying];
         this.audio.src = path(this.currentAudio.file);
-        this.audio.play();
+        // this.audio.play();
         // this.audio.loop = true;
     },
     restart(){

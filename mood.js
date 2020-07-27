@@ -21,7 +21,7 @@ tempo_do_contador;
 mudar.addEventListener('click', Meditar, false);
 
 //btn next song
-btnNext.addEventListener('click', nextSong);
+btnNext.addEventListener('click', nextSong, false);
 
 //chk humor
 checkbox.addEventListener('change', function(){
@@ -84,12 +84,11 @@ function ativarPlayer() {
 function Meditar() {
     window.player.togglePlayPause();
 
-    if(window.player.isPlaying) {
+     if(window.player.isPlaying) {
         //play
         ativarPlayer(); //animação player
         timerPlayer(); //controla o tempo
-        mudar.innerHTML = `Pausar &#${10074}&#${10074}`;  
-
+        mudar.innerHTML = `Pausar &#${10074}&#${10074}`;
     } else {
         //pause
         pausePlayer();
@@ -114,9 +113,11 @@ function nextSong() {
     toggleClass(btnNext, perguntaNext, 'hiddenElement')
 
     //depois de 5s iniciar próxima meditação
-    setTimeout(function(){
+    setTimeout(() => {
         window.player.next();
-        timerPlayer();
+        window.player.togglePlayPause();
+        Meditar();
+        mudar.innerHTML = `Pausar &#${10074}&#${10074}`
     }, 5000);
 }
 
@@ -135,7 +136,7 @@ function timerPlayer() {
 
     //fim da meditação
     if(contadorPlayer == 30) {
-        window.player.pause();
+        window.player.togglePlayPause();
         nextSong();        
     }    
 };
