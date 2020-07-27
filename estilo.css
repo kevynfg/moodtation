@@ -3,7 +3,7 @@ html, body {
     width: 100%;
     overflow: hidden;
     justify-content: center;    
-	font-family: 'Roboto', serif;
+	font-family: 'Kodchasan', sans-serif;
     margin: 0;
     padding: 0;
      }
@@ -334,14 +334,24 @@ html, body {
     #perguntaNext {
         position: absolute;
         top: 66%;
-        left: 38%;
+        left: 34%;
         transform: translate(-50%, -50%);
-        height: 27px;
+        height: 24px;
         font-size: 19px;
         color: white;
         margin: 0 auto;
-        background: rgb(17, 91, 228);
+        background: rgb(17, 91, 228); 
+        transition: 2s ease-in-out;  
+    }
+
+    .hiddenElement {
+        visibility: hidden;
         opacity: 0;
+        transition: 1s ease-in-out;
+    }
+
+    #sectionOndas {
+        transition: 5s ease-in-out;
     }
 
     .secao3 {
@@ -350,8 +360,7 @@ html, body {
         right: 0;
         top: 0;
         bottom: 0;
-        visibility: hidden;
-        opacity: 0;
+        transition: 5s ease-in-out;
     }
 
     #inputRange {

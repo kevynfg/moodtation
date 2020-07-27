@@ -1,28 +1,28 @@
-window.audiosTenso = [
+window.audiosMeditativos = [
     {
-        file: "curatibetanea.mp3"
+        file: "M-curatibetanea.mp3"
     },
     {
-        file: "flautaindígena.mp3"
+        file: "M-flautaIndigena.mp3"
     },
     {
-        file: "meditaçãoxamânica.mp3"
+        file: "M-meditaçãoxamanica.mp3"
     },
     {
         file: "Meditation.mp3"
     }
 ];
 
-window.audios = [
+window.audiosNatureza = [
     
     {
 
-    file: "eveningForest.wav" 
+    file: "ChuvaRaios.mp3" 
 
     },
     {
 
-    file: "calmingbirds.mp3"
+    file: "ForestMelhor.mp3"
 
     }
 ];
