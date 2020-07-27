@@ -82,8 +82,7 @@ $ npm install sqlite3
 
 ## Team
 
-> Or Contributors/People
-- Just me :^)
+> https://github.com/maryanasales
 
 ## License
 
