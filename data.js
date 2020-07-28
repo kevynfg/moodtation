@@ -6,7 +6,7 @@ window.audiosMeditativos = [
         file: "M-flautaIndigena.mp3"
     },
     {
-        file: "M-meditaçãoxamanica.mp3"
+        file: "M-meditacaoxamanica.mp3"
     },
     {
         file: "Meditation.mp3"

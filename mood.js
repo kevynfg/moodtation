@@ -80,22 +80,23 @@ function ativarPlayer() {
     });
 }
 
+
 //meditar
 function Meditar() {
     window.player.togglePlayPause();
-
+    
      if(window.player.isPlaying) {
         //play
         ativarPlayer(); //animação player
         timerPlayer(); //controla o tempo
+        
         mudar.innerHTML = `Pausar &#${10074}&#${10074}`;
     } else {
         //pause
-        pausePlayer();
-        setTimeout(() => {
-            $("#playerRange").roundSlider("option", "value", contadorPlayer)
-        }, 0)
-        ativarPlayer();
+        pausePlayer(); //parar controlador do player
+        $("#playerRange").roundSlider("option", "value", contadorPlayer)
+        ativarPlayer(); //animação do player
+       
         mudar.innerHTML = `Play &#${9658}`;
     }
 }
@@ -112,13 +113,15 @@ function nextSong() {
     //aparecer mensagem
     toggleClass(btnNext, perguntaNext, 'hiddenElement')
 
+    window.player.pause(); //Pausa o player
+
     //depois de 5s iniciar próxima meditação
     setTimeout(() => {
-        window.player.next();
-        window.player.togglePlayPause();
-        Meditar();
+        window.player.next(); //próxima meditação
+        Meditar(); //inicia nova meditação
         mudar.innerHTML = `Pausar &#${10074}&#${10074}`
     }, 5000);
+    
 }
 
 //controlador do tempo
