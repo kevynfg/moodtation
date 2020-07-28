@@ -23,7 +23,7 @@ You can try this github page https://kevynfg.github.io/moodtation/
 ```shell
 $ npm install cors
 ```
-# Below this message it's pre feature for a future backend in this project.
+# Below this message it's pre-feature for a future backend in this project.
 
 - To install nodejs
 
@@ -82,8 +82,7 @@ $ npm install sqlite3
 
 ## Team
 
-> Or Contributors/People
-- Just me :^)
+> https://github.com/maryanasales
 
 ## License
 
