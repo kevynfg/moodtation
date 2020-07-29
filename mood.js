@@ -13,6 +13,8 @@ playerGongo = document.getElementById("playerGongo"),
 secao3 = document.getElementById('secao3'),
 mudar = document.querySelector(".buttonM"),
 btnNext = document.getElementById('NextMeditation'),
+textoBoasVindas = document.getElementById('comoesta'),
+textoBoasVindas2 = document.getElementById('comoesta2'),
 contadorPlayer = 0,
 controladorPlayer = false,
 tempo_do_contador;
@@ -26,16 +28,21 @@ btnNext.addEventListener('click', nextSong, false);
 //chk humor
 checkbox.addEventListener('change', function(){
     if(checkbox.checked) {
-        //feliz
-        player.audioData = window.audiosMeditativos;
-        emoji.textContent = '😄';
-        novoFavicon = faviconTemplate`${emoji.textContent}`
+        //triste
+        player.audioData = window.audiosNatureza;
+        // emoji.textContent = '😩';
+        textoBoasVindas.style.display = 'block';
+        textoBoasVindas2.style.display = 'none';
+        novoFavicon = faviconTemplate`${emoji.textContent}`;
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
     }
     else { 
-        //triste
-        player.audioData = window.audiosNatureza;
-        emoji.textContent = '😩';
+        
+        //feliz
+        player.audioData = window.audiosMeditativos;
+        // emoji.textContent = '😄';
+        textoBoasVindas.style.display = 'none'
+        textoBoasVindas2.style.display = 'block';
         novoFavicon = faviconTemplate`${emoji.textContent}`
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
     }
