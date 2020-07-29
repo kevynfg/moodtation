@@ -18,15 +18,15 @@ html, body {
     .LogoPage{
         width: 40vw;
         height: 35vh;
-        bottom: 23%;
+        bottom: 20%;
         position: relative;
     }
 
     #moodseuDia{
         position: absolute;
         left: 54%;
-        top: 6%;
-        font-size: 32px;
+        top: 7%;
+        font-size: 31px;
         color: white;
     }
     
@@ -130,10 +130,10 @@ html, body {
 
     #barrasProgress {
         position: relative;
+        bottom: 26%;
+        left: 0;
+        font-size: 32px;
         display: flex;
-        left: 0px;
-        margin: 0 auto;
-        bottom: 21%;
     }
 
     p#botaoImergir {
@@ -193,29 +193,20 @@ html, body {
         
     }
 
-    .emoji{
+    .emoji, .emoji2{
+        font-size: 32px;
         position: relative;
-        top: 0;
+        bottom: 14px;
         left: 0;
-        font-size: 32px;
-        display: flex;
-    }
-
-    .emoji2{
-        position: relative;
-        font-size: 32px;
-        bottom: 0;
-        right: 0;
-        display: flex;
     }
 
     .switch{
         position: relative;
         display: flex;
-        width: 70px;
-        height: 34px;
+        width: 80px;
+        height: 55px;
         margin: auto 10px;
-        bottom: 12px;
+        bottom: 14px;
     }
 
     .switch input{
@@ -231,7 +222,7 @@ html, body {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #ccc;
+        background-color: #77B2C5;
         -webkit-transition: .4s;
         transition: .4s;
     }
@@ -239,27 +230,27 @@ html, body {
     .slider:before {
         position: absolute;
         content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
+        height: 35px;
+        width: 35px;
+        left: 10px;
+        bottom: 10px;
         background-color: white;
         -webkit-transition: .4s;
         transition: .4s;
       }
 
       input:checked + .slider {
-        background-color: #2196F3;
+        background-color: #275793;
       }
       
       input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
+        box-shadow: 0 0 1px #275793;
       }
       
       input:checked + .slider:before {
-        -webkit-transform: translateX(35px);
-        -ms-transform: translateX(35px);
-        transform: translateX(35px);
+        -webkit-transform: translateX(29px);
+        -ms-transform: translateX(29px);
+        transform: translateX(29px);
       }
       
       /* sliders redondos */
@@ -397,7 +388,7 @@ html, body {
     }
 
     #comoesta , #comoesta2{
-        width: 34vw;
+        width: 25vw;
         font-size: 18px;
         color: white;
         position: relative;
