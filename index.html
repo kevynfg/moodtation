@@ -17,18 +17,28 @@
 </script>
 <body>
         <div id="container" class="container flex">
-            <img class="LogoPage" src="./logo/logo.png" alt="LogoPage">
-            <p id="moodseuDia">mood seu dia</p>   
+            <img class="LogoPage" src="./logo/Logo.svg" alt="LogoPage"> 
 
-            </span>
                 <div id="player">
-                    <audio volume="1" id="audio1">  
-                    </audio>
+                    <audio volume="1" id="audio1"></audio>
                 </div> 
                 <div id="player2">
                     <audio volume="0.1" src="sounds/cumbuca.ogg" id="playerGongo"></audio>
                 </div>
 
+                
+    
+            
+            <div id="barrasProgress">
+
+
+                <div class="emoji">😩</div>
+                    <!-- <span id="triste" class="sliderzin">Triste</span> -->
+                    <label class="switch" style="visibility: visible; padding: 0;">
+                    <input type="checkbox" id="alegrometro" checked>
+                    <span class="slider round"></span>
+                    </label>
+                    <div class="emoji2">😄</div>
                 <p id="comoesta">
                     Bem-vindos navegantes! O Moodtation oferece pequenas sessões
                     de dois minutos para meditações, com um breve sinal antes e 
@@ -41,27 +51,10 @@
                     de dois minutos para meditações, com um breve sinal antes e 
                     sempre que acabar uma sessão. Sons da Natureza para te ajudar
                     a imergir e relaxar, diminuindo o estresse e ansiedade.
-                </p>
-                
-            
-            <div id="barrasProgress">
-                
-                    <div class="emoji">😩</div>
-                    <!-- <span id="triste" class="sliderzin">Triste</span> -->
-                    <label class="switch" style="visibility: visible; padding: 0;">
-                    <input type="checkbox" id="alegrometro" checked>
-                    <span class="slider round"></span>
-                    </label>
-                    <div class="emoji2">😄</div>
-                    
-                    <!-- <span id="alegre" class="sliderzin">Alegre</span>
-                    <p id="valoralegre" hidden>Valor: <span id="valor"></span></p> -->
-                    
+                </p>      
+                <p id="botaoImergir"><button id="imergir" class="button" type="button">Imergir</button></p>  
     
-            </div>
-
-                <p id="botaoImergir"><button id="imergir" class="button" type="button">Imergir</button></p>
-                
+            </div>            
                 <div id="licenseCopyright">
                 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
                     <img alt="Creative Commons License" style="border-width:0;width: 60px;" src="https://i.creativecommons.org/l/by/3.0/80x15.png" /></a>
@@ -70,9 +63,6 @@
                         Creative Commons Attribution 3.0 Unported License
                     </a>
                 </div>
-                <p>
-                    <button class="button" id="parar" role="button">Parar</button>
-                </p>
         </div>  
    
 <div id="section">
