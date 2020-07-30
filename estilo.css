@@ -6,6 +6,7 @@ html, body {
 	font-family: 'Kodchasan', sans-serif;
     margin: 0;
     padding: 0;
+    
      }
     body{
         background-image: url('./imgs/homepage.jpg');
@@ -71,6 +72,8 @@ html, body {
         box-shadow: 0px 1px 21px 5px white;
         transition-duration: 0.2s;
         color: #192F5E;
+        font-weight: bolder;
+        text-align: center;
     }
     
     .button#imergir:hover{
@@ -131,7 +134,7 @@ html, body {
         position: relative;
         margin: 0 auto;
         z-index: 1;
-        bottom: 25px;
+        bottom: 10px;
         left: 0;
         z-index: 9999;
     }
@@ -232,7 +235,7 @@ html, body {
         content: "";
         height: 35px;
         width: 35px;
-        left: 10px;
+        left: 8px;
         bottom: 10px;
         background-color: white;
         -webkit-transition: .4s;
@@ -560,88 +563,55 @@ html, body {
     @media (min-width: 320px) and (max-width: 480px) 
         {
            .LogoPage {
-            width: 70vw;
-            height: 25vh;
-            bottom: 20%;
-            left: 0;
+                width: 70vw;
+                height: 25vh;
+                bottom: 18%;
+                left: 0;
             }
 
-            #barrasProgress {
-                position: relative;
-                top: 0;
-                left: 0;
+            #barrasProgress { 
                 font-size: 32px;
-                display: inline-block;
             }
             html, body {
                 font-size: 1.4rem;
             }
 
             #comoesta, #comoesta2 {
-                width: 50vw;
                 font-size: 10px;
-                color: white;
-                position: relative;
-                margin: 0 auto;
-                background: #52b4c8;
                 border-radius: 25px;
                 padding: 25px;
-                top: 2%;
-                left: 0px;
-                text-align: justify;
-                z-index: 1;
             }
 
             .button {
-                background-color: white;
-                border: none;
                 padding: 8px 18px;
-                text-decoration: none;
                 font-size: 11px;
-                border-radius: 25px;
-                box-shadow: 0px 1px 21px 5px white;
-                transition-duration: 0.2s;
-                color: #192F5E;
-                font-weight: bolder;
-                text-align: center;
+            }
+
+            p#botaoImergir {
+                bottom: 20px;
             }
 
             .switch {
-                position: relative;
                 width: 50px;
-                z-index: 2;
                 height: 30px;
-                margin: auto 10px;
-                top: 25px;
-                left: 0;
-                display: inline-block;
             }
 
             .slider:before {
-                position: absolute;
-                content: "";
-                height: 17px;
-                width: 17px;
-                left: 4px;
-                bottom: 7px;
-                background-color: white;
-                -webkit-transition: .4s;
-                transition: .4s;
+                height: 20px;
+                width: 20px;
+                left: 5px;
+                bottom: 5px;
             }
 
             input:checked + .slider:before {
-                -webkit-transform: translateX(25px);
-                -ms-transform: translateX(25px);
-                transform: translateX(25px);
+                -webkit-transform: translateX(20px);
+                -ms-transform: translateX(20px);
+                transform: translateX(20px);
             }
 
             .emoji, .emoji2 {
                 font-size: 20px;
-                position: relative;
-                z-index: 2;
-                left: 0;
                 top: 16px;
-                display: inline-block;
             }
 
         }
@@ -651,16 +621,12 @@ html, body {
                 width: 70vw;
                 height: 25vh;
                 bottom: 20%;
-                left: 0;
             }
 
             #barrasProgress {
-                position: relative;
-                top: 0;
-                left: 0;
                 font-size: 32px;
-                display: inline-block;
             }
+
             html, body {
                 font-size: 1.4rem;
             }
@@ -674,49 +640,24 @@ html, body {
             }
 
             .button {
-                background-color: white;
-                border: none;
                 padding: 12px 24px;
-                text-decoration: none;
                 font-size: 11px;
-                border-radius: 25px;
-                box-shadow: 0px 1px 21px 5px white;
-                transition-duration: 0.2s;
-                color: #192F5E;
-                font-weight: bolder;
-                text-align: center;
             }
 
             p#botaoImergir {
-                position: relative;
-                margin: 0 auto;
-                z-index: 1;
-                bottom: 30px;
-                left: 0;
-                z-index: 9999;
+                bottom: 20px;
             }
 
             .switch {
-                position: relative;
                 width: 60px;
-                z-index: 2;
                 height: 35px;
-                margin: auto 10px;
-                top: 25px;
-                left: 0;
-                display: inline-block;
             }
 
             .slider:before {
-                position: absolute;
-                content: "";
                 height: 17px;
                 width: 17px;
                 left: 4px;
                 bottom: 9px;
-                background-color: white;
-                -webkit-transition: .4s;
-                transition: .4s;
             }
 
             input:checked + .slider:before {
@@ -727,11 +668,7 @@ html, body {
 
             .emoji, .emoji2 {
                 font-size: 18px;
-                position: relative;
-                z-index: 2;
-                left: 0;
                 top: 16px;
-                display: inline-block;
             }
     }
 
@@ -772,64 +709,42 @@ html, body {
         }
 
         .button {
-            background-color: white;
-            border: none;
             padding: 12px 24px;
-            text-decoration: none;
             font-size: 11px;
             border-radius: 25px;
-            box-shadow: 0px 1px 21px 5px white;
-            transition-duration: 0.2s;
-            color: #192F5E;
-            font-weight: bolder;
-            text-align: center;
         }
 
         p#botaoImergir {
             position: relative;
             margin: 0 auto;
             z-index: 1;
-            bottom: 30px;
+            bottom: 20px;
             left: 0;
             z-index: 9999;
         }
 
         .switch {
-            position: relative;
             width: 60px;
-            z-index: 2;
             height: 35px;
-            margin: auto 10px;
             top: 25px;
-            left: 0;
-            display: inline-block;
         }
 
         .slider:before {
-            position: absolute;
-            content: "";
-            height: 17px;
-            width: 17px;
-            left: 5px;
-            bottom: 9px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
+            height: 25px;
+            width: 25px;
+            left: 7px;
+            bottom: 5px;
         }
 
         input:checked + .slider:before {
-            -webkit-transform: translateX(34px);
-            -ms-transform: translateX(34px);
-            transform: translateX(34px);
+            -webkit-transform: translateX(22px);
+            -ms-transform: translateX(22px);
+            transform: translateX(22px);
         }
 
         .emoji, .emoji2 {
             font-size: 24px;
-            position: relative;
-            z-index: 2;
-            left: 0;
             top: 16px;
-            display: inline-block;
         }
     }
 
@@ -848,4 +763,6 @@ html, body {
             top: 20px;
         }
     }
+    
+
     
