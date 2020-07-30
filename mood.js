@@ -27,6 +27,7 @@ btnNext.addEventListener('click', nextSong, false);
 
 //chk humor
 checkbox.addEventListener('change', function(){
+    let root = document.documentElement;
     if(checkbox.checked) {
         //triste
         player.audioData = window.audiosNatureza;
@@ -35,9 +36,10 @@ checkbox.addEventListener('change', function(){
         textoBoasVindas2.style.display = 'none';
         novoFavicon = faviconTemplate`${emoji.textContent}`;
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
+        root.style.setProperty("--rangeAlegreCor", "#77B2C5");
+        root.style.setProperty("--PerguntaNextAlegre", "#192F5E");
     }
     else { 
-        
         //feliz
         player.audioData = window.audiosMeditativos;
         // emoji.textContent = '😄';
@@ -45,6 +47,8 @@ checkbox.addEventListener('change', function(){
         textoBoasVindas2.style.display = 'block';
         novoFavicon = faviconTemplate`${emoji.textContent}`
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
+        root.style.setProperty("--rangeAlegreCor", "#4C82B4");
+        root.style.setProperty("--PerguntaNextAlegre", "#77B2C5");
     }
 });
 
@@ -57,6 +61,7 @@ imergir.addEventListener('click', function() {
 
     //efeito de fadeout do container
     toggleClass(container, sectionOndas, 'hiddenElement');
+
 
     //animar section onda
     $('html, body').animate({
@@ -101,14 +106,14 @@ function Meditar() {
         ativarPlayer(); //animação player
         timerPlayer(); //controla o tempo
         
-        mudar.innerHTML = `Pausar &#${10074}&#${10074}`;
+        mudar.innerHTML = `pause`;
     } else {
         //pause
         pausePlayer(); //parar controlador do player
         $("#playerRange").roundSlider("option", "value", contadorPlayer)
         ativarPlayer(); //animação do player
        
-        mudar.innerHTML = `Play &#${9658}`;
+        mudar.innerHTML = `play_arrow`;
     }
 }
 
@@ -130,7 +135,7 @@ function nextSong() {
     setTimeout(() => {
         window.player.next(); //próxima meditação
         Meditar(); //inicia nova meditação
-        mudar.innerHTML = `Pausar &#${10074}&#${10074}`
+        mudar.innerHTML = `pause`
     }, 5000);
     
 }
@@ -158,7 +163,7 @@ function timerPlayer() {
 //parar controlador
 function pausePlayer(){
     clearTimeout(tempo_do_contador)
-    mudar.innerHTML = `Play &#${9658}`
+    mudar.innerHTML = `play_arrow`
 };
 
 //show/hidden element

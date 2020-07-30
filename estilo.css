@@ -3,7 +3,8 @@ html, body {
     width: 100%;
     overflow: hidden;
     justify-content: center;    
-	font-family: 'Kodchasan', sans-serif;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: bolder;
     margin: 0;
     padding: 0;
     
@@ -23,9 +24,18 @@ html, body {
         bottom: 18%;
     }
 
+    #comoSente{
+        position: relative;
+        margin: 0 auto;
+        font-size: 16px;
+        left: 0;
+        top: 10px;
+        color: white;
+    }
+
     #section {
         min-height: 100%;
-        background-color: #00a8cc;        
+        background-color: #00a8cc;      
     }
 
     .container{
@@ -138,6 +148,11 @@ html, body {
         bottom: 10px;
         left: 0;
         z-index: 9999;
+    }
+
+    #Imergir:focus{
+        outline: none;
+        box-shadow: none;
     }
 
     .setaBaixo {
@@ -291,11 +306,15 @@ html, body {
     :root{
         --transition-duration: 120s;
         --transition-timing-function: linear;
+        --rangeTristeCor: #275793;
+        --rangeAlegreCor: #6E5C97;
+        --PerguntaNextTriste: #77B2C5;
+        --PerguntaNextAlegre: #192F5E;
     }
 
     .rs-inner.rs-bg-color.rs-border{
         border: 0;
-        background-color: rgb(17, 91, 228);
+        background-color: white;
     }
 
     .rs-block.rs-outer.rs-border.rs-split{
@@ -303,11 +322,15 @@ html, body {
     }
 
     #playerRange .rs-path-color {
-        background-color: rgb(17, 91, 228);
+        background-color: var(--rangeAlegreCor);
     }
 
     #playerRange .rs-range-color {
         background-color: white;
+    }
+
+    #playerRange .rs-bg-color {
+        background-color: var(--rangeAlegreCor);
     }
 
     /* #playerRange.rs-animation .rs-transition {
@@ -320,32 +343,46 @@ html, body {
     }
 
     #buttonM {
-        position: absolute;
+        position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 25px;
+        border: none;
+        background: none;
+        font-size: 70px;
+        color: white;
+    
+    }
+
+    #buttonM:focus{
+        outline: none;
+        box-shadow: none;
     }
 
     #NextMeditation {
         position: absolute;
         top: 66%;
-        left: 60%;
+        left: 51%;
         transform: translate(-50%, -50%);
-        height: 25px;
     }
 
     #perguntaNext {
-        position: absolute;
+        position: fixed;
         top: 66%;
-        left: 34%;
+        left: 50%;
         transform: translate(-50%, -50%);
-        height: 24px;
-        font-size: 19px;
+        height: 18px;
+        width: 206px;
+        font-size: 11px;
         color: white;
-        margin: 0 auto;
-        background: rgb(17, 91, 228); 
-        transition: 2s ease-in-out;  
+        margin: 0px auto;
+        padding: 5px;
+        border-radius: 50px;
+        background: var(--PerguntaNextAlegre);
+        transition: 2s ease-in-out;
+        font-weight: 100;
+        font-style: italic;
+        text-align: center;
     }
 
     .hiddenElement {
@@ -365,6 +402,10 @@ html, body {
         top: 0;
         bottom: 0;
         transition: 5s ease-in-out;
+        background-image: url(./imgs/Medplayer.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     #inputRange {
@@ -385,6 +426,7 @@ html, body {
     #comoesta , #comoesta2{
         width: 50vw;
         font-size: 18px;
+        font-weight: 400;
         color: white;
         position: relative;
         margin: 0 auto;
@@ -557,7 +599,7 @@ html, body {
            .LogoPage {
                 width: 70vw;
                 height: 25vh;
-                bottom: 20%;
+                bottom: 15%;
                 left: 0;
             }
 
@@ -604,6 +646,10 @@ html, body {
             .emoji, .emoji2 {
                 font-size: 20px;
                 top: 16px;
+            }
+
+            .secao3 {
+                background-image: url(./imgs/rangeTenso3.jpg);
             }
 
         }
@@ -662,6 +708,10 @@ html, body {
                 font-size: 18px;
                 top: 16px;
             }
+
+            .secao3 {
+                background-image: url(./imgs/rangeTenso3.jpg);
+            }
     }
 
     @media (min-width: 768px) and (max-width: 1024px)
@@ -669,7 +719,7 @@ html, body {
         .LogoPage {
             width: 50vw;
             height: 25vh;
-            bottom: 20%;
+            bottom: 15%;
             left: 0;
         }
 
@@ -738,12 +788,16 @@ html, body {
             font-size: 24px;
             top: 16px;
         }
+
+        .secao3 {
+            background-image: url(./imgs/rangeTenso3.jpg);
+        }
     }
 
     @media (min-width: 1281px) 
     {
         .LogoPage {
-            bottom: 17%;
+            bottom: 14%;
         }
 
         .emoji, .emoji2 {
@@ -751,8 +805,17 @@ html, body {
             top: 50px;
         }
 
-        #barraProgress {
-            top: 20px;
+        #barrasProgress {
+            top: 25px;
+        }
+
+        #comoSente{
+            font-size: 28px;
+            top: 35px;
+        }
+
+        .secao3 {
+            background-image: url(./imgs/Medplayer.jpg);
         }
     }
     
