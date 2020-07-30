@@ -56,23 +56,24 @@ checkbox.addEventListener('change', function(){
 imergir.addEventListener('click', function() {
     var speed = 5000;
 
-    //playerGongo é o inicio da meditação quando sobe a onda
-    playerGongo.play()
-
-    //efeito de fadeout do container
-    toggleClass(container, sectionOndas, 'hiddenElement');
-
-
     //animar section onda
     $('html, body').animate({
         scrollTop: $("#section").offset().top
     }, speed);
 
+    //playerGongo é o inicio da meditação quando sobe a onda
     setTimeout(() => {
         toggleClass(sectionOndas, secao3, 'hiddenElement');
+        playerGongo.play() 
+    }, 5000);
+    
+    //efeito de fadeout do container
+    toggleClass(container, sectionOndas, 'hiddenElement');
+
+    setTimeout(() => {
         window.player.start(); //iniciar o player
         Meditar(); //meditação
-    }, speed)
+    }, 5000)
 });
 
 //player jQuery

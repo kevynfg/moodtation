@@ -150,10 +150,7 @@ html, body {
         z-index: 9999;
     }
 
-    #Imergir:focus{
-        outline: none;
-        box-shadow: none;
-    }
+    
 
     .setaBaixo {
         border: solid white;
@@ -359,11 +356,17 @@ html, body {
         box-shadow: none;
     }
 
+
     #NextMeditation {
         position: absolute;
         top: 66%;
         left: 51%;
         transform: translate(-50%, -50%);
+    }
+
+    #imergir:focus{
+        outline: none;
+        box-shadow: none;
     }
 
     #perguntaNext {
