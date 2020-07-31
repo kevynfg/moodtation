@@ -202,7 +202,7 @@ html, body {
     }
 
     .emoji, .emoji2{
-        top: 30px;
+        top: 50px;
         font-size: 32px;
         position: relative;
         z-index: 2;
@@ -249,6 +249,11 @@ html, body {
         background-color: white;
         -webkit-transition: .4s;
         transition: .4s;
+      }
+
+      .slider:focus{
+          outline: none;
+          box-shadow: none;
       }
 
       input:checked + .slider {
@@ -307,6 +312,8 @@ html, body {
         --rangeAlegreCor: #6E5C97;
         --PerguntaNextTriste: #77B2C5;
         --PerguntaNextAlegre: #192F5E;
+        --UrlAlegre: url(./imgs/imagemAlegre.jpg);
+        --UrlTriste: url(./imgs/imagemTriste.jpg);
     }
 
     .rs-inner.rs-bg-color.rs-border{
@@ -348,7 +355,43 @@ html, body {
         background: none;
         font-size: 70px;
         color: white;
-    
+    }
+
+    #btnContinuar {
+        padding: 8px 8px;
+        font-size: 12px;
+        position: absolute;
+        top: 72%;
+        left: 46%;
+        transform: translate(-50%, -50%);
+        border: none;
+        background: white;
+        box-shadow: none;
+        color: #192F5E;
+        height: 30px;
+        width: 95px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    #btnVoltar {
+        padding: 8px 18px;
+        font-size: 12px;
+        position: absolute;
+        top: 72%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        border: none;
+        background: white;
+        color: #192F5E;
+        height: 30px;
+        width: 95px;
+        display: inline-block;
+    }
+
+    #btnVoltar, #btnContinuar:focus{
+        outline: none;
+        box-shadow: none;
     }
 
     #buttonM:focus{
@@ -362,6 +405,7 @@ html, body {
         top: 66%;
         left: 51%;
         transform: translate(-50%, -50%);
+        box-shadow: 0px 1px 20px 2px white;
     }
 
     #imergir:focus{
@@ -369,23 +413,34 @@ html, body {
         box-shadow: none;
     }
 
-    #perguntaNext {
+    #NextMeditation:focus{
+        outline: none;
+        box-shadow: none;
+    }
+
+    #perguntaNext, #perguntaFim {
         position: fixed;
         top: 66%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 18px;
-        width: 206px;
-        font-size: 11px;
+        height: 35px;
+        width: 260px;
+        font-size: 14px;
         color: white;
         margin: 0px auto;
-        padding: 5px;
+        padding: 5px 10px;
         border-radius: 50px;
         background: var(--PerguntaNextAlegre);
-        transition: 2s ease-in-out;
+        transition: 1s ease-in-out;
         font-weight: 100;
         font-style: italic;
+        line-height: 35px;
         text-align: center;
+    }
+
+    #perguntaFim{
+        font-size: 12px;
+        width: 420px;
     }
 
     .hiddenElement {
@@ -405,7 +460,7 @@ html, body {
         top: 0;
         bottom: 0;
         transition: 5s ease-in-out;
-        background-image: url(./imgs/Medplayer.jpg);
+        background-image: var(--UrlAlegre);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -435,7 +490,7 @@ html, body {
         margin: 0 auto;
         background: #52b4c8;
         border-radius: 35px;
-        padding: 45px;
+        padding: 35px;
         top: 2%;
         left: 0px;
         text-align: justify;
@@ -651,10 +706,30 @@ html, body {
                 top: 16px;
             }
 
-            .secao3 {
-                background-image: url(./imgs/rangeTenso3.jpg);
+            #perguntaNext{
+                font-size: 11px;
+                width: 200px;
             }
 
+            #perguntaFim {
+                font-size: 8px;
+                width: 270px;
+                padding: 5px 10px;
+            }
+
+            #btnContinuar {
+                padding: 8px 8px;
+                font-size: 11px;
+                top: 75%;
+                left: 35%;
+            }
+
+            #btnVoltar {
+                padding: 8px 18px;
+                font-size: 11px;
+                top: 75%;
+                left: 68%;
+            }
         }
 
     @media (min-width: 481px) and (max-width: 767px) {
@@ -674,10 +749,6 @@ html, body {
 
             #comoesta, #comoesta2 {
                 font-size: 11px;
-            }
-
-            .emoji, .emoji2 {
-                font-size: 24px;
             }
 
             .button {
@@ -708,12 +779,9 @@ html, body {
             }
 
             .emoji, .emoji2 {
-                font-size: 18px;
-                top: 16px;
-            }
-
-            .secao3 {
-                background-image: url(./imgs/rangeTenso3.jpg);
+                font-size: 28px;
+                top: 20px;
+                top: 67%;
             }
     }
 
@@ -792,8 +860,14 @@ html, body {
             top: 16px;
         }
 
-        .secao3 {
-            background-image: url(./imgs/rangeTenso3.jpg);
+        #btnContinuar{
+            top: 75%;
+            left: 45%;
+        }
+
+        #btnVoltar{
+            top: 75%;
+            left: 56%;
         }
     }
 
@@ -817,9 +891,20 @@ html, body {
             top: 35px;
         }
 
-        .secao3 {
-            background-image: url(./imgs/Medplayer.jpg);
+        #perguntaNext{
+            height: 40px;
         }
+
+        #btnContinuar{
+            top: 75%;
+            left: 46%;
+        }
+
+        #btnVoltar{
+            top: 75%;
+            left: 55%;
+        }
+
     }
     
 

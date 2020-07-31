@@ -7,6 +7,7 @@ player,
 checkbox = document.getElementById('alegrometro'),
 emoji = document.querySelector('.emoji'),
 perguntaNext = document.getElementById('perguntaNext'),
+perguntaFim = document.getElementById('perguntaFim'),
 meuRange = document.getElementById('playerRange'),
 clickPlay = document.getElementById('buttonM'),
 playerGongo = document.getElementById("playerGongo"),
@@ -16,7 +17,7 @@ btnNext = document.getElementById('NextMeditation'),
 textoBoasVindas = document.getElementById('comoesta'),
 textoBoasVindas2 = document.getElementById('comoesta2'),
 contadorPlayer = 0,
-controladorPlayer = false,
+tempo_maximo_player = 0,
 tempo_do_contador;
 
 //btn play/pause
@@ -28,7 +29,7 @@ btnNext.addEventListener('click', nextSong, false);
 //chk humor
 checkbox.addEventListener('change', function(){
     let root = document.documentElement;
-    if(checkbox.checked) {
+    if(!checkbox.checked) {
         //triste
         player.audioData = window.audiosNatureza;
         // emoji.textContent = '😩';
@@ -70,6 +71,13 @@ imergir.addEventListener('click', function() {
     //efeito de fadeout do container
     toggleClass(container, sectionOndas, 'hiddenElement');
 
+    if (!checkbox.checked) {
+        tempo_maximo_player = 180;
+    } else {
+        tempo_maximo_player = 360;
+    }
+    
+
     setTimeout(() => {
         window.player.start(); //iniciar o player
         Meditar(); //meditação
@@ -81,7 +89,7 @@ function ativarPlayer() {
     $("#playerRange").roundSlider({
         sliderType: "range",
         min: 0,
-        max: 30,
+        max: tempo_maximo_player,
         value: contadorPlayer,
         startValue: 1,
         showTooltip: false,
@@ -152,13 +160,23 @@ function timerPlayer() {
     $("#playerRange").roundSlider("option", "value", contadorPlayer)
 
     //Tempo que roda em volta do player
-    tempo_do_contador = setTimeout(timerPlayer, 500);
+    tempo_do_contador = setTimeout(timerPlayer, 50);
 
     //fim da meditação
-    if(contadorPlayer == 30) {
+    if (contadorPlayer == 180 && !checkbox.checked){
+        window.player.togglePlayPause();
+        nextSong(); 
+    } else if(contadorPlayer == 360 && checkbox.checked) {
         window.player.togglePlayPause();
         nextSong();        
-    }    
+    } else if (window.player.currentPlaying == window.player.audioData.length) {
+        pausePlayer();
+        window.player.pause();
+        playerGongo.play() //sinal final
+        mudar.classList.add('hiddenElement');
+        toggleClass(perguntaNext, perguntaFim, 'hiddenElement');
+
+    }
 };
 
 //parar controlador
