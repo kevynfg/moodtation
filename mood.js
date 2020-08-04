@@ -6,6 +6,7 @@ sectionOndas = document.getElementById('section'),
 player,        
 checkbox = document.getElementById('alegrometro'),
 emoji = document.querySelector('.emoji'),
+emoji2 = document.querySelector('.emoji2'),
 perguntaNext = document.getElementById('perguntaNext'),
 perguntaFim = document.getElementById('perguntaFim'),
 meuRange = document.getElementById('playerRange'),
@@ -39,6 +40,8 @@ checkbox.addEventListener('change', function(){
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
         root.style.setProperty("--rangeAlegreCor", "#77B2C5");
         root.style.setProperty("--PerguntaNextAlegre", "#192F5E");
+        emoji2.style.opacity = '0.2';
+        emoji.style.opacity = '1';
     }
     else { 
         //feliz
@@ -50,6 +53,8 @@ checkbox.addEventListener('change', function(){
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
         root.style.setProperty("--rangeAlegreCor", "#4C82B4");
         root.style.setProperty("--PerguntaNextAlegre", "#77B2C5");
+        emoji.style.opacity = '0.2';
+        emoji2.style.opacity = '1';
     }
 });
 

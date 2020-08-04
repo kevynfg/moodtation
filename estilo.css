@@ -21,7 +21,7 @@ html, body {
         position: relative;
         width: 70vw;
         height: 10vh;
-        bottom: 18%;
+        bottom: 13%;
     }
 
     #comoSente{
@@ -136,7 +136,7 @@ html, body {
 
     #barrasProgress {
         position: relative;
-        top: 0;
+        top: 13%;
         left: 0;
         display: inline-block;
     }
@@ -208,6 +208,7 @@ html, body {
         z-index: 2;
         left: 0;
         display: inline-block;
+        opacity: 1;
     }
 
     .switch{
@@ -402,8 +403,8 @@ html, body {
 
     #NextMeditation {
         position: absolute;
-        top: 66%;
-        left: 51%;
+        top: 70%;
+        left: 50%;
         transform: translate(-50%, -50%);
         box-shadow: 0px 1px 20px 2px white;
     }
@@ -420,7 +421,7 @@ html, body {
 
     #perguntaNext, #perguntaFim {
         position: fixed;
-        top: 66%;
+        top: 71%;
         left: 50%;
         transform: translate(-50%, -50%);
         height: 35px;
@@ -464,6 +465,7 @@ html, body {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        max-width: 100%;
     }
 
     #inputRange {
@@ -484,6 +486,7 @@ html, body {
     #comoesta , #comoesta2{
         width: 50vw;
         font-size: 18px;
+        /* font-family: 'Kodchasan', sans-serif; */
         font-weight: 400;
         color: white;
         position: relative;
@@ -657,12 +660,13 @@ html, body {
            .LogoPage {
                 width: 70vw;
                 height: 25vh;
-                bottom: 15%;
+                bottom: 8%;
                 left: 0;
             }
 
             #barrasProgress { 
                 font-size: 32px;
+                top: 10%;
             }
             html, body {
                 font-size: 1.4rem;
@@ -789,14 +793,14 @@ html, body {
     {
         .LogoPage {
             width: 50vw;
-            height: 25vh;
-            bottom: 15%;
+            height: 10vh;
+            bottom: 10%;
             left: 0;
         }
 
         #barrasProgress {
             position: relative;
-            top: 0;
+            top: 14%;
             left: 0;
             font-size: 32px;
             display: inline-block;
@@ -806,8 +810,7 @@ html, body {
         }
 
         #comoesta, #comoesta2 {
-            width: 55vw;
-            height: 15vh;
+            width: 60vw;
             font-size: 14px;
             color: white;
             position: relative;
