@@ -15,6 +15,8 @@ playerGongo = document.getElementById("playerGongo"),
 secao3 = document.getElementById('secao3'),
 mudar = document.querySelector(".buttonM"),
 btnNext = document.getElementById('NextMeditation'),
+btnContinuar = document.getElementById('btnContinuar'),
+btnVoltar = document.getElementById('btnVoltar'),
 textoBoasVindas = document.getElementById('comoesta'),
 textoBoasVindas2 = document.getElementById('comoesta2'),
 contadorPlayer = 0,
@@ -27,10 +29,26 @@ mudar.addEventListener('click', Meditar, false);
 //btn next song
 btnNext.addEventListener('click', nextSong, false);
 
+//btn Continuar meditação
+btnContinuar.addEventListener('click', () => {
+    nextSong
+    window.player.next(); //próxima meditação
+    Meditar(); //inicia nova meditação
+    toggleClass(perguntaFim, perguntaNext, 'hiddenElement');
+    btnVoltar.classList.add('hiddenElement');
+    btnContinuar.classList.add('hiddenElement');
+
+}, false);
+
+//btn Voltar para home
+btnVoltar.addEventListener('click', ()=> {
+    location.reload();
+}, false);
+
 //chk humor
 checkbox.addEventListener('change', function(){
     let root = document.documentElement;
-    if(!checkbox.checked) {
+    if(checkbox.checked == false) {
         //triste
         player.audioData = window.audiosNatureza;
         // emoji.textContent = '😩';
@@ -40,10 +58,12 @@ checkbox.addEventListener('change', function(){
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
         root.style.setProperty("--rangeAlegreCor", "#77B2C5");
         root.style.setProperty("--PerguntaNextAlegre", "#192F5E");
+        secao3.style.backgroundImage = "url('./imgs/imagemTriste.jpg')";
         emoji2.style.opacity = '0.2';
         emoji.style.opacity = '1';
+        console.log(checkbox.checked)
     }
-    else { 
+    else if (checkbox.checked == true) { 
         //feliz
         player.audioData = window.audiosMeditativos;
         // emoji.textContent = '😄';
@@ -53,8 +73,10 @@ checkbox.addEventListener('change', function(){
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
         root.style.setProperty("--rangeAlegreCor", "#4C82B4");
         root.style.setProperty("--PerguntaNextAlegre", "#77B2C5");
+        secao3.style.backgroundImage = "url('./imgs/imagemAlegre.jpg')";
         emoji.style.opacity = '0.2';
         emoji2.style.opacity = '1';
+        console.log(checkbox.checked)
     }
 });
 
@@ -119,14 +141,14 @@ function Meditar() {
         //play
         ativarPlayer(); //animação player
         timerPlayer(); //controla o tempo
-        
+        btnVoltar.classList.add('hiddenElement');
         mudar.innerHTML = `pause`;
     } else {
         //pause
         pausePlayer(); //parar controlador do player
         $("#playerRange").roundSlider("option", "value", contadorPlayer)
         ativarPlayer(); //animação do player
-       
+        btnVoltar.classList.remove('hiddenElement');
         mudar.innerHTML = `play_arrow`;
     }
 }
@@ -145,13 +167,25 @@ function nextSong() {
 
     window.player.pause(); //Pausa o player
 
-    //depois de 5s iniciar próxima meditação
-    setTimeout(() => {
-        window.player.next(); //próxima meditação
-        Meditar(); //inicia nova meditação
-        mudar.innerHTML = `pause`
-    }, 5000);
-    
+    if (window.player.currentPlaying+1 == window.player.audioData.length) {
+        pausePlayer();
+        window.player.pause();
+        playerGongo.play() //sinal final
+        mudar.classList.add('hiddenElement');
+        toggleClass(perguntaNext, perguntaFim, 'hiddenElement');
+        btnVoltar.classList.remove('hiddenElement');
+        btnContinuar.classList.remove('hiddenElement');
+        console.log('entrou')
+
+    } else {
+        //depois de 5s iniciar próxima meditação
+        setTimeout(() => {
+            window.player.next(); //próxima meditação
+            Meditar(); //inicia nova meditação
+            mudar.innerHTML = `pause`
+        }, 5000);
+    }
+
 }
 
 //controlador do tempo
@@ -173,15 +207,16 @@ function timerPlayer() {
         nextSong(); 
     } else if(contadorPlayer == 360 && checkbox.checked) {
         window.player.togglePlayPause();
-        nextSong();        
-    } else if (window.player.currentPlaying == window.player.audioData.length) {
-        pausePlayer();
-        window.player.pause();
-        playerGongo.play() //sinal final
-        mudar.classList.add('hiddenElement');
-        toggleClass(perguntaNext, perguntaFim, 'hiddenElement');
+        nextSong();    
+    }    
+    // } else if (window.player.currentPlaying == window.player.audioData.length) {
+    //     pausePlayer();
+    //     window.player.pause();
+    //     playerGongo.play() //sinal final
+    //     mudar.classList.add('hiddenElement');
+    //     toggleClass(perguntaNext, perguntaFim, 'hiddenElement');
 
-    }
+    // }
 };
 
 //parar controlador

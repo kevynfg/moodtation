@@ -21,7 +21,7 @@ html, body {
         position: relative;
         width: 70vw;
         height: 10vh;
-        bottom: 13%;
+        bottom: 11%;
     }
 
     #comoSente{
@@ -461,7 +461,7 @@ html, body {
         top: 0;
         bottom: 0;
         transition: 5s ease-in-out;
-        background-image: var(--UrlAlegre);
+        background-image: url(./imgs/imagemAlegre.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -724,14 +724,14 @@ html, body {
             #btnContinuar {
                 padding: 8px 8px;
                 font-size: 11px;
-                top: 75%;
+                top: 80%;
                 left: 35%;
             }
 
             #btnVoltar {
                 padding: 8px 18px;
                 font-size: 11px;
-                top: 75%;
+                top: 80%;
                 left: 68%;
             }
         }
@@ -877,7 +877,7 @@ html, body {
     @media (min-width: 1281px) 
     {
         .LogoPage {
-            bottom: 14%;
+            bottom: 20%;
         }
 
         .emoji, .emoji2 {
