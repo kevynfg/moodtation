@@ -3,45 +3,21 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './src/database/db.sqlite'
-    },
-  migrations: {
-    directory: './src/database/migrations'
-  },
-    useNullAsDefault: true
-  },
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
+      database: "moodtation",
+      user: "postgres",
+      password: "m@ry"
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
-
-  production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      tableName: 'knex_migrations',
+      //define o diretório onde o database vai ser instalado
+      //com __dirname (variavel global) que é a pasta src no caso usado
+      //instalando com npx knex migrate:make create_table_users
+      directory: `${__dirname}/src/database/migrations`
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
+    seeds: { 
+    directory: `${__dirname}/src/database/seeds`
     }
   }
-
 };

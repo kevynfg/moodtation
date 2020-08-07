@@ -24,7 +24,6 @@ module.exports = {
         city,
         uf,
     });
-
     
     return response.json({ id, name, email });
     }

@@ -2,10 +2,10 @@
   "name": "moodtation",
   "version": "1.0.0",
   "description": "Hey, Kevyn here. First i want to say this is a personal project, after seeing the exponential growing on meditation apps i wanted to give it a try to give some comfort and care to the world.",
-  "main": "coisas.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon login.js"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,13 +19,13 @@
   },
   "homepage": "https://github.com/kevynfg/moodtation#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jplayer": "^2.9.2",
-    "knex": "^0.21.0",
+    "knex": "^0.21.2",
     "lodash.update": "^4.10.2",
+    "pg": "^8.3.0",
     "sqlite3": "^4.1.1"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  }
+  "devDependencies": {}
 }
