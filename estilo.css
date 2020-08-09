@@ -360,7 +360,7 @@ html, body {
 
     #btnContinuar {
         padding: 8px 8px;
-        font-size: 12px;
+        font-size: 14px;
         position: absolute;
         top: 72%;
         left: 46%;
@@ -369,8 +369,8 @@ html, body {
         background: white;
         box-shadow: none;
         color: #192F5E;
-        height: 30px;
-        width: 95px;
+        height: 40px;
+        width: 110px;
         text-align: center;
         display: inline-block;
     }
@@ -385,8 +385,8 @@ html, body {
         border: none;
         background: white;
         color: #192F5E;
-        height: 30px;
-        width: 95px;
+        height: 40px;
+        width: 110px;
         display: inline-block;
     }
 
@@ -724,15 +724,15 @@ html, body {
             #btnContinuar {
                 padding: 8px 8px;
                 font-size: 11px;
-                top: 80%;
-                left: 35%;
+                top: 82%;
+                left: 31%;
             }
 
             #btnVoltar {
                 padding: 8px 18px;
                 font-size: 11px;
-                top: 80%;
-                left: 68%;
+                top: 82%;
+                left: 72%;
             }
         }
 
