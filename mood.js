@@ -7,13 +7,13 @@ player,
 checkbox = document.getElementById('alegrometro'),
 emoji = document.querySelector('.emoji'),
 emoji2 = document.querySelector('.emoji2'),
-perguntaNext = document.getElementById('perguntaNext'),
-perguntaFim = document.getElementById('perguntaFim'),
+perguntaNext = document.querySelector('#perguntaNext'),
+perguntaFim = document.querySelector('#perguntaFim'),
 meuRange = document.getElementById('playerRange'),
 clickPlay = document.getElementById('buttonM'),
 playerGongo = document.getElementById("playerGongo"),
 secao3 = document.getElementById('secao3'),
-mudar = document.querySelector(".buttonM"),
+mudar = document.querySelector(".meditar"),
 btnNext = document.getElementById('NextMeditation'),
 btnContinuar = document.getElementById('btnContinuar'),
 btnSair = document.getElementById('btnSair'),
@@ -35,7 +35,8 @@ btnContinuar.addEventListener('click', () => {
     nextSong
     window.player.next(); //próxima meditação
     Meditar(); //inicia nova meditação
-    toggleClass(perguntaFim, perguntaNext, 'hiddenElement');
+    perguntaFim.classList.add('hiddenElement');
+    // toggleClass(perguntaFim, perguntaNext, 'hiddenElement');
     btnVoltar.classList.add('hiddenElement');
     btnContinuar.classList.add('hiddenElement');
 
@@ -64,7 +65,7 @@ checkbox.addEventListener('change', function(){
         novoFavicon = faviconTemplate`${emoji.textContent}`;
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
         root.style.setProperty("--rangeAlegreCor", "#77B2C5");
-        root.style.setProperty("--PerguntaNextAlegre", "#192F5E");
+        root.style.setProperty("--perguntaNextAlegre", "#192F5E");
         secao3.style.backgroundImage = "url('./imgs/imagemTriste.jpg')";
         emoji2.style.opacity = '0.2';
         emoji.style.opacity = '1';
@@ -79,7 +80,7 @@ checkbox.addEventListener('change', function(){
         novoFavicon = faviconTemplate`${emoji.textContent}`
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
         root.style.setProperty("--rangeAlegreCor", "#4C82B4");
-        root.style.setProperty("--PerguntaNextAlegre", "#77B2C5");
+        root.style.setProperty("--perguntaNextAlegre", "#77B2C5");
         secao3.style.backgroundImage = "url('./imgs/imagemAlegre.jpg')";
         emoji.style.opacity = '0.2';
         emoji2.style.opacity = '1';
