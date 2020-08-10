@@ -16,6 +16,7 @@ secao3 = document.getElementById('secao3'),
 mudar = document.querySelector(".buttonM"),
 btnNext = document.getElementById('NextMeditation'),
 btnContinuar = document.getElementById('btnContinuar'),
+btnSair = document.getElementById('btnSair'),
 btnVoltar = document.getElementById('btnVoltar'),
 textoBoasVindas = document.getElementById('comoesta'),
 textoBoasVindas2 = document.getElementById('comoesta2'),
@@ -44,6 +45,11 @@ btnContinuar.addEventListener('click', () => {
 btnVoltar.addEventListener('click', ()=> {
     location.reload();
 }, false);
+
+//btn Voltar para home
+// btnSair.addEventListener('click', ()=> {
+//     location.reload();
+// }, false);
 
 //chk humor
 checkbox.addEventListener('change', function(){
@@ -141,14 +147,14 @@ function Meditar() {
         //play
         ativarPlayer(); //animação player
         timerPlayer(); //controla o tempo
-        btnVoltar.classList.add('hiddenElement');
+        // btnSair.classList.add('hiddenElement');
         mudar.innerHTML = `pause`;
     } else {
         //pause
         pausePlayer(); //parar controlador do player
         $("#playerRange").roundSlider("option", "value", contadorPlayer)
         ativarPlayer(); //animação do player
-        btnVoltar.classList.remove('hiddenElement');
+        // btnSair.classList.remove('hiddenElement');
         mudar.innerHTML = `play_arrow`;
     }
 }

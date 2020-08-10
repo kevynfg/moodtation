@@ -297,10 +297,7 @@ html, body {
     }
 
     #playerRange {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin: auto;
         opacity: 1;
     }
 
@@ -348,10 +345,7 @@ html, body {
     }
 
     #buttonM {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        z-index: 999;
         border: none;
         background: none;
         font-size: 70px;
@@ -361,10 +355,6 @@ html, body {
     #btnContinuar {
         padding: 8px 8px;
         font-size: 14px;
-        position: absolute;
-        top: 72%;
-        left: 46%;
-        transform: translate(-50%, -50%);
         border: none;
         background: white;
         box-shadow: none;
@@ -378,10 +368,6 @@ html, body {
     #btnVoltar {
         padding: 8px 18px;
         font-size: 12px;
-        position: absolute;
-        top: 72%;
-        left: 55%;
-        transform: translate(-50%, -50%);
         border: none;
         background: white;
         color: #192F5E;
@@ -402,10 +388,6 @@ html, body {
 
 
     #NextMeditation {
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         box-shadow: 0px 1px 20px 2px white;
     }
 
@@ -442,6 +424,15 @@ html, body {
     #perguntaFim{
         font-size: 12px;
         width: 420px;
+    }
+
+    #blocoSection3 {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        z-index: 999;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
 
     .hiddenElement {
@@ -666,7 +657,7 @@ html, body {
 
             #barrasProgress { 
                 font-size: 32px;
-                top: 10%;
+                top: 9%;
             }
             html, body {
                 font-size: 1.4rem;
