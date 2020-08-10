@@ -47,9 +47,10 @@ btnVoltar.addEventListener('click', ()=> {
 }, false);
 
 //btn Voltar para home
-// btnSair.addEventListener('click', ()=> {
-//     location.reload();
-// }, false);
+btnSair.addEventListener('click', ()=> {
+    location.reload();
+    btnSair.classList.add('hiddenElement');
+}, false);
 
 //chk humor
 checkbox.addEventListener('change', function(){
@@ -110,10 +111,10 @@ imergir.addEventListener('click', function() {
         tempo_maximo_player = 360;
     }
     
-
     setTimeout(() => {
         window.player.start(); //iniciar o player
         Meditar(); //meditação
+        btnSair.classList.remove('hiddenElement');
     }, 5000)
 });
 
