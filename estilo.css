@@ -741,6 +741,10 @@ html, body {
                 top: 35px;
                 font-size: 2.6rem;
             }
+
+            #comoesta, #comoesta2 {
+                width: 70vw;
+            }
         }
         @media (min-width: 1024px) {
             #spanNext {

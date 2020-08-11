@@ -17,103 +17,86 @@
 
 </script>
 <body>
-        <div id="container" class="container flex">
-            <img class="LogoPage" src="./logo/Logo.svg" alt="LogoPage"> 
+    <div id="container" class="container flex">
+        <img class="LogoPage" src="./logo/Logo.svg" alt="LogoPage"> 
+            <div id="player">
+                <audio volume="1" id="audio1"></audio>
+            </div> 
+            <div id="player2">
+                <audio volume="0.1" src="sounds/cumbuca.mp3" id="playerGongo"></audio>
+            </div>
+        <div id="barrasProgress">
+            <p id="comoSente">COMO SE SENTE?</p>
+            <div class="emoji">😩</div>
+                <!-- <span id="triste" class="sliderzin">Triste</span> -->
+                <label class="switch" style="visibility: visible; padding: 0;">
+                <input type="checkbox" id="alegrometro" checked>
+                <span class="slider round"></span>
+                </label>
+                <div class="emoji2">😄</div>
+            <p id="comoesta">
+                Bem-vindos navegantes! O Moodtation oferece pequenas sessões
+                de dois minutos para meditações, com um breve sinal antes e 
+                sempre que acabar uma sessão. Sons para meditação para te ajudar
+                a imergir e relaxar, diminuindo o estresse e ansiedade. Regule o volume de seu fone/caixa de som, caso contrário o volume
+                pode começar muito alto!
+            </p>
+            <p id="comoesta2">
+                Bem-vindos navegantes! O Moodtation oferece pequenas sessões
+                de dois minutos para meditações, com um breve sinal antes e 
+                sempre que acabar uma sessão. Sons da Natureza para te ajudar
+                a imergir e relaxar, diminuindo o estresse e ansiedade. Regule o volume de seu fone/caixa de som, caso contrário o volume
+                pode começar muito alto!
+            </p>>     
+            <p id="botaoImergir"><button id="imergir" class="button" type="button">IMERGIR</button></p>  
 
-                <div id="player">
-                    <audio volume="1" id="audio1"></audio>
-                </div> 
-                <div id="player2">
-                    <audio volume="0.1" src="sounds/cumbuca.mp3" id="playerGongo"></audio>
-                </div>
-
-                
-    
-            
-            <div id="barrasProgress">
-
-                <p id="comoSente">COMO SE SENTE?</p>
-                <div class="emoji">😩</div>
-                    <!-- <span id="triste" class="sliderzin">Triste</span> -->
-                    <label class="switch" style="visibility: visible; padding: 0;">
-                    <input type="checkbox" id="alegrometro" checked>
-                    <span class="slider round"></span>
-                    </label>
-                    <div class="emoji2">😄</div>
-                <p id="comoesta">
-                    Bem-vindos navegantes! O Moodtation oferece pequenas sessões
-                    de dois minutos para meditações, com um breve sinal antes e 
-                    sempre que acabar uma sessão. Sons para meditação para te ajudar
-                    a imergir e relaxar, diminuindo o estresse e ansiedade. Regule o volume de seu fone/caixa de som, caso contrário o volume
-                    pode começar muito alto!
-                </p>
-                
-                <p id="comoesta2">
-                    Bem-vindos navegantes! O Moodtation oferece pequenas sessões
-                    de dois minutos para meditações, com um breve sinal antes e 
-                    sempre que acabar uma sessão. Sons da Natureza para te ajudar
-                    a imergir e relaxar, diminuindo o estresse e ansiedade. Regule o volume de seu fone/caixa de som, caso contrário o volume
-                    pode começar muito alto!
-                </p>>     
-                <p id="botaoImergir"><button id="imergir" class="button" type="button">IMERGIR</button></p>  
-    
-            </div>            
-                <div id="licenseCopyright">
+        </div>            
+            <div id="licenseCopyright">
                 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
                     <img alt="Creative Commons License" style="border-width:0;width: 60px;" src="https://i.creativecommons.org/l/by/3.0/80x15.png" /></a>
                     <br />This work is licensed under a 
                     <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
                         Creative Commons Attribution 3.0 Unported License
-                    </a>
-                </div>
-        </div>  
-   
+                </a>
+            </div>
+    </div>  
 <div id="section">
-
-    <div class="progress-bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
-    
+<div class="progress-bar" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">0%</div>
     <div id="ondasPos">
-        
         <svg id="ondas" class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
-        <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(20,40,80,0.7)" />
-        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(39,73,109,0.5)" />
-        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(12,123,147,0.3)" />
-        <use xlink:href="#gentle-wave" x="48" y="7" fill="#00a8cc" />
-        </g>
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(20,40,80,0.7)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(39,73,109,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(12,123,147,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#00a8cc" />
+                    </g>
         </svg>
-        
     </div>
 </div>
-<section id="secao3" class="secao3 hiddenElement">
-<div id="blocoSection3">
-    <div id="playerRange" class="container flex">
-    </div>
-    <button type="button" id="buttonM" class="meditar material-icons">play_arrow</button>
-    <p id="NextMeditation">
-        <button type="button" class="button">PRÓXIMA</button>
-    </p>
-    <p id="spanNext" class="hiddenElement"><span id="perguntaNext">próxima meditação já vai começar...</span></p>
-    <p id="spanFim" class="hiddenElement"><span id="perguntaFim">Sua meditação chegou ao fim, deseja continuar ou voltar ao início?</span></p>
-    <button type="button" id="btnContinuar" class="button hiddenElement">CONTINUAR</button>
-    <button type="button" id="btnVoltar" class="button hiddenElement">VOLTAR</button>
-</div>
-
-<button type="button" id="btnSair" class="button material-icons hiddenElement">arrow_upward</button>
-</section>
-    <script src="mood.js"></script>
-    <script src="data.js"></script>
-    <script src="player.js"></script>
-    <script src="index.js"></script>
-
+    <section id="secao3" class="secao3 hiddenElement">
+        <div id="blocoSection3">
+            <div id="playerRange" class="container flex">
+            </div>
+            <button type="button" id="buttonM" class="meditar material-icons">play_arrow</button>
+            <p id="NextMeditation">
+                <button type="button" class="button">PRÓXIMA</button>
+            </p>
+            <p id="spanNext" class="hiddenElement"><span id="perguntaNext">próxima meditação já vai começar...</span></p>
+            <p id="spanFim" class="hiddenElement"><span id="perguntaFim">Sua meditação chegou ao fim, deseja continuar ou voltar ao início?</span></p>
+            <button type="button" id="btnContinuar" class="button hiddenElement">CONTINUAR</button>
+            <button type="button" id="btnVoltar" class="button hiddenElement">VOLTAR</button>
+        </div>
+       <button type="button" id="btnSair" class="button material-icons hiddenElement">arrow_upward</button>
+    </section>
+<script src="./src/mood.js"></script>
+<script src="./src/data.js"></script>
+<script src="./src/player.js"></script>
+<script src="./src/index.js"></script>
     <!-- CREDITS AND ATTRIBUTION FOR THE RIGHTFUL OWNERS -->
-
     <!-- https://freesound.org/people/xUMR/sounds/478658/ -->
-
-    
 </body>
 </html>
