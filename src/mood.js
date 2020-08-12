@@ -32,7 +32,7 @@ btnNext.addEventListener('click', nextSong, false);
 
 //btn Continuar meditação
 btnContinuar.addEventListener('click', () => {
-    nextSong
+    nextSong()
     window.player.next(); //próxima meditação
     Meditar(); //inicia nova meditação
     spanFim.classList.add('hiddenElement');

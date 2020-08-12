@@ -37,10 +37,11 @@ html, body {
         left: 0;
         top: 10px;
         color: white;
+        font-weight: 500;
     }
 
     #section {
-        min-height: 100%;
+        min-height: 100vh;
         background-color: #00a8cc;      
     }
 
@@ -66,21 +67,6 @@ html, body {
     
     .button#imergir:hover{
         box-shadow: 0px 1px 20px 1px white;
-    }
-
-    #parar{
-        visibility: hidden;
-    }
-
-    .progress-bar{
-        width: 30px;
-        position: absolute;
-        display: inline-block;
-        left: 50%;
-        top: 50%;
-        margin: 0 auto;
-        visibility: hidden;
-        z-index: 9999;
     }
 
     label{
@@ -246,15 +232,6 @@ html, body {
         padding: 12px;
     }
     
-    .sliderEscrita{
-        color: white;
-        position: relative;
-        text-align: center;
-        right: 15px;
-        font-size: 2rem;
-        padding: 12px;
-    }
-
     #playerRange {
         margin: auto;
         opacity: 1;
@@ -391,7 +368,7 @@ html, body {
         border-radius: 25px;
         background: var(--PerguntaNextAlegre);
         transition: 1s ease-in-out;
-        line-height: 20px;
+        line-height: 2.0rem;
         padding: 15px 10px;
     }
 
@@ -420,6 +397,7 @@ html, body {
 
     .secao3 {
         position: absolute;
+        min-height: 100vh;
         left: 0;
         right: 0;
         top: 0;
@@ -431,20 +409,13 @@ html, body {
         background-size: cover;
     }
 
-    #inputRange {
-        width: 220px;
-        height: 18px;
-        position: absolute;
-        top: 57%;left: 44%;
-        visibility: hidden;
-    }
     /* FIM DO CONTROLE DO PLAYER */
 
     #comoesta , #comoesta2{
         width: 50vw;
         font-size: 18px;
         /* font-family: 'Kodchasan', sans-serif; */
-        font-weight: 600;
+        font-weight: 400;
         color: white;
         position: relative;
         margin: 0 auto;
@@ -519,86 +490,8 @@ html, body {
         }
     }
 
-    .caixa{
-        /* display: none; */
-        position: absolute;
-        display: inline-block;
-        right: 45%;
-        bottom: 50%;
-        visibility: hidden;
-    }
-
-    .caixa .porcentagem {
-        position: relative;
-        width: 0vw;
-        height: 0vh;
-    }
-
-    .caixa .porcentagem svg {
-        position: absolute;
-        display: inline-block;
-        left: 50%;
-        top: 50%;
-    }
-
-    .caixa .porcentagem svg circle {
-        width: 150px;
-        height: 150px;
-        fill: none;
-        stroke-width: 10;
-        stroke: #000;
-        transform: translate(5px, 5px);
-        stroke-dasharray: 440;
-        stroke-dashoffset: 440;
-    }
-
-     /* CRIA-SE DOIS CIRCULOS, UM COMO BASE E OUTRO COMO PROGRESS BAR */
-    .caixa .porcentagem svg circle:nth-child(1) {
-
-        stroke-dashoffset: 440;
-        stroke: #f3f3f3;
-    }
-
-    .caixa .porcentagem svg circle:nth-child(2) {
-
-        /* calculo padrão de porcentagem em 440 * N / 100  */
-        stroke-dashoffset: calc(440 - (440 * 100) / 100);
-        stroke: #03a9f4;
-    }
-
-    .caixa .porcentagem .numero {
-        position: absolute;
-        top: 75px;
-        left: 85px;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: rgb(17, 91, 228);
-    }
-
-    .caixa .porcentagem .numero h2 {
-        font-size: 48px;
-    }
-    
-    .caixa .porcentagem .numero h2 span{
-        font-size: 24px;
-    }
-
-    .caixa .textoProgress {
-        padding: 10px 0 0;
-        color: rgb(17, 91, 228);
-        font-weight: 700;
-        position: relative;
-        display: flex;
-        top: 140px;
-        left: 25%;
-        letter-spacing: 1px;
-    }
-
     /* LINK DO SITE PRA LICENSE */
-
+    
     #licenseCopyright{
         position: relative;
         display: inline-block;
@@ -607,7 +500,7 @@ html, body {
         font-size: 8px;
     }
 
-    @media (min-width: 320px) and (max-width: 480px) 
+    @media all and (min-width: 320px) and (max-width: 480px) 
         {
             .LogoPage{
                 width: 70vw;
@@ -662,7 +555,7 @@ html, body {
             #spanNext{
                 font-size: 12px;
                 width: 78vw;
-                line-height: 30px;
+                line-height: 3.0rem;
                 bottom: 46px;
                 height: 35px;
                 padding: 5px 5px;
@@ -694,7 +587,7 @@ html, body {
 
         }
 
-        @media (min-width: 481px) and (max-width: 960px) {
+        @media all and (min-width: 481px) and (max-width: 960px) {
             
             .LogoPage {
                 width: 50vw;
@@ -745,9 +638,10 @@ html, body {
 
             #comoesta, #comoesta2 {
                 width: 70vw;
+                font-size: 1.7rem;
             }
         }
-        @media (min-width: 1024px) {
+        @media all and (min-width: 1024px) {
             #spanNext {
                 width: 30vw;
             }
@@ -773,7 +667,7 @@ html, body {
             }
         }
 
-        @media (min-width: 1240px) {
+        @media all and (min-width: 1240px) {
                 #spanNext {
                     width: 20vw;
                 }
