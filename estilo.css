@@ -57,7 +57,7 @@ html, body {
         font-size: 16px;
         font-family: 'Kodchasan', sans-serif;
         border-radius: 25px;
-        box-shadow: 0px 1px 21px 5px white;
+        box-shadow: 0px 1px 15px 2px white;
         transition-duration: 0.2s;
         color: #192F5E;
         font-weight: bold;
@@ -614,11 +614,12 @@ html, body {
             }
 
             #barrasProgress {
-                top: 21%;
+                top: 18%;
             }
 
             #comoesta, #comoesta2 {
-                font-size: 1.2rem;
+                font-size: 1rem;
+                width: 65vw;
             }
 
             #comoSente {
