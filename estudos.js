@@ -44,3 +44,16 @@ Promise.resolve().then(() => console.log('como')).then(() => console.log('vai'))
 console.log('oi');
 
 
+`
+para html, existem os elementos
+se o picture com media definida não der certo, ele roda o element IMG
+padrão. Fazer isso ajuda reduzir o consumo de dados em celulares,
+para não fazer download de imagens HD
+
+<picture class="image" alt="Imagem de algo">
+ <source media="(min-width: 768px)" srcset="url de alguma imagem">
+
+ <img src="url da imagem" alt="Imagem de algo">
+
+`
+
