@@ -76,7 +76,6 @@ html, body {
 
     label{
         visibility: hidden;
-        padding: 10px;
     }
 
     #painelSlides{
@@ -529,10 +528,10 @@ html, body {
             }
 
             .slider:before {
-                height: 23px;
-                width: 24px;
-                left: 8px;
-                bottom: 9px;
+                height: 25px;
+                width: 25px;
+                left: 9px;
+                bottom: 8px;
             }
 
             input:checked + .slider:before {
@@ -592,10 +591,10 @@ html, body {
             }
 
             .slider:before {
-                height: 23px;
-                width: 24px;
-                left: 8px;
-                bottom: 9px;
+                height: 27px;
+                width: 27px;
+                left: 6px;
+                bottom: 7px;
             }
 
             input:checked + .slider:before {
@@ -646,11 +645,16 @@ html, body {
             }
 
             #barrasProgress {
-                top: 18%;   
+                top: 10%;   
             }
 
             .emoji, .emoji2 {
-                font-size: 3.8rem;
+                font-size: 4.4rem;
+                top: 55px;
+            }
+
+            #buttonM {
+                top: 22%;
             }
         }
 
@@ -661,7 +665,7 @@ html, body {
                 }
 
                 #blocoSection3 {
-                    top: 60%;
+                    top: 50%;
                 }
 
                 #btnProxima {
