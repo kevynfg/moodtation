@@ -77,7 +77,7 @@ checkbox.addEventListener('change', function(){
         // emoji.textContent = '😄';
         textoBoasVindas.style.display = 'none'
         textoBoasVindas2.style.display = 'block';
-        novoFavicon = faviconTemplate`${emoji.textContent}`
+        novoFavicon = faviconTemplate`${emoji2.textContent}`
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
         root.style.setProperty("--rangeAlegreCor", "#4C82B4");
         root.style.setProperty("--perguntaNextAlegre", "#77B2C5");
@@ -245,7 +245,7 @@ const linkForFavicon = document.querySelector(
   
   function faviconTemplate(string, icon) {
     return `
-      <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
+      <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 110 110%22>
         <text y=%22.9em%22 font-size=%2290%22>
           ${icon}
         </text>
