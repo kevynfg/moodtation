@@ -617,7 +617,7 @@ html, body {
             }
 
             #buttonM {
-                top: 23%;
+                top: 22%;
             }
 
             #barrasProgress {
@@ -661,7 +661,7 @@ html, body {
         @media all and (min-width: 1240px) {
 
                 #buttonM {
-                    top: 18%;
+                    top: 22%;
                 }
 
                 #blocoSection3 {

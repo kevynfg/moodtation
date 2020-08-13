@@ -90,8 +90,10 @@ checkbox.addEventListener('change', function(){
 
 //btn imergir
 imergir.addEventListener('click', function() {
+    
     var speed = 10000;
     playerGongo.play()
+
     //animar section onda
     $('html, body').animate({
         scrollTop: $("#section").offset().top
