@@ -90,7 +90,7 @@ checkbox.addEventListener('change', function(){
 
 //btn imergir
 imergir.addEventListener('click', function() {
-    var speed = 5000;
+    var speed = 10000;
 
     //animar section onda
     $('html, body').animate({
@@ -101,7 +101,7 @@ imergir.addEventListener('click', function() {
     setTimeout(() => {
         toggleClass(sectionOndas, secao3, 'hiddenElement');
         playerGongo.play() 
-    }, 5000);
+    }, speed);
     
     //efeito de fadeout do container
     toggleClass(container, sectionOndas, 'hiddenElement');
@@ -116,7 +116,7 @@ imergir.addEventListener('click', function() {
         window.player.start(); //iniciar o player
         Meditar(); //meditação
         btnSair.classList.remove('hiddenElement');
-    }, 5000)
+    }, speed)
 });
 
 //player jQuery
@@ -207,7 +207,7 @@ function timerPlayer() {
     $("#playerRange").roundSlider("option", "value", contadorPlayer)
 
     //Tempo que roda em volta do player
-    tempo_do_contador = setTimeout(timerPlayer, 50);
+    tempo_do_contador = setTimeout(timerPlayer, 500);
 
     //fim da meditação
     if (contadorPlayer == 180 && !checkbox.checked){
