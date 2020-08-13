@@ -42,6 +42,7 @@ html, body {
 
     #section {
         min-height: 100vh;
+        margin: auto;
         background-color: #00a8cc;      
     }
 
@@ -58,15 +59,19 @@ html, body {
         font-size: 16px;
         font-family: 'Kodchasan', sans-serif;
         border-radius: 25px;
-        box-shadow: 0px 1px 15px 2px white;
         transition-duration: 0.2s;
         color: #192F5E;
         font-weight: bold;
         text-align: center;
+        cursor: pointer;
     }
-    
-    .button#imergir:hover{
-        box-shadow: 0px 1px 20px 1px white;
+
+    .button:active {
+        outline: none;
+    }
+
+    .button:focus {
+        outline: none;
     }
 
     label{
@@ -94,8 +99,6 @@ html, body {
         left: 0;
         z-index: 9999;
     }
-
-    
 
     .setaBaixo {
         border: solid white;
@@ -301,7 +304,6 @@ html, body {
         font-size: 14px;
         border: none;
         background: white;
-        box-shadow: none;
         color: #192F5E;
         height: 40px;
         width: 110px;
@@ -320,20 +322,20 @@ html, body {
         display: inline-block;
     }
 
-    #btnVoltar, #btnContinuar:focus{
+    #btnSair:hover, #btnProxima:hover, 
+    #btnContinuar:hover,
+    #imergir:hover {
+        box-shadow: 0px 2px 20px 2px white;
         outline: none;
-        box-shadow: none;
     }
 
-    #buttonM:focus{
-        outline: none;
-        box-shadow: none;
+    #btnProxima {
+        position: relative;
+        top: 30px;
     }
 
-
-    #NextMeditation {
-        transition: 1s ease-in-out;
-        margin: 10px;
+    #btnVoltar:hover {
+        box-shadow: 0px 0px 5px 1px white;
     }
 
     #btnSair {
@@ -344,40 +346,26 @@ html, body {
         transform: translate(-50%, -50%);
     }
 
-    #imergir:focus{
-        outline: none;
-        box-shadow: none;
-    }
-
-    #NextMeditation:focus{
-        outline: none;
-        box-shadow: none;
-    }
-
     #perguntaNext, #perguntaFim {
+        display: inline-block;
         font-size: 14px;
         color: white;
         font-weight: 100;
         font-style: italic;
         text-align: center;
+        background: var(--PerguntaNextAlegre);
+        border-radius: 30px;
+        padding: 0.5em 1.2em 0.8em 1.5em;
     }
 
     #perguntaFim{
         font-size: 14px;
+        margin: 5px;
     }
 
-    #spanNext, #spanFim {
-        margin: 10px auto;
-        width: 20vw;
-        border-radius: 25px;
-        background: var(--PerguntaNextAlegre);
-        transition: 1s ease-in-out;
-        line-height: 2.0rem;
-        padding: 15px 10px;
-    }
-
-    #spanFim {
-        width: 40vw;
+    #perguntaNext {
+        position: relative;
+        top: 38px;
     }
 
     #blocoSection3 {
@@ -406,7 +394,7 @@ html, body {
         right: 0;
         top: 0;
         bottom: 0;
-        transition: 5s ease-in-out;
+        transition: 1.5s ease-in-out;
         background-image: url(./imgs/imagemAlegre.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -511,16 +499,17 @@ html, body {
             }
 
             #barrasProgress {
-                top: 18%;
+                top: 15%;
             }
 
             #comoesta, #comoesta2 {
-                font-size: 1rem;
+                font-size: 1.4rem;
                 width: 65vw;
             }
 
             #comoSente {
                 font-size: 2.6rem;
+                top: 20px;
             }
 
             .button {
@@ -529,50 +518,40 @@ html, body {
             }
 
             p#botaoImergir {
-                bottom: 20px;
+                bottom: 30px;
             }
 
             .switch {
                 width: 50px;
-                height: 30px;
+                height: 32px;
                 top: 23px;
+                padding: 5px 10px;
             }
 
             .slider:before {
-                height: 20px;
-                width: 20px;
-                left: 5px;
-                bottom: 5px;
+                height: 23px;
+                width: 24px;
+                left: 8px;
+                bottom: 9px;
             }
 
             input:checked + .slider:before {
-                -webkit-transform: translateX(20px);
-                -ms-transform: translateX(20px);
-                transform: translateX(20px);
+                -webkit-transform: translateX(30px);
+                -ms-transform: translateX(30px);
+                transform: translateX(30px);
             }
 
             .emoji, .emoji2 {
-                font-size: 2.6rem;
-                top: 30px;
+                font-size: 3.6rem;
+                top: 37px;
             }
-
-            #spanNext{
+            
+            #perguntaNext {
                 font-size: 12px;
-                width: 78vw;
-                line-height: 3.0rem;
-                bottom: 46px;
-                height: 35px;
-                padding: 5px 5px;
             }
 
             #perguntaFim {
                 font-size: 12px;
-            }
-
-            #spanFim {
-                margin: 10px auto;
-                width: 85vw;
-                padding: 10px 5px;
             }
 
             #btnContinuar {
@@ -586,12 +565,16 @@ html, body {
             }
 
             #buttonM {
-                top: 19%;
+                top: 22%;
+            }
+
+            #btnProxima {
+                top: 30px;
             }
 
         }
 
-        @media all and (min-width: 375px) and (max-width: 960px) {
+        @media all and (min-width: 475px) and (max-width: 1023px) {
             
             .LogoPage {
                 width: 50vw;
@@ -601,22 +584,29 @@ html, body {
                 bottom: 25px;
             }
 
+            .switch {
+                width: 50px;
+                height: 32px;
+                top: 23px;
+                padding: 5px 10px;
+            }
+
+            .slider:before {
+                height: 23px;
+                width: 24px;
+                left: 8px;
+                bottom: 9px;
+            }
+
+            input:checked + .slider:before {
+                -webkit-transform: translateX(30px);
+                -ms-transform: translateX(30px);
+                transform: translateX(30px);
+            }
+
             .emoji, .emoji2 {
                 font-size: 3.8rem;
-            }
-
-            #perguntaNext {
-                width: 50vw;
-            }
-
-            #spanFim {
-                width: 60vw;
-                padding: 15px 15px;
-            }
-
-            #spanNext {
-                width: 35vw;
-                padding: 10px 15px;
+                top: 39px;
             }
 
             #btnContinuar {
@@ -628,11 +618,11 @@ html, body {
             }
 
             #buttonM {
-                top: 19%;
+                top: 23%;
             }
 
             #barrasProgress {
-                top: 18%;   
+                top: 10%;   
             }
 
             #comoSente {
@@ -646,13 +636,6 @@ html, body {
             }
         }
         @media all and (min-width: 1024px) {
-            #spanNext {
-                width: 30vw;
-            }
-
-            #spanFim {
-                width: 50vw;
-            }
 
             #comoSente {
                 top: 35px;
@@ -672,17 +655,20 @@ html, body {
         }
 
         @media all and (min-width: 1240px) {
-                #spanNext {
-                    width: 20vw;
-                }
-
-                #spanFim {
-                    width: 35vw;
-                }
 
                 #buttonM {
                     top: 18%;
                 }
+
+                #blocoSection3 {
+                    top: 60%;
+                }
+
+                #btnProxima {
+                    top: 30px;
+                }
+
+
         }
     
 

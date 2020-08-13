@@ -7,14 +7,14 @@ player,
 checkbox = document.getElementById('alegrometro'),
 emoji = document.querySelector('.emoji'),
 emoji2 = document.querySelector('.emoji2'),
-spanNext = document.querySelector('#spanNext'),
-spanFim = document.querySelector('#spanFim'),
+perguntaNext = document.querySelector('#perguntaNext'),
+perguntaFim = document.querySelector('#perguntaFim'),
 meuRange = document.getElementById('playerRange'),
 clickPlay = document.getElementById('buttonM'),
 playerGongo = document.getElementById("playerGongo"),
 secao3 = document.getElementById('secao3'),
 mudar = document.querySelector(".meditar"),
-btnNext = document.getElementById('NextMeditation'),
+btnNext = document.getElementById('btnProxima'),
 btnContinuar = document.getElementById('btnContinuar'),
 btnSair = document.getElementById('btnSair'),
 btnVoltar = document.getElementById('btnVoltar'),
@@ -35,8 +35,8 @@ btnContinuar.addEventListener('click', () => {
     nextSong()
     window.player.next(); //próxima meditação
     Meditar(); //inicia nova meditação
-    spanFim.classList.add('hiddenElement');
-    // toggleClass(spanFim, spanNext, 'hiddenElement');
+    perguntaFim.classList.add('hiddenElement');
+    // toggleClass(perguntaFim, perguntaNext, 'hiddenElement');
     btnVoltar.classList.add('hiddenElement');
     btnContinuar.classList.add('hiddenElement');
 
@@ -65,7 +65,7 @@ checkbox.addEventListener('change', function(){
         novoFavicon = faviconTemplate`${emoji.textContent}`;
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
         root.style.setProperty("--rangeAlegreCor", "#77B2C5");
-        root.style.setProperty("--spanNextAlegre", "#192F5E");
+        root.style.setProperty("--perguntaNextAlegre", "#192F5E");
         secao3.style.backgroundImage = "url('./imgs/imagemTriste.jpg')";
         emoji2.style.opacity = '0.2';
         emoji.style.opacity = '1';
@@ -80,7 +80,7 @@ checkbox.addEventListener('change', function(){
         novoFavicon = faviconTemplate`${emoji.textContent}`
         linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
         root.style.setProperty("--rangeAlegreCor", "#4C82B4");
-        root.style.setProperty("--spanNextAlegre", "#77B2C5");
+        root.style.setProperty("--perguntaNextAlegre", "#77B2C5");
         secao3.style.backgroundImage = "url('./imgs/imagemAlegre.jpg')";
         emoji.style.opacity = '0.2';
         emoji2.style.opacity = '1';
@@ -91,7 +91,7 @@ checkbox.addEventListener('change', function(){
 //btn imergir
 imergir.addEventListener('click', function() {
     var speed = 10000;
-
+    playerGongo.play()
     //animar section onda
     $('html, body').animate({
         scrollTop: $("#section").offset().top
@@ -99,8 +99,7 @@ imergir.addEventListener('click', function() {
 
     //playerGongo é o inicio da meditação quando sobe a onda
     setTimeout(() => {
-        toggleClass(sectionOndas, secao3, 'hiddenElement');
-        playerGongo.play() 
+        toggleClass(sectionOndas, secao3, 'hiddenElement'); 
     }, speed);
     
     //efeito de fadeout do container
@@ -171,7 +170,7 @@ function nextSong() {
     mudar.classList.add('hiddenElement');
     
     //aparecer mensagem
-    toggleClass(btnNext, spanNext, 'hiddenElement')
+    toggleClass(btnNext, perguntaNext, 'hiddenElement')
 
     window.player.pause(); //Pausa o player
 
@@ -180,7 +179,7 @@ function nextSong() {
         window.player.pause();
         playerGongo.play() //sinal final
         mudar.classList.add('hiddenElement');
-        toggleClass(spanNext, spanFim, 'hiddenElement');
+        toggleClass(perguntaNext, perguntaFim, 'hiddenElement');
         btnVoltar.classList.remove('hiddenElement');
         btnContinuar.classList.remove('hiddenElement');
         console.log('entrou')
@@ -199,7 +198,7 @@ function nextSong() {
 //controlador do tempo
 function timerPlayer() {
     //aparecer botão
-    toggleClass(spanNext, btnNext, 'hiddenElement')
+    toggleClass(perguntaNext, btnNext, 'hiddenElement')
     mudar.classList.remove('hiddenElement');
 
     //Contador que verifica a posição do timing do player
@@ -222,7 +221,7 @@ function timerPlayer() {
     //     window.player.pause();
     //     playerGongo.play() //sinal final
     //     mudar.classList.add('hiddenElement');
-    //     toggleClass(spanNext, spanFim, 'hiddenElement');
+    //     toggleClass(perguntaNext, perguntaFim, 'hiddenElement');
 
     // }
 };
