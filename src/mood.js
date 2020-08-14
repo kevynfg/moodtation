@@ -97,12 +97,12 @@ imergir.addEventListener('click', function() {
     //animar section onda
     $('html, body').animate({
         scrollTop: $("#section").offset().top
-    }, speed);
+    }, speed, );
 
     //playerGongo é o inicio da meditação quando sobe a onda
     setTimeout(() => {
         toggleClass(sectionOndas, secao3, 'hiddenElement'); 
-    }, speed);
+    }, speed, "linear", true);
     
     //efeito de fadeout do container
     toggleClass(container, sectionOndas, 'hiddenElement');
@@ -117,7 +117,7 @@ imergir.addEventListener('click', function() {
         window.player.start(); //iniciar o player
         Meditar(); //meditação
         btnSair.classList.remove('hiddenElement');
-    }, speed)
+    }, speed, true)
 });
 
 //player jQuery
@@ -192,7 +192,7 @@ function nextSong() {
             window.player.next(); //próxima meditação
             Meditar(); //inicia nova meditação
             mudar.innerHTML = `pause`
-        }, 5000);
+        }, 5000, true);
     }
 
 }
@@ -208,7 +208,7 @@ function timerPlayer() {
     $("#playerRange").roundSlider("option", "value", contadorPlayer)
 
     //Tempo que roda em volta do player
-    tempo_do_contador = setTimeout(timerPlayer, 500);
+    tempo_do_contador = setTimeout(timerPlayer, 500, true);
 
     //fim da meditação
     if (contadorPlayer == 180 && !checkbox.checked){
