@@ -8,7 +8,7 @@ html {
 }
 
 html, body {
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     justify-content: center;    
     font-family: 'Kodchasan', sans-serif;
@@ -41,7 +41,7 @@ html, body {
     }
 
     #section {
-        min-height: 100vh;
+        min-height: 100%;
         margin: auto;
         background-color: #00a8cc;      
     }

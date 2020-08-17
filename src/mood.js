@@ -91,13 +91,13 @@ checkbox.addEventListener('change', function(){
 //btn imergir
 imergir.addEventListener('click', function() {
     
-    var speed = 10000;
+    var speed = 6000;
     playerGongo.play()
 
     //animar section onda
-    $('html, body').animate({
+    $("body").animate({
         scrollTop: $("#section").offset().top
-    }, speed, );
+    }, speed);
 
     //playerGongo é o inicio da meditação quando sobe a onda
     setTimeout(() => {
