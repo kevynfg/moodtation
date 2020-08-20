@@ -1,39 +1,39 @@
 window.audiosMeditativos = [
     {
-        file: "M-curatibetanea.mp3"
+        file: "M-curatibetanea.m4a"
     },
     {
-        file: "M-flautaIndigena.mp3"
+        file: "M-flautaIndigena.m4a"
     },
     {
-        file: "M-meditacaoxamanica.mp3"
+        file: "M-meditacaoxamanica.m4a"
     },
     {
-        file: "Meditation.mp3"
+        file: "Meditation.m4a"
     },
     {
-        file: "M-Bowl_birds.mp3"
+        file: "M-Bowl_birds.m4a"
     },
     {
-        file: "M-Meianoite.mp3"
+        file: "M-Meianoite.m4a"
     }
 ];
 
 window.audiosNatureza = [
     
     {
-        file: "ChuvaRaios.mp3" 
+        file: "ChuvaRaios.m4a" 
     },
     {
-        file: "ForestMelhor.mp3"
+        file: "ForestMelhor.m4a"
     },
     {
-        file: "SomOceano3.mp3"
+        file: "SomOceano3.m4a"
     },
     {
-        file: "Forest2.mp3"
+        file: "Forest2.m4a"
     },
     {
-        file: "Fogueira_cricket.mp3"
+        file: "Fogueira_cricket.m4a"
     }
 ];
