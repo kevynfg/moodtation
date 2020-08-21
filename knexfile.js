@@ -7,7 +7,7 @@ module.exports = {
     connection: {
       database: "moodtation",
       user: "postgres",
-      password: "m@ry"
+      password: "ke452366"
     },
     migrations: {
       tableName: 'knex_migrations',

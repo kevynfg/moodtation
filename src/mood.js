@@ -141,7 +141,6 @@ function ativarPlayer() {
     });
 }
 
-
 //meditar
 function Meditar() {
     window.player.togglePlayPause();
