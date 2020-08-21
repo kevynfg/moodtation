@@ -45,11 +45,11 @@ module.exports = {
             const { tempo_meditacao, user_id } = req.body
 
             await knex('progresso').insert({
-                user_id,
-                tempo_meditacao
+                tempo_meditacao,
+                user_id
             })
 
-            return res.status(201).send()
+            return res.send()
 
         } catch (error) {
             next(error)
