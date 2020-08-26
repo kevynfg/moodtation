@@ -17,24 +17,29 @@ module.exports = {
             //e assim por diante em cada paginação, pagina 1 até 5 registros
             //pagina 2 de 6 a 11 registros
             .offset((page - 1) * 5)
-            
+
             if(user_id) {
                 query
                 .where({ user_id })
                 .join('users', 'users.id', '=', 'progresso.user_id')
                 .select('progresso.*', 'users.username')
-                
-                //busca os dados do id de usuário especificado
+                .where('users.deleted_at', null)
+
+                //busca os dados do id de usuário especificado e retorna um array
                 countObject.where({ user_id })
             }
 
+            //desestruturando o count, pegando de dentro do objeto que retornou em um array
             const [count] = await countObject
             console.log(count)
 
+            //armazena a query
             const results = await query
 
+            //exibe no header do insomnia o count de progresso
             res.header('X-Total-Count', count["count"])
             
+            //finaliza
             return res.json(results);
 
         } catch (error) {
