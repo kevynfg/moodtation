@@ -18,6 +18,13 @@ module.exports = {
     },
     seeds: { 
     directory: `${__dirname}/src/database/seeds`
+    },
+    pool: {
+      afterCreate: function(connection, callback) {
+        connection.query('SET timezone = "UTC";', function(err){
+          callback(err, connection);
+        });
+      }
     }
   }
 };

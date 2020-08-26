@@ -2,17 +2,23 @@ const knex = require("../database")
 // const update = require("lodash.update");
 
 module.exports = {
-    async index(req, res) {
-        const results = await knex('users')
+    async index(req, res, next) {
+        try {
+            const results = await knex('users')
 
-        return res.json(results);
+            return res.json(results);
+        } catch (error) {
+            next(error)
+        }
+        
     },
     //como terceiro parâmetro coloco o next que lida com o erro de request
     //vindo do server.js
     async create(req, res, next) {
-        const { username } = req.body
         
         try {
+            const {username} = req.body;
+
             await knex('users').insert({
                 username
             })

@@ -4,14 +4,16 @@ const routes = require('./routes'); //importar o routes do routes.js
 
 
 const server = express();
+
+server.use(express.json());
+
 server.use(routes);
 
 
 //esta linha faz com que o server passe a usar requests em json
-server.use(express.json());
 
 
-//rota para rotas que não são achadas
+//rota de error para rotas que não são achadas
 server.use((req, res, next) => {
     const error = new Error('Not found')
     error.status = 404

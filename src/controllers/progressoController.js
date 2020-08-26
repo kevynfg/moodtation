@@ -17,6 +17,7 @@ module.exports = {
             //e assim por diante em cada paginação, pagina 1 até 5 registros
             //pagina 2 de 6 a 11 registros
             .offset((page - 1) * 5)
+            
             if(user_id) {
                 query
                 .where({ user_id })
