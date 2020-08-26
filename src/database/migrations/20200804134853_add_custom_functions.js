@@ -1,5 +1,6 @@
 //criação de function e trigger
 //serve para atualizar o updated_at após qualquer alteração de usuario e progresso
+//exports up necessita se tornar async
 const CUSTOM_FUNCTIONS = `
 CREATE OR REPLACE FUNCTION on_update_timestamp()
 RETURNS trigger AS $$

@@ -52,6 +52,7 @@ module.exports = {
             await knex('users')
             .where({ id })
             .update('deleted_at', new Date())
+            
 
             return res.send()
 

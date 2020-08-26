@@ -14,6 +14,7 @@ routes
     //progresso do usuário
     .get('/progresso', progressoController.index)
     .post('/progresso', progressoController.create)
+    .delete('/progresso/:id', usersController.delete)
 
 
 module.exports = routes

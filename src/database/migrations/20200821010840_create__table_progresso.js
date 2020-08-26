@@ -16,7 +16,7 @@ exports.up = async knex => knex.schema.createTable('progresso', table => {
     
     //o createSchema é uma Promise, logo pode-se utilizar .then
     //disparando o trigger criado
-  }).then(() => knex.raw(onUpdateTrigger('progresso')))
+  }).then( () => knex.raw(onUpdateTrigger('progresso')))
 
 //é ação de rollback
 exports.down = async knex => knex.schema.dropTable('progresso');

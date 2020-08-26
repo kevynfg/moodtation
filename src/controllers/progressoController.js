@@ -1,4 +1,5 @@
-const knex = require("../database")
+const knex = require("../database");
+const update = require("lodash.update");
 // const update = require("lodash.update");
 
 module.exports = {
@@ -57,6 +58,20 @@ module.exports = {
 
             return res.send()
 
+        } catch (error) {
+            next(error)
+        }
+    },
+    async delete(req, res, next) {
+        try {
+            const { user_id } = req.params
+
+            await knex('progresso')
+            .where({ user_id })
+            .join('users', 'users.id', '=', 'progresso.user_id')
+            .select('progresso.*', 'users.username')
+            .where('users.deleted_at', null)
+            
         } catch (error) {
             next(error)
         }
