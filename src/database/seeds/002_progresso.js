@@ -4,8 +4,8 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('progresso').insert([
-        { user_id: 9,
-          tempo_meditacao: "120" }
+        { user_id: 1,
+          tempo_meditacao: "1220" }
       ]);
     });
 };
