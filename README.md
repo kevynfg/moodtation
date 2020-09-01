@@ -16,14 +16,11 @@ You can try this github page https://kevynfg.github.io/moodtation/
 
 ### Setup
 
-# For now you just need 
+# 
 
-- To install cors
 
-```shell
-$ npm install cors
-```
-# Theres no need to download these stuff below this message they are for an ocasional backend in this project.
+# For now you don't need to install anything unless you are going to help with this project. 
+# Download these stuff below this message they are for an ocasional backend in this project.  
 
 - To install nodejs
 
@@ -47,14 +44,15 @@ scoop install nodejs
 $ npm install express --save
 ```
 
-- To install knex (our database)
+- To install knex (our database) postgresql
 
 ```shell
-$ npm install sqlite3
+$ npm install pg
 ```
 
-## Features
-- Done with JavaScript, jquery and HTML5 until the moment.
+## Features  
+
+- Done with JavaScript, jquery and HTML5 until the moment.  
 
 ## Mentions
 
