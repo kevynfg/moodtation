@@ -8,7 +8,7 @@ You can try this github page https://kevynfg.github.io/moodtation/
 
 >Hey, Kevyn here. First i want to say this is a personal project, after seeing the exponential growing on meditation apps i wanted to give it a try to give some comfort and care to the world.
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)] [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)]  
 
 ## Installation
 
@@ -16,14 +16,11 @@ You can try this github page https://kevynfg.github.io/moodtation/
 
 ### Setup
 
-# For now you just need 
+# 
 
-- To install cors
 
-```shell
-$ npm install cors
-```
-# Theres no need to download these stuff below this message they are for an ocasional backend in this project.
+# For now you don't need to install anything unless you are going to help with this project. 
+# Download these stuff below this message they are for an ocasional backend in this project.  
 
 - To install nodejs
 
@@ -47,14 +44,15 @@ scoop install nodejs
 $ npm install express --save
 ```
 
-- To install knex (our database)
+- To install knex (our database) postgresql
 
 ```shell
-$ npm install sqlite3
+$ npm install pg
 ```
 
-## Features
-- Done with JavaScript, jquery and HTML5 until the moment.
+## Features  
+
+- Done with JavaScript, jquery and HTML5 until the moment.  
 
 ## Mentions
 
