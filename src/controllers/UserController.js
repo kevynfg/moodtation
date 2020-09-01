@@ -59,5 +59,8 @@ module.exports = {
         } catch (error) {
             next(error)
         }
+    },
+    pegarEmail: function (email) {
+        return knex('users').where('email', email).first();
     }
 }

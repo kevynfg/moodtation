@@ -2,9 +2,9 @@ const { onUpdateTrigger } = require('../../../knexfile')
 //ação de update
 exports.up = async knex => knex.schema.createTable('users', table => {
     table.increments('id');
-    table.text('username').unique().notNullable();
+    table.text('name').notNullable();
+    table.text('email').unique().notNullable();
     table.varchar('password').notNullable();
-    table.text('email').notNullable();
     //defaultTo é para setar valor padrão
     //knext.fn.now é para o knex rodar uma função de NOW (data criada o registro)
     table.timestamp('created_at').defaultTo(knex.fn.now());

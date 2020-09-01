@@ -1,16 +1,13 @@
 const express = require('express');
 const routes = require('./routes'); //importar o routes do routes.js
-// const cors = require('cors');
-
+const auth = require('./auth');
 
 const server = express();
 
-server.use(express.json());
-
-server.use(routes);
-
-
 //esta linha faz com que o server passe a usar requests em json
+server.use(express.json());
+server.use(routes);
+server.use('/auth', auth);
 
 
 //rota de error para rotas que não são achadas

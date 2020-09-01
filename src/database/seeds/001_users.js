@@ -5,10 +5,10 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('users').insert([
-        { username: 'kevyn gonçalves',
+        { name: 'kevyn gonçalves',
           password: '452366',
           email: 'kevynfariaga@gmail.com' },
-        { username: 'maryana sales',
+        { name: 'maryana sales',
           password: 'm@ry',
           email: 'maryanasales@live.com' },
       ]);
