@@ -1,104 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Moodtation - Afunde-se em si próprio</title>
-    <link rel="stylesheet" href="estilo.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilo.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.css" />
-    <link rel="icon" type="image/jpg" href="./imgs/favicon.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.css"
+    />
+    <link rel="icon" type="image/jpg" href="./imgs/favicon.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.js"></script>
-</head>
-<!-- This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA. -->
-<script>
-
-</script>
-<body>
+  </head>
+  <!-- This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA. -->
+  <script></script>
+  <body>
     <div id="container" class="container flex">
-        <img class="LogoPage" src="./logo/Logo.svg" alt="LogoPage"> 
-            <div id="player">
-                <audio volume="1" id="audio1" type="audio/mpeg"></audio>
-            </div> 
-            <div id="player2">
-                <audio volume="0.1" src="sounds/cumbuca.mp3" id="playerGongo" type="audio/mpeg"></audio>
-            </div>
-        <div id="barrasProgress">
-            <p id="comoSente">COMO SE SENTE?</p>
-            <div class="emoji">😩</div>
-                <!-- <span id="triste" class="sliderzin">Triste</span> -->
-                <label class="switch" style="visibility: visible;">
-                <input type="checkbox" id="alegrometro" checked>
-                <span class="slider round"></span>
-                </label>
-                <div class="emoji2">😄</div>
-            <p id="comoesta">
-                Bem-vindos! O Moodtation oferece pequenas sessões
-                de dois minutos para meditações, com um breve sinal antes e 
-                sempre que acabar uma sessão. Sons para meditação para te ajudar
-                a imergir e relaxar, diminuindo o estresse e ansiedade. Regule o volume de seu fone/caixa de som, caso contrário, o volume
-                pode começar muito alto! Se você estiver utilizando sistema iOS, após interagir com Imergir, você deve tocar no player Play/Pause para ativar a meditação.
-            </p>
-            <p id="comoesta2">
-                Bem-vindos! O Moodtation oferece pequenas sessões
-                de dois minutos para meditações, com um breve sinal antes e 
-                sempre que acabar uma sessão. Sons da Natureza para te ajudar
-                a imergir e relaxar, diminuindo o estresse e ansiedade. Regule o volume de seu fone/caixa de som, caso contrário, o volume
-                pode começar muito alto!
-            </p>>     
-            <p id="botaoImergir"><button id="imergir" class="button" type="button">IMERGIR</button></p>  
-
-        </div>            
-
-    </div>  
-<div id="section">
-    <div id="ondasPos">
-        <svg id="ondas" class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                </defs>
-                    <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(20,40,80,0.7)" />
-                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(39,73,109,0.5)" />
-                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(12,123,147,0.3)" />
-                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#00a8cc" />
-                    </g>
+      <img class="LogoPage" src="./logo/Logo.svg" alt="LogoPage" />
+      <div id="player">
+        <audio volume="1" id="audio1" type="audio/mpeg"></audio>
+      </div>
+      <div id="player2">
+        <audio
+          volume="0.1"
+          src="sounds/cumbuca.mp3"
+          id="playerGongo"
+          type="audio/mpeg"
+        ></audio>
+      </div>
+      <div id="barrasProgress">
+        <p id="comoSente">COMO SE SENTE?</p>
+        <div class="emoji">😩</div>
+        <!-- <span id="triste" class="sliderzin">Triste</span> -->
+        <label class="switch" style="visibility: visible">
+          <input type="checkbox" id="alegrometro" checked />
+          <span class="slider round"></span>
+        </label>
+        <div class="emoji2">😄</div>
+        <p id="comoesta">
+          Bem-vindos! O Moodtation oferece pequenas sessões de dois minutos para
+          meditações, com um breve sinal antes e sempre que acabar uma sessão.
+          Sons para meditação para te ajudar a imergir e relaxar, diminuindo o
+          estresse e ansiedade. Regule o volume de seu fone/caixa de som, caso
+          contrário, o volume pode começar muito alto! Se você estiver
+          utilizando sistema iOS, após interagir com Imergir, você deve tocar no
+          player Play/Pause para ativar a meditação.
+        </p>
+        <p id="comoesta2">
+          Bem-vindos! O Moodtation oferece pequenas sessões de dois minutos para
+          meditações, com um breve sinal antes e sempre que acabar uma sessão.
+          Sons da Natureza para te ajudar a imergir e relaxar, diminuindo o
+          estresse e ansiedade. Regule o volume de seu fone/caixa de som, caso
+          contrário, o volume pode começar muito alto!
+        </p>
+        >
+        <p id="botaoImergir">
+          <button id="imergir" class="button" type="button">IMERGIR</button>
+        </p>
+      </div>
+    </div>
+    <div id="section">
+      <div id="ondasPos">
+        <svg
+          id="ondas"
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(20,40,80,0.7)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(39,73,109,0.5)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(12,123,147,0.3)"
+            />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#00a8cc" />
+          </g>
         </svg>
+      </div>
     </div>
-</div>
     <section id="secao3" class="secao3 hiddenElement">
-        <div id="blocoSection3">
-            <div id="playerRange" class="container flex">
-            </div>
-            <button type="button" id="buttonM" class="meditar material-icons">play_arrow</button>
-            <button id="btnProxima" type="button" class="button">PRÓXIMA</button>
-            <p id="spanNext"><span id="perguntaNext" class="hiddenElement">próxima meditação já vai começar...</span></p>
-            <p id="spanFim"><span id="perguntaFim" class="hiddenElement">Sua meditação chegou ao fim, deseja continuar ou voltar ao início?</span></p>
-            <button type="button" id="btnContinuar" class="button hiddenElement">CONTINUAR</button>
-            <button type="button" id="btnVoltar" class="button hiddenElement">VOLTAR</button>
-        </div>
-       <button type="button" id="btnSair" class="button material-icons hiddenElement">arrow_upward</button>
+      <div id="blocoSection3">
+        <div id="playerRange" class="container flex"></div>
+        <button type="button" id="buttonM" class="meditar material-icons">
+          play_arrow
+        </button>
+        <button id="btnProxima" type="button" class="button">PRÓXIMA</button>
+        <p id="spanNext">
+          <span id="perguntaNext" class="hiddenElement"
+            >próxima meditação já vai começar...</span
+          >
+        </p>
+        <p id="spanFim">
+          <span id="perguntaFim" class="hiddenElement"
+            >Sua meditação chegou ao fim, deseja continuar ou voltar ao
+            início?</span
+          >
+        </p>
+        <button type="button" id="btnContinuar" class="button hiddenElement">
+          CONTINUAR
+        </button>
+        <button type="button" id="btnVoltar" class="button hiddenElement">
+          VOLTAR
+        </button>
+      </div>
+      <button
+        type="button"
+        id="btnSair"
+        class="button material-icons hiddenElement"
+      >
+        arrow_upward
+      </button>
     </section>
-<footer>
-    <div id="licenseCopyright">
+    <footer>
+      <div id="licenseCopyright">
         <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
-            <img alt="Creative Commons License" style="border-width:0;width: 30px;" src="https://i.creativecommons.org/l/by/3.0/80x15.png" /></a>
-            <br />This work is licensed under a 
-            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
-                Creative Commons Attribution 3.0 Unported License
+          <img
+            alt="Creative Commons License"
+            style="border-width: 0; width: 30px"
+            src="https://i.creativecommons.org/l/by/3.0/80x15.png"
+        /></a>
+        <br />This work is licensed under a
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">
+          Creative Commons Attribution 3.0 Unported License
         </a>
-    </div>
-</footer>
-<script src="./src/mood.js"></script>
-<script src="./src/data.js"></script>
-<script src="./src/player.js"></script>
-<script src="./src/index.js"></script>
+      </div>
+    </footer>
+    <script src="./src/mood.js"></script>
+    <script src="./src/data.js"></script>
+    <script src="./src/player.js"></script>
+    <script src="./src/index.js"></script>
     <!-- CREDITS AND ATTRIBUTION FOR THE RIGHTFUL OWNERS -->
     <!-- https://freesound.org/people/xUMR/sounds/478658/ -->
     <!-- https://freesound.org/people/FoolBoyMedia/sounds/332323/ -->
     <!-- https://freesound.org/people/InspectorJ/sounds/352514/ -->
-</body>
+  </body>
 </html>

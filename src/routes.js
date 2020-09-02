@@ -10,8 +10,8 @@ const routes = express.Router();
 routes.post('/sessions', sessionsController.create);
 
 //controle de criação e listar usuários
-routes.get('/users' , usersController.server); 
-routes.post('/users' , usersController.create);
+routes.get('/users', usersController.server);
+routes.post('/users', usersController.create);
 
 //profile é para saber qual ID está logado
 routes.get('/profile', profileController.server);
