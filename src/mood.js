@@ -22,6 +22,8 @@ var imergir = document.getElementById('imergir'),
   textoBoasVindas2 = document.getElementById('comoesta2'),
   contadorPlayer = 0,
   tempo_maximo_player = 0,
+  i,
+  timeout_loadingPlayer,
   tempo_do_contador;
 
 //btn play/pause
@@ -204,18 +206,37 @@ function nextSong() {
     toggleClass(perguntaNext, perguntaFim, 'hiddenElement');
     btnVoltar.classList.remove('hiddenElement');
     btnContinuar.classList.remove('hiddenElement');
-    console.log('entrou');
   } else {
     //depois de 5s iniciar próxima meditação
-    setTimeout(
-      () => {
-        window.player.next(); //próxima meditação
-        Meditar(); //inicia nova meditação
-        mudar.innerHTML = `pause`;
-      },
-      5000,
-      true
-    );
+    // setTimeout(
+    //   () => {
+    //     window.player.next(); //próxima meditação
+    //     Meditar(); //inicia nova meditação
+    //     mudar.innerHTML = `pause`;
+    //   },
+    //   5000,
+    //   true
+    // );
+    setTimeout(() => {
+      loadingPlayer();
+    }, 1000);
+  }
+}
+
+function loadingPlayer() {
+  contadorPlayer++;
+  const tempo_maximo_load = 10;
+  $('#playerRange').roundSlider('option', 'value', contadorPlayer);
+  $('#playerRange').roundSlider('option', 'max', tempo_maximo_load);
+  timeout_loadingPlayer = setTimeout(loadingPlayer, 500);
+  if (contadorPlayer == 10) {
+    clearTimeout(timeout_loadingPlayer);
+    contadorPlayer = 0;
+    setTimeout(() => {
+      window.player.next(); //próxima meditação
+      Meditar(); //inicia nova meditação
+      mudar.innerHTML = `pause`;
+    }, 1000);
   }
 }
 
