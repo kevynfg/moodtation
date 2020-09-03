@@ -437,6 +437,15 @@ input:checked + .slider:before {
   display: none;
 }
 
+@keyframes scrollAnimate {
+  0% {
+    bottom: 15%;
+  }
+  100% {
+    bottom: 17%;
+  }
+}
+
 /* Ondas */
 
 .waves {
@@ -521,6 +530,26 @@ input:checked + .slider:before {
     overflow: auto;
   }
 
+  #comoesta::after {
+    position: fixed;
+    display: inline-block;
+    content: '^';
+    left: 50%;
+    font-weight: bold;
+    font-size: 40px;
+    transform: translate(-50%, -50%);
+    animation: scrollAnimate 1s infinite;
+  }
+
+  @keyframes scrollAnimate {
+    0% {
+      bottom: 15%;
+    }
+    100% {
+      bottom: 17%;
+    }
+  }
+
   #comoSente {
     font-size: 2.6rem;
     top: 20px;
@@ -584,7 +613,104 @@ input:checked + .slider:before {
   }
 }
 
-@media all and (min-width: 348px) and (max-width: 1023px) {
+@media all and (min-width: 348px) and (max-width: 587px) {
+  .LogoPage {
+    width: 65vw;
+  }
+
+  p#botaoImergir {
+    bottom: 12px;
+  }
+
+  .switch {
+    width: 50px;
+    height: 32px;
+    top: 23px;
+    padding: 5px 10px;
+  }
+
+  .slider:before {
+    height: 27px;
+    width: 27px;
+    left: 6px;
+    bottom: 7px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  .emoji,
+  .emoji2 {
+    font-size: 3.8rem;
+    top: 39px;
+  }
+
+  #btnContinuar {
+    margin: 0px 10px;
+  }
+
+  #btnVoltar {
+    margin: 0px 5px;
+  }
+
+  #buttonM {
+    top: 21%;
+  }
+
+  #barrasProgress {
+    top: 10%;
+  }
+
+  #comoSente {
+    top: 35px;
+    font-size: 2.6rem;
+  }
+
+  #comoesta,
+  #comoesta2 {
+    width: 78vw;
+    font-size: 1.5rem;
+    height: 20vh;
+    overflow: auto;
+  }
+
+  #comoesta::after {
+    position: fixed;
+    display: inline-block;
+    content: '^';
+    left: 50%;
+    font-weight: bold;
+    font-size: 40px;
+    transform: translate(-50%, -50%);
+    animation: scrollAnimate 1s infinite;
+  }
+
+  @keyframes scrollAnimate {
+    0% {
+      bottom: 17%;
+    }
+    100% {
+      bottom: 19%;
+    }
+  }
+}
+
+@media all and (min-width: 588px) and (max-width: 855px) {
+  #comoSente {
+    top: 35px;
+  }
+
+  p#botaoImergir {
+    bottom: 25px;
+  }
+
+  #barrasProgress {
+    top: 10%;
+  }
+
   .LogoPage {
     width: 65vw;
   }
@@ -648,27 +774,50 @@ input:checked + .slider:before {
     overflow: auto;
   }
 }
-@media all and (min-width: 1024px) {
-  #comoSente {
-    top: 35px;
+
+@media all and (min-width: 755px) {
+  .LogoPage {
+    width: 65vw;
   }
 
-  p#botaoImergir {
-    bottom: 25px;
+  #comoSente {
+    top: 35px;
+    font-size: 2.6rem;
+  }
+
+  #comoesta,
+  #comoesta2 {
+    width: 60vw;
   }
 
   #barrasProgress {
-    top: 10%;
+    top: 15%;
+  }
+
+  .switch {
+    width: 50px;
+    height: 32px;
+    top: 23px;
+    padding: 5px 10px;
+  }
+
+  .slider:before {
+    height: 27px;
+    width: 27px;
+    left: 6px;
+    bottom: 7px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
   }
 
   .emoji,
   .emoji2 {
-    font-size: 4.4rem;
-    top: 55px;
-  }
-
-  #buttonM {
-    top: 22%;
+    font-size: 3.8rem;
+    top: 39px;
   }
 }
 
@@ -683,5 +832,31 @@ input:checked + .slider:before {
 
   #btnProxima {
     top: 30px;
+  }
+
+  .emoji,
+  .emoji2 {
+    font-size: 3.8rem;
+    top: 39px;
+  }
+
+  .switch {
+    width: 50px;
+    height: 32px;
+    top: 23px;
+    padding: 5px 10px;
+  }
+
+  .slider:before {
+    height: 27px;
+    width: 27px;
+    left: 6px;
+    bottom: 7px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
   }
 }
