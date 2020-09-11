@@ -19,8 +19,7 @@ You can try this github page https://kevynfg.github.io/moodtation/
 # 
 
 
-# For now you don't need to install anything unless you are going to help with this project. 
-# Download these stuff below this message they are for an ocasional backend in this project.  
+# For now you don't need to install anything below this message unless you are going to help with this project. 
 
 - To install nodejs
 
