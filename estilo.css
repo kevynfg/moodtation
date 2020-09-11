@@ -343,8 +343,8 @@ input:checked + .slider:before {
 #btnProxima {
   position: relative;
   top: 30px;
-  padding: 10px 25px;
-  font-size: 14px;
+  padding: 10px 15px;
+  font-size: 12px;
 }
 
 #btnVoltar:hover {
