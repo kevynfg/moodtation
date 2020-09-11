@@ -343,6 +343,8 @@ input:checked + .slider:before {
 #btnProxima {
   position: relative;
   top: 30px;
+  padding: 10px 25px;
+  font-size: 14px;
 }
 
 #btnVoltar:hover {
@@ -754,7 +756,7 @@ input:checked + .slider:before {
   }
 
   #buttonM {
-    top: 21%;
+    top: 23%;
   }
 
   #barrasProgress {
@@ -777,7 +779,7 @@ input:checked + .slider:before {
 
 @media all and (min-width: 755px) {
   .LogoPage {
-    width: 65vw;
+    width: 50vw;
   }
 
   #comoSente {
@@ -792,6 +794,10 @@ input:checked + .slider:before {
 
   #barrasProgress {
     top: 15%;
+  }
+
+  #buttonM {
+    top: 23%;
   }
 
   .switch {
