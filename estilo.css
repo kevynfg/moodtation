@@ -28,7 +28,7 @@ body {
   position: absolute;
   width: 30vw;
   margin: auto;
-  top: 2%;
+  top: 3%;
 }
 
 #comoSente {
@@ -780,6 +780,7 @@ input:checked + .slider:before {
 @media all and (min-width: 755px) {
   .LogoPage {
     width: 50vw;
+    left: 26%;
   }
 
   #comoSente {
