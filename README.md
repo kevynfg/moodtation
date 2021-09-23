@@ -1,8 +1,4 @@
-Hey, Kevyn here. First i want to say this is a personal project, after seeing the exponential growing on meditation apps i wanted to give it a try to give some comfort and care to the world.
-
-Not sure when this is gonna be done because i'm having college at the moment.
-
-You can try this github page https://kevynfg.github.io/moodtation/
+You can try this github page https://kevynfg.github.io/moodtation/  
 
 # Moodtation
 
@@ -12,42 +8,8 @@ You can try this github page https://kevynfg.github.io/moodtation/
 
 ## Installation
 
-- It's pretty simple you just have to clone https://github.com/kevynfg/moodtation.git and done!
-
-### Setup
-
-# 
-
-
-# For now you don't need to install anything below this message unless you are going to help with this project. 
-
-- To install nodejs
-
-> if you use chocolatey
-
-```shell
-cinst nodejs
-or full install with npm
-cinst nodejs.install
-```
-
-> or if you use scoop
-
-```shell
-scoop install nodejs
-```
-
-- To install express
-
-```shell
-$ npm install express --save
-```
-
-- To install knex (our database) postgresql
-
-```shell
-$ npm install pg
-```
+- It's pretty simple, you just have to clone https://github.com/kevynfg/moodtation.git 
+- npm install and done!  
 
 ## Features  
 
