@@ -1,25 +1,25 @@
-var imergir = document.getElementById('imergir'),
+var imergir = document.getElementById("imergir"),
   bodychange = document.body,
-  container = document.getElementById('container'),
-  ondas = document.getElementsByClassName('waves'),
-  sectionOndas = document.getElementById('section'),
+  container = document.getElementById("container"),
+  ondas = document.getElementsByClassName("waves"),
+  sectionOndas = document.getElementById("section"),
   player,
-  checkbox = document.getElementById('alegrometro'),
-  emoji = document.querySelector('.emoji'),
-  emoji2 = document.querySelector('.emoji2'),
-  perguntaNext = document.querySelector('#perguntaNext'),
-  perguntaFim = document.querySelector('#perguntaFim'),
-  meuRange = document.getElementById('playerRange'),
-  clickPlay = document.getElementById('buttonM'),
-  playerGongo = document.getElementById('playerGongo'),
-  secao3 = document.getElementById('secao3'),
-  mudar = document.querySelector('.meditar'),
-  btnNext = document.getElementById('btnProxima'),
-  btnContinuar = document.getElementById('btnContinuar'),
-  btnSair = document.getElementById('btnSair'),
-  btnVoltar = document.getElementById('btnVoltar'),
-  textoBoasVindas = document.getElementById('comoesta'),
-  textoBoasVindas2 = document.getElementById('comoesta2'),
+  checkbox = document.getElementById("alegrometro"),
+  emoji = document.querySelector(".emoji"),
+  emoji2 = document.querySelector(".emoji2"),
+  perguntaNext = document.querySelector("#perguntaNext"),
+  perguntaFim = document.querySelector("#perguntaFim"),
+  meuRange = document.getElementById("playerRange"),
+  clickPlay = document.getElementById("buttonM"),
+  playerGongo = document.getElementById("playerGongo"),
+  secao3 = document.getElementById("secao3"),
+  mudar = document.querySelector(".meditar"),
+  btnNext = document.getElementById("btnProxima"),
+  btnContinuar = document.getElementById("btnContinuar"),
+  btnSair = document.getElementById("btnSair"),
+  btnVoltar = document.getElementById("btnVoltar"),
+  textoBoasVindas = document.getElementById("comoesta"),
+  textoBoasVindas2 = document.getElementById("comoesta2"),
   contadorPlayer = 0,
   tempo_maximo_player = 0,
   i,
@@ -27,29 +27,29 @@ var imergir = document.getElementById('imergir'),
   tempo_do_contador;
 
 //btn play/pause
-mudar.addEventListener('click', Meditar, false);
+mudar.addEventListener("click", Meditar, false);
 
 //btn next song
-btnNext.addEventListener('click', nextSong, false);
+btnNext.addEventListener("click", nextSong, false);
 
 //btn Continuar meditação
 btnContinuar.addEventListener(
-  'click',
+  "click",
   () => {
     nextSong();
     window.player.next(); //próxima meditação
     Meditar(); //inicia nova meditação
-    perguntaFim.classList.add('hiddenElement');
+    perguntaFim.classList.add("hiddenElement");
     // toggleClass(perguntaFim, perguntaNext, 'hiddenElement');
-    btnVoltar.classList.add('hiddenElement');
-    btnContinuar.classList.add('hiddenElement');
+    btnVoltar.classList.add("hiddenElement");
+    btnContinuar.classList.add("hiddenElement");
   },
   false
 );
 
 //btn Voltar para home
 btnVoltar.addEventListener(
-  'click',
+  "click",
   () => {
     location.reload();
   },
@@ -58,57 +58,57 @@ btnVoltar.addEventListener(
 
 //btn Voltar para home
 btnSair.addEventListener(
-  'click',
+  "click",
   () => {
     location.reload();
-    btnSair.classList.add('hiddenElement');
+    btnSair.classList.add("hiddenElement");
   },
   false
 );
 
 //chk humor
-checkbox.addEventListener('change', function () {
+checkbox.addEventListener("change", function () {
   let root = document.documentElement;
   if (checkbox.checked == false) {
     //triste
     player.audioData = window.audiosNatureza;
     // emoji.textContent = '😩';
-    textoBoasVindas.style.display = 'block';
-    textoBoasVindas2.style.display = 'none';
+    textoBoasVindas.style.display = "block";
+    textoBoasVindas2.style.display = "none";
     novoFavicon = faviconTemplate`${emoji.textContent}`;
     linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
-    root.style.setProperty('--rangeAlegreCor', '#77B2C5');
-    root.style.setProperty('--perguntaNextAlegre', '#192F5E');
+    root.style.setProperty("--rangeAlegreCor", "#77B2C5");
+    root.style.setProperty("--perguntaNextAlegre", "#192F5E");
     secao3.style.backgroundImage = "url('./imgs/imagemTriste.jpg')";
-    emoji2.style.opacity = '0.2';
-    emoji.style.opacity = '1';
+    emoji2.style.opacity = "0.2";
+    emoji.style.opacity = "1";
     console.log(checkbox.checked);
   } else if (checkbox.checked == true) {
     //feliz
     player.audioData = window.audiosMeditativos;
     // emoji.textContent = '😄';
-    textoBoasVindas.style.display = 'none';
-    textoBoasVindas2.style.display = 'block';
+    textoBoasVindas.style.display = "none";
+    textoBoasVindas2.style.display = "block";
     novoFavicon = faviconTemplate`${emoji2.textContent}`;
     linkForFavicon.setAttribute(`href`, `data:image/svg+xml,${novoFavicon}`);
-    root.style.setProperty('--rangeAlegreCor', '#4C82B4');
-    root.style.setProperty('--perguntaNextAlegre', '#77B2C5');
+    root.style.setProperty("--rangeAlegreCor", "#4C82B4");
+    root.style.setProperty("--perguntaNextAlegre", "#77B2C5");
     secao3.style.backgroundImage = "url('./imgs/imagemAlegre.jpg')";
-    emoji.style.opacity = '0.2';
-    emoji2.style.opacity = '1';
+    emoji.style.opacity = "0.2";
+    emoji2.style.opacity = "1";
     console.log(checkbox.checked);
   }
 });
 
 //btn imergir
-imergir.addEventListener('click', function () {
+imergir.addEventListener("click", function () {
   var speed = 6000;
   playerGongo.play();
 
   //animar section onda
-  $('body').animate(
+  $("body").animate(
     {
-      scrollTop: $('#section').offset().top,
+      scrollTop: $("#section").offset().top,
     },
     speed
   );
@@ -116,15 +116,15 @@ imergir.addEventListener('click', function () {
   //playerGongo é o inicio da meditação quando sobe a onda
   setTimeout(
     () => {
-      toggleClass(sectionOndas, secao3, 'hiddenElement');
+      toggleClass(sectionOndas, secao3, "hiddenElement");
     },
     speed,
-    'linear',
+    "linear",
     true
   );
 
   //efeito de fadeout do container
-  toggleClass(container, sectionOndas, 'hiddenElement');
+  toggleClass(container, sectionOndas, "hiddenElement");
 
   if (!checkbox.checked) {
     tempo_maximo_player = 180;
@@ -136,7 +136,7 @@ imergir.addEventListener('click', function () {
     () => {
       window.player.start(); //iniciar o player
       Meditar(); //meditação
-      btnSair.classList.remove('hiddenElement');
+      btnSair.classList.remove("hiddenElement");
     },
     speed,
     true
@@ -145,8 +145,8 @@ imergir.addEventListener('click', function () {
 
 //player jQuery
 function ativarPlayer() {
-  $('#playerRange').roundSlider({
-    sliderType: 'range',
+  $("#playerRange").roundSlider({
+    sliderType: "range",
     min: 0,
     max: tempo_maximo_player,
     value: contadorPlayer,
@@ -155,31 +155,27 @@ function ativarPlayer() {
     radius: 70,
     width: 10,
     svgMode: true,
-    sliderType: 'range',
-    rangeColor: 'rgb(17, 91, 228)',
-    pathColor: '#B6174B',
+    sliderType: "range",
+    rangeColor: "rgb(17, 91, 228)",
+    pathColor: "#B6174B",
     borderWidth: 0,
     readOnly: true,
     keyboardAction: false,
   });
 }
 
-//meditar
 function Meditar() {
   window.player.togglePlayPause();
 
   if (window.player.isPlaying) {
-    //play
     ativarPlayer(); //animação player
     timerPlayer(); //controla o tempo
-    // btnSair.classList.add('hiddenElement');
     mudar.innerHTML = `pause`;
   } else {
     //pause
     pausePlayer(); //parar controlador do player
-    $('#playerRange').roundSlider('option', 'value', contadorPlayer);
+    $("#playerRange").roundSlider("option", "value", contadorPlayer);
     ativarPlayer(); //animação do player
-    // btnSair.classList.remove('hiddenElement');
     mudar.innerHTML = `play_arrow`;
   }
 }
@@ -187,14 +183,14 @@ function Meditar() {
 //próxima meditação
 function nextSong() {
   contadorPlayer = 0; //zerar tempo
-  $('#playerRange').roundSlider('option', 'value', contadorPlayer);
+  $("#playerRange").roundSlider("option", "value", contadorPlayer);
 
   pausePlayer();
   playerGongo.play(); //sinal final
-  mudar.classList.add('hiddenElement');
+  mudar.classList.add("hiddenElement");
 
   //aparecer mensagem
-  toggleClass(btnNext, perguntaNext, 'hiddenElement');
+  toggleClass(btnNext, perguntaNext, "hiddenElement");
 
   window.player.pause(); //Pausa o player
 
@@ -202,21 +198,11 @@ function nextSong() {
     pausePlayer();
     window.player.pause();
     playerGongo.play(); //sinal final
-    mudar.classList.add('hiddenElement');
-    toggleClass(perguntaNext, perguntaFim, 'hiddenElement');
-    btnVoltar.classList.remove('hiddenElement');
-    btnContinuar.classList.remove('hiddenElement');
+    mudar.classList.add("hiddenElement");
+    toggleClass(perguntaNext, perguntaFim, "hiddenElement");
+    btnVoltar.classList.remove("hiddenElement");
+    btnContinuar.classList.remove("hiddenElement");
   } else {
-    //depois de 5s iniciar próxima meditação
-    // setTimeout(
-    //   () => {
-    //     window.player.next(); //próxima meditação
-    //     Meditar(); //inicia nova meditação
-    //     mudar.innerHTML = `pause`;
-    //   },
-    //   5000,
-    //   true
-    // );
     setTimeout(() => {
       loadingPlayer();
     }, 1000);
@@ -226,8 +212,8 @@ function nextSong() {
 function loadingPlayer() {
   contadorPlayer++;
   const tempo_maximo_load = 10;
-  $('#playerRange').roundSlider('option', 'value', contadorPlayer);
-  $('#playerRange').roundSlider('option', 'max', tempo_maximo_load);
+  $("#playerRange").roundSlider("option", "value", contadorPlayer);
+  $("#playerRange").roundSlider("option", "max", tempo_maximo_load);
   timeout_loadingPlayer = setTimeout(loadingPlayer, 500);
   if (contadorPlayer == 10) {
     clearTimeout(timeout_loadingPlayer);
@@ -243,12 +229,12 @@ function loadingPlayer() {
 //controlador do tempo
 function timerPlayer() {
   //aparecer botão
-  toggleClass(perguntaNext, btnNext, 'hiddenElement');
-  mudar.classList.remove('hiddenElement');
+  toggleClass(perguntaNext, btnNext, "hiddenElement");
+  mudar.classList.remove("hiddenElement");
 
   //Contador que verifica a posição do timing do player
   contadorPlayer++;
-  $('#playerRange').roundSlider('option', 'value', contadorPlayer);
+  $("#playerRange").roundSlider("option", "value", contadorPlayer);
 
   //Tempo que roda em volta do player
   tempo_do_contador = setTimeout(timerPlayer, 500, true);

@@ -12,11 +12,11 @@ body {
   height: 100vh;
   overflow: hidden;
   justify-content: center;
-  font-family: 'Kodchasan', sans-serif;
+  font-family: "Kodchasan", sans-serif;
   text-rendering: optimizeLegibility;
 }
 body {
-  background-image: url('./imgs/homepage.jpg');
+  background-image: url("./imgs/homepage.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -58,7 +58,7 @@ body {
   padding: 15px 32px;
   text-decoration: none;
   font-size: 16px;
-  font-family: 'Kodchasan', sans-serif;
+  font-family: "Kodchasan", sans-serif;
   border-radius: 25px;
   transition-duration: 0.2s;
   color: #192f5e;
@@ -204,7 +204,7 @@ i.setaBaixo:hover {
 
 .slider:before {
   position: absolute;
-  content: '';
+  content: "";
   height: 35px;
   width: 35px;
   left: 8px;
@@ -535,7 +535,7 @@ input:checked + .slider:before {
   #comoesta::after {
     position: fixed;
     display: inline-block;
-    content: '^';
+    content: "^";
     left: 50%;
     font-weight: bold;
     font-size: 40px;
@@ -682,7 +682,7 @@ input:checked + .slider:before {
   #comoesta::after {
     position: fixed;
     display: inline-block;
-    content: '^';
+    content: "^";
     left: 50%;
     font-weight: bold;
     font-size: 40px;
@@ -830,7 +830,7 @@ input:checked + .slider:before {
 
 @media all and (min-width: 1240px) {
   #buttonM {
-    top: 22%;
+    top: 24%;
   }
 
   #blocoSection3 {

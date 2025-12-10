@@ -2,7 +2,7 @@
   "name": "moodtation",
   "version": "1.0.0",
   "description": "Hey, Kevyn here. First i want to say this is a personal project, after seeing the exponential growing on meditation apps i wanted to give it a try to give some comfort and care to the world.",
-  "main": "src/server.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/server.js"
@@ -19,13 +19,9 @@
   },
   "homepage": "https://github.com/kevynfg/moodtation#readme",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.22.0",
     "jplayer": "^2.9.2",
     "knex": "^0.21.3",
-    "lodash.update": "^4.10.2",
-    "pg": "^8.3.0",
-    "sqlite3": "^4.1.1"
+    "lodash.update": "^4.10.2"
   },
   "devDependencies": {}
 }
