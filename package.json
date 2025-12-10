@@ -25,7 +25,7 @@
     "knex": "^0.21.3",
     "lodash.update": "^4.10.2",
     "pg": "^8.3.0",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {}
 }
