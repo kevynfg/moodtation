@@ -24,7 +24,7 @@
     "jplayer": "^2.9.2",
     "knex": "^0.21.3",
     "lodash.update": "^4.10.2",
-    "pg": "^8.3.0",
+    "pg": "^8.16.3",
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {}
